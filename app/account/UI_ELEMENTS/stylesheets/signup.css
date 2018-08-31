@@ -8,7 +8,7 @@
   z-index: 1;
   height: 280px;
   width: 320px;
-  opacity: 0.8;
+  opacity: 0.9;
   border: solid 1px  rgb(119, 7, 18);
   background: #FFFFFF;
   max-width: 360px;
@@ -140,7 +140,7 @@ cursor: pointer;
   color: #EF3B3A;
 }
 body {
-  background-image: url("/home/s4lm4/Desktop/FastFoodFast/app/account/UI_ELEMENTS/images/food22.jpg");
+  background-image: url("/home/s4lm4/Desktop/FastFoodFast/app/account/UI_ELEMENTS/images/food26.jpg");
   background-size: 100% 675px;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
