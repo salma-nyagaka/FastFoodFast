@@ -65,6 +65,7 @@ body {
 
 }
 
+
 .button1:hover {
     border: 0 px solid white;
     background-color: rgb(87, 4, 12);
@@ -206,13 +207,6 @@ img {
 }
 
 
-.colum {
-    float: right;
-    width: 33.33%;
-    padding: 10px;
-    height: 400px;
-    font-size: 12px;
-}
 
 * {
     box-sizing: border-box;
@@ -224,17 +218,34 @@ img {
      height:160px;
     }
 
-.column {
-    float: left;
-    width: 30%;
-    padding: 10px;
-    margin: 0 0 0 30px;
-    margin-bottom: 30px;
-    margin-top: 2%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    height: 200px; 
-}
-
+    .colum {
+        float: right;
+        width: 33.33%;
+        padding: 10px;
+        height: 400px;
+        font-size: 90%;
+        color: black;
+        
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    .column {
+        float: left;
+        width: 30%;
+        padding: 10px;
+        margin: 0 0 0 30px;
+        margin-bottom: 30px;
+        margin-top: 2%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
+        height: 200px;
+    
+        /* background-color:rgb(242, 242, 242); */
+        background-color: white;
+    }
+    
 .row:after {
     content: "";
     display: table;
@@ -281,8 +292,8 @@ table, td, th {
 .btn-basic {
     font-size:15px;
     margin-top: 2%;
-    height: 25px;
-    width: 21%;
+    height: 29px;
+    width: 10%;
     background-color: rgb(119, 7, 18); 
     color: white;
 }
