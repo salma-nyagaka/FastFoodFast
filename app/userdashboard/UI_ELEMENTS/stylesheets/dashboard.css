@@ -1,8 +1,10 @@
 body {
-    font-family: "Lato", sans-serif;
-    /* background-color: rgb(22, 22, 22); */
-    background-color: white;
-}
+    background: white;
+    background-image: url("/home/s4lm4/Desktop/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/food25.jpeg");
+    background-size: 100% 100px;;  font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;      
+  }
 
 .sidenav {
     height: 100%;
@@ -126,7 +128,7 @@ body {
     color: white;
     cursor: pointer;
     padding: 18px;
-    width: 55%;
+    width: 33%;
     height: 30px;
     margin-bottom: 5px;
     margin-top: 10px;
@@ -234,7 +236,7 @@ body {
     transform: scale(1.05);
   }
 .center{
-    margin-right:33%;
+    margin-right:31%;
     position: center;
 
 
@@ -361,24 +363,44 @@ img {
     width: 33.33%;
     padding: 10px;
     height: 400px;
-    font-size: 12px;
+    font-size: 90%;
+    color: black;
+    
 }
 
 * {
     box-sizing: border-box;
 }
+button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+    background-color: rgb(119, 7, 18);
+    color: white;
+}
+
 
 .column {
     float: left;
     width: 30%;
     padding: 10px;
     margin: 0 0 0 30px;
-    margin-bottom: 30px;
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
     height: 200px;
-    background-color:rgb(242, 242, 242);
+
+    /* background-color:rgb(242, 242, 242); */
+    background-color: white;
 }
+
 
 .row:after {
     content: "";
@@ -422,6 +444,7 @@ table, td, th {
 #tablee td, #tablee th {
     border: 1px solid #ddd;
     padding: 8px;
+    background-color: white;
 }
 
 #tablee tr:nth-child(even){background-color: #f2f2f2;}
