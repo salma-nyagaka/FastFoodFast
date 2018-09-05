@@ -157,7 +157,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 21px;
     border: solid 1px rgb(119, 7, 18);
     background-color:  rgb(119, 7, 18);
     margin-left: 6px; 
@@ -293,7 +293,7 @@ table, td, th {
     font-size:15px;
     margin-top: 2%;
     height: 29px;
-    width: 10%;
+    width: 21%;
     background-color: rgb(119, 7, 18); 
     color: white;
 }
