@@ -219,38 +219,7 @@ button {
   font-size: 17px;
 }
 
-#navvbar {
-  margin-top: 1%;
-  width: 90%;
-  margin-left: 5%;
-  text-align:center;
-  overflow: hidden;
-  background-color: #fff!important;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
-}
 
-#navvbar a {
-  float: right;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  border: solid 1px rgb(119, 7, 18);
-  background-color:  rgb(119, 7, 18);
-  margin-left: 6px; 
-
-
-}
-
-#navvbar a:hover {
-    background-color: rgb(128, 10, 22);
-    color: white;
-    -ms-transform: scale(1.5); 
-    -webkit-transform: scale(1.05); 
-    transform: scale(1.05);
-  }
 .center{
     margin-right:33%;
     position: center;

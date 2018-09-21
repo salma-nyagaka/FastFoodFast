@@ -153,19 +153,16 @@ body {
   #navvbar a {
     float: right;
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 21px;
-    border: solid 1px rgb(119, 7, 18);
-    background-color:  rgb(119, 7, 18);
-    margin-left: 6px; 
+    font-size: 17px;
+   
   
   
   }
   .center{
-    margin-right:33%;
     position: center;
 
 
@@ -177,6 +174,41 @@ body {
       -webkit-transform: scale(1.05); 
       transform: scale(1.05);
     }
+
+
+    #navbar {
+        margin-top: 1%;
+        width: 60%;
+        margin-left:20%;
+        text-align:center;
+        overflow: hidden;
+        background-color: #fff!important;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
+      }
+      
+      #navbar a {
+        float: right;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        margin-left: 6px; 
+      
+      
+     
+    
+    
+    }
+      #navbar a:hover {
+          background-color: rgb(128, 10, 22);
+          color: white;
+          -ms-transform: scale(1.5); 
+          -webkit-transform: scale(1.05); 
+          transform: scale(1.05);
+        }
+    
 
 .sticky {
   position: fixed;
@@ -274,13 +306,14 @@ table, td, th {
 }
 
 #tablee td, #tablee th {
-    border: 1px solid #ddd;
+    border: 1px solid grey;
     padding: 8px;
+    background-color: white;
 }
 
-#tablee tr:nth-child(even){background-color: #f2f2f2;}
+#tablee tr:nth-child(even){background-color: white;}
 
-#tablee tr:hover {background-color: #ddd;}
+#tablee tr:hover {background-color: white;}
 
 #tablee th {
     padding-top: 12px;
@@ -293,10 +326,20 @@ table, td, th {
     font-size:15px;
     margin-top: 2%;
     height: 29px;
+    width: 10%;
+    background-color: rgb(119, 7, 18); 
+    color: white;
+}
+.btn-bassic {
+    font-size:15px;
+    margin-top: 2%;
+    height: 29px;
     width: 21%;
     background-color: rgb(119, 7, 18); 
     color: white;
 }
+
+ 
 
  
 

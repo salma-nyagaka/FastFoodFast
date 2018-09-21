@@ -1,20 +1,20 @@
 .login-page {
-  width: 360px;
+  width: 100%;
   padding: 8% 0 0;
   margin: auto;
 }
 .form {
   position: relative;
   z-index: 1;
-  height: 280px;
-  width: 320px;
+  height: 320px;
+  width: 370px;
+  padding: 20px 10px;
   opacity: 0.9;
-  border: solid 1px  rgb(119, 7, 18);
+  border: solid 1px grey;
   background: #FFFFFF;
-  max-width: 360px;
   margin: 0 auto 100px;
-  padding: 45px;
   text-align: center;
+  border-radius: 6px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -141,11 +141,12 @@ cursor: pointer;
 }
 body {
   background: white;
-  background-image: url("../img/food26.jpg");
-  background-size: 100% 675px;  font-family: "Roboto", sans-serif;
+  background-image: url("../img/food25.jpeg");
+  background-size: 100% 100px;;  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
+
 
 #navbar {
   overflow: hidden;  
@@ -175,6 +176,7 @@ body {
 
 
 a:-webkit-any-link {
-    color: black;
+    color:whitesmoke;
     cursor: pointer;
+    text-decoration: none;
 }
