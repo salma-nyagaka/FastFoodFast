@@ -1,6 +1,6 @@
 body {
     background: white;
-    background-image: url("/home/s4lm4/Desktop/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/food25.jpeg");
+    background-image: url(/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/food25.jpeg);
     background-size: 100% 100px;;  font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
@@ -41,7 +41,7 @@ body {
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav a {font-size: 17px;}
 }
 .button {
     background-color: rgb(119, 7, 18); 
@@ -128,7 +128,7 @@ body {
     color: white;
     cursor: pointer;
     padding: 18px;
-    width: 33%;
+    width: 100px;
     height: 30px;
     margin-bottom: 5px;
     margin-top: 10px;
@@ -137,7 +137,7 @@ body {
     border: none;
     text-align:left;
     outline: none;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .active, .collapsible:hover {
@@ -150,6 +150,7 @@ body {
     display: none;
     overflow: hidden;
     background-color: white;
+    width: 400px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 }
@@ -186,55 +187,7 @@ body {
     margin: 10px 1px;
 }
 
-#navbar {
-    width: 100%;
-  overflow: hidden;  
-  background-color: #fff!important;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
-}
 
-#navbar a {
-  float: right;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-#navvbar {
-  margin-top: 1%;
-  width: 90%;
-  margin-left: 5%;
-  text-align:center;
-  overflow: hidden;
-  background-color: #fff!important;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
-}
-
-#navvbar a {
-  float: right;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  border: solid 1px rgb(119, 7, 18);
-  background-color:  rgb(119, 7, 18);
-  margin-left: 6px; 
-
-
-}
-
-#navvbar a:hover {
-    background-color: rgb(128, 10, 22);
-    color: white;
-    -ms-transform: scale(1.5); 
-    -webkit-transform: scale(1.05); 
-    transform: scale(1.05);
-  }
 .center{
     margin-right:31%;
     position: center;
@@ -308,15 +261,36 @@ h2 {
 }
 
 
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
+#navbar {
+    overflow: hidden;  
+    background-color: #fff!important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
+  }
+  
+  #navbar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 
-#navbar a.active {
-  background-color: grey;
-  color: white;
-}
+
+  .center{
+    margin-right:33%;
+    position: center;}
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  #navbar a.active {
+    background-color: grey;
+    color: white;
+  }
 
 .content {
   padding: 0px;
@@ -348,6 +322,7 @@ img {
     margin-left: 5%;
     margin-right: 8%;
     margin-top: 2px;
+    float: center;
 }
 .collapse {
     padding: 2px 16px;
