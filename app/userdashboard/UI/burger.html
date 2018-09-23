@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/stylesheets/dashboard.css" type="text/css">
+</head>
+<body>
+
+
+<div id="navbar">
+                <div class= "center">
+                
+                <a href="./orders.html">Order History</a>  
+                <a href="./drinks.html">Drinks</a>
+                <a href="./burger.html">Burger</a>   
+                <a href="./index.html">Pizza</a> 
+                <a href="#" class="w3-bar-item w3-button">Home</a>
+                </div>
+                
+                </div>
+                
+
+
+  <button class="collapsible">ORDERS</button>
+      <div class="content">
+        
+              <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b></b></span></h4>
+              <p><a href="#">UMAMI</a> <span class="price">750/=</span></p>
+              <p><a href="#">MINNETA</a> <span class="price">650/=</span></p>
+              <hr>
+              <p>Total <span class="price" style="color:black"><b>1400/=</b></span></p>
+              <button class="button3 button2"><a href="./login.html">Checkout</a></button> </a>
+            </div>
+          </div>    
+       </div>
+</div>
+      
+<div class= "container"> 
+
+         <div class="row">
+              <div class="column" >
+                      <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/umami.webp" alt="Burger" >
+                  <div class="colum"  class="bg-1">
+                        <h2>UMAMI</h2>
+                        <p>Port, Silton, Barbeque sauce, cheese<br></p>
+                        <h2> 750/=</h2>
+                        <a href="#" ><button>ORDER</button></a>
+                      </div>
+              </div>
+
+              <div class="column">
+                        <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/pug.webp" alt="Burger" >
+                    <div class="colum"  class="bg-1">
+                         <h2>PUG</h2>
+                         <p>Lettuce, cucumber, beef filling, bacon</p>
+                         <h2> 750/=</h2>
+                         <a href="#" ><button>ORDER</button></a>
+                        </div>
+                </div>
+                <div class="column">
+                        <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/greenchille.webp"alt="Burger" >
+                    <div class="colum"  class="bg-1"> 
+                        <h2>GREEN CHILLE</h2>
+                         <p>Eggs, chillie, capsicum </p>
+                         <h2> 950/=</h2>
+                         <br>
+                         <a href="#" ><button>ORDER</button></a>
+                        </div>
+                </div>
+                <div class="column">
+                        <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/minetta.webp"alt="Burger">
+                    <div class="colum"  class="bg-1">
+                         <h2>MINNETTA</h2>
+                         <p>Pineappe, cheese, capsicum</p>
+                         <h2> 650/=</h2>
+                         <br>
+                         <a href="#" ><button>ORDER</button></a>
+                        </div>
+                </div>
+                <div class="column">
+                        <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/cheddar.webp"alt="Burger" >
+                    <div class="colum"  class="bg-1">
+                         <h2>CHEDDAR SMASHED</h2>
+                         <p>Ground Beef, Onions, Cheddar</p>
+                         <h2> 750/=</h2>
+                         <a href="#" ><button>ORDER</button></a>
+                        </div>
+                </div>
+                <div class="column" >
+                        <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/beef.webp"alt="Burger" >
+                    <div class="colum"  class="bg-1">
+                         <h2>BEEF WITH<br>PEANUTE CHIPOTLE</h2>
+                         <p>Barebeque Sauce,peanutes</p>
+                         <h2> 850/=</h2>
+                         
+                         <a href="#" ><button>ORDER</button></a>
+                        </div>
+                </div>
+</div>
+     <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+</body>
+</html> 

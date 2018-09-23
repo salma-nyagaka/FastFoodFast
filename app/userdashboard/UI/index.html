@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/stylesheets/dashboard.css" type="text/css">
+</head>
+<body>
+
+
+    <div id="navbar">
+        <div class= "center">
+    
+        <a href="./orders.html">Order History</a>  
+        <a href="./drinks.html">Drinks</a>
+        <a href="./burger.html">Burger</a>   
+        <a href="./index.html">Pizza</a> 
+        <a href="#" class="w3-bar-item w3-button">Home</a>
+        </div>
+    
+    </div>
+    
+    
+    
+           <button class="collapsible">ORDERS</button>
+      <div class="content">
+            <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b></b></span></h4>
+            <p><a href="#">hawaian</a> <span class="price">650/=</span></p>
+            <p><a href="#">Mixed</a> <span class="price">950/=</span></p>
+            <hr>
+            <p>Total <span class="price" style="color:black"><b>1600/=</b></span></p>
+            <button class="button3 button2"><a href="./login.html">Checkout</a></button>
+            </a>
+         </div>
+      </div>
+    </div>
+    
+    <div class= "container"> 
+        <div class="row">
+           <div class="column">
+                  <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/baberque.jpeg" alt="Pizza" >
+              <div class="colum"  class="bg-1">
+                    <h2>BABERQUE</h2>
+                    <p>meat, cheese, <br>capscicum<br></p>
+                    <h2> 750/=</h2>
+                    <br>
+                    <a href="#" ><button>ORDER</button></a>
+              </div>
+            </div>
+            <div class="column">
+                    <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/tomato.jpg" alt="Pizza">
+                <div class="colum"  class="bg-1">
+                      <h2>TOMATO</h2>
+                      <p>Thick tomato sauce, cheese, capsicum</p>
+                      <h2> 750/=</h2>
+                      <a href="#" ><button>ORDER</button></a>
+                    </div>
+            </div>
+            <div class="column">
+                    <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/ham.jpg" alt="Pizza" >
+                    <div class="colum"  class="bg-1"> 
+                    <h2>MIXED</h2>
+                      <p>Meat, ham, pineapple, chicken, peporoni </p>
+                      <h2> 950/=</h2>
+                      
+                      <a href="#" ><button>ORDER</button></a>
+                    </div>
+            </div>
+            <div class="column">
+                    <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/hawaian.jpg" alt="Pizza" >
+                <div class="colum"  class="bg-1">
+                      <h2>HAWAIAN</h2>
+                      <p>Pineappe, cheese, capsicum</p>
+                      <h2> 650/=</h2>
+                      
+                      <a href="#" ><button>ORDER</button></a>
+                    </div>
+            </div>
+            <div class="column">
+                    <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/peporoni.jpg" alt="Pizza" style="width:60%" height:"270px">
+                <div class="colum"  class="bg-1">
+                      <h2>PEPORONI</h2>
+                      <p>peporoni, cheese</p>
+                      <h2> 750/=</h2>
+                      <br>
+                      <a href="#" ><button>ORDER</button></a>
+                    </div>
+            </div>
+            <div class="column">
+                    <img src="/home/s4lm4/Desktop/gitapi/FastFoodFast/app/userdashboard/UI_ELEMENTS/images/vegetable.jpg" alt="Pizza" style="width:50%" height:"270px">
+                <div class="colum"  class="bg-1">
+                      <h2>VEGIE</h2>
+                      <p>Sweet corn,  capsicum, egg plant.</p>
+                      <h2> 850/=</h2>
+                      <a href="#" ><button>ORDER</button></a>
+                    </div>
+            </div>
+            </div>
+    
+      <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+        </script>
+    </body>
+    </html> 
+    
