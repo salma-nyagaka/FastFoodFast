@@ -30,7 +30,7 @@ login.onclick= function(){
 
         }
         else{
-            document.getElementById('loginfail').innerHTML= "invalid username or password";
+            document.getElementById('loginfail').innerHTML= "Invalid username or password";
             document.getElementById('loginfail').style.color='red';
             document.getElementById('loginfail').style.display='block';
         }
