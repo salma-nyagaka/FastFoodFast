@@ -1,7 +1,7 @@
 body {
     background: white;
-    background-image: url("../img/food25.jpeg");
-    background-size: 100% 100px;;  font-family: "Roboto", sans-serif;
+    background-image: url("../img/pizza70.jpg");
+    background-size: 100% 625px;;  font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
   }
@@ -258,8 +258,9 @@ h2 {
     -webkit-margin-end: 0px;
     font-weight: bold;
     font-size: 12px;
-}
+    word-wrap: break-word;
 
+}
 
 #navbar {
     overflow: hidden;  
@@ -276,11 +277,6 @@ h2 {
     text-decoration: none;
     font-size: 17px;
   }
-
-
-  .center{
-    margin-right:33%;
-    position: center;}
   
   #navbar a:hover {
     background-color: #ddd;
@@ -305,7 +301,7 @@ img {
     /* margin-top: 30px; */
     border-radius: 5px 5px 0 0;
     width:60%;
-     height:180px;
+     height:170px;
     }
 .sticky + .content {
   padding-top: 60px;
@@ -319,7 +315,7 @@ img {
 
 .container {
     padding: 2px 16px;
-    margin-left: 5%;
+    margin-left: 15%;
     margin-right: 8%;
     margin-top: 2px;
     float: center;
@@ -365,13 +361,13 @@ button {
 
 .column {
     float: left;
-    width: 30%;
+    width: 25%;
     padding: 10px;
     margin: 0 0 0 30px;
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
-    height: 200px;
-
+    height: 190px;
+    opacity: 1.0px;
     /* background-color:rgb(242, 242, 242); */
     background-color: white;
 }
@@ -403,6 +399,7 @@ button {
 }
 table {
     margin-top: 5%;
+
     border-collapse: collapse;
 }
 
@@ -410,21 +407,21 @@ table, td, th {
     border: 1px solid black;
 }
 #tablee {
-    margin-left: 15%;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 300%;
+    margin-left: 6%;
+    width: 90%;
 }
 
 #tablee td, #tablee th {
-    border: 1px solid #ddd;
+    border: 1px solid grey;
     padding: 8px;
     background-color: white;
 }
 
-#tablee tr:nth-child(even){background-color: #f2f2f2;}
+#tablee tr:nth-child(even){background-color: white;}
 
-#tablee tr:hover {background-color: #ddd;}
+#tablee tr:hover {background-color: white;}
 
 #tablee th {
     padding-top: 12px;

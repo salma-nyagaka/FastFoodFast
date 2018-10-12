@@ -6,11 +6,11 @@
 .form {
   position: relative;
   z-index: 1;
-  height: 320px;
+  height: 390px;
   width: 370px;
   padding: 20px 10px;
   opacity: 0.9;
-  border: solid 1px grey;
+  border: solid 1px black;
   background: #FFFFFF;
   margin: 0 auto 100px;
   text-align: center;
@@ -19,13 +19,12 @@
 }
 
 .form input {
-  border: solid 1px  rgb(119, 7, 18);
+  border: solid 1px  rgb(79, 75, 75);
 
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #0202024a;
   width: 100%;
-  border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
@@ -80,7 +79,7 @@ cursor: pointer;
   text-transform: uppercase;
   outline: 0;
   background:  rgb(119, 7, 18);
-  width: 130%;
+  width: 100%;
   border: 0;
   padding: 15px;
   margin-right: 20px;
@@ -91,7 +90,7 @@ cursor: pointer;
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: rgba(182, 4, 102, 0.713);
+  background:rgb(36, 3, 5);
 }
 .form .message {
   margin: 15px 0 0;
@@ -141,8 +140,8 @@ cursor: pointer;
 }
 body {
   background: white;
-  background-image: url("../img/food25.jpeg");
-  background-size: 100% 100px;;  font-family: "Roboto", sans-serif;
+  background-image: url("../img/pizza70.jpg");
+  background-size: 100% 625px;;  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
 }
@@ -173,6 +172,7 @@ body {
   background-color: grey;
   color: white;
 }
+
 
 
 a:-webkit-any-link {

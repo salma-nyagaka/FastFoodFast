@@ -23,11 +23,11 @@ register.onclick= function(){
     .then(res => res.json())
     .then(data => {console.log(data)
         if (data['message'] === 'successfully created a new account'){
-            alert('Welcome ' + data['username'] +', you may now Login' )
-            document.getElementById('username').value = "username";
-            document.getElementById('email').value = "email";
-            document.getElementById('password').value = "password";
-            document.getElementById('confirmPassword').value = "confirmPassword";
+            alert('Successfully signed up') 
+            document.getElementById('username').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('password').value = "";
+            document.getElementById('confirmPassword').value = "";
         }
         else{
             document.getElementById('username').value = "";
