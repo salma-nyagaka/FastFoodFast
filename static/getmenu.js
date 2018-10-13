@@ -31,7 +31,6 @@ window.onload = function(){
                                         <h2>${res['price']}</h2>
                                         
                                         <br>
-                                        <button class="ORDER"  onClick="get_meal('${res['id']}')">VIEW</button>
 
                                         <button class="ORDER"  onClick="delete_meal('${res['id']}')">DELETE</button>
                                     </div>

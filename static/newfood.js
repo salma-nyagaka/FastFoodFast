@@ -1,13 +1,13 @@
 var newfood = document.getElementById('new')
 
-window.onload = function(){
+// window.onload = function(){
 
-    if (window.localStorage.getItem('username') == null){
-        document.getElementById('signintext').innerHTML = "SIGN IN";
-    }
-    else{
-        document.getElementById('signintext').innerHTML = "LOG OUT";
-    }
+//     if (window.localStorage.getItem('username') == null){
+//         document.getElementById('signintext').innerHTML = "SIGN IN";
+//     }
+//     else{
+//         document.getElementById('signintext').innerHTML = "LOG OUT";
+//     }
 
 newfood.onclick= function(){
     let name = document.getElementById('name').value;
@@ -90,14 +90,14 @@ function upload(ev){
 
 
 
-var logout = document.getElementById('signintext')
-logout.onclick = function(){
-    if (window.localStorage.getItem('username') == null){
-        redirect: window.location.replace("./login.html");
-    }
+// var logout = document.getElementById('signintext')
+// logout.onclick = function(){
+//     if (window.localStorage.getItem('username') == null){
+//         redirect: window.location.replace("./login.html");
+//     }
 
-    else{
-        localStorage.clear();
-        redirect: window.location.replace("./index.html");
-    }
-}}
+//     else{
+//         localStorage.clear();
+//         redirect: window.location.replace("./index.html");
+//     }
+// }}
