@@ -19,20 +19,19 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
-        let output = '';
+        let output = `<table id="tablee">
+                        <tr>
+                        <th>id</th>
+                        <th>username</th>
+                        <th>food_name</th>
+                        <th>description</th>
+                        <th>price</th>
+                        <th>current status</th>
+                        <th>update status</th>
+                        </tr>`;
         console.log(data)
         data["orders"].forEach(res=>{
-            output +=` <table id="tablee">
-                            <tr>
-                            <th>id</th>
-                            <th>username</th>
-                            <th>food_name</th>
-                            <th>description</th>
-                            <th>price</th>
-                            <th>current status</th>
-                            <th>update status</th>
-                            </tr>
-    
+            output +=` 
                             <tr>
                             <td>${res['id']}</td>
                             <td>${res['username']}</td>
@@ -42,9 +41,11 @@ window.onload = function(){
                             <td>${res['status']}</td>
                             <td><button class="ORDER"  onClick="status('${res['id']}')">Complete</button>    
                             </td>
-                            </tr>
-                        </table>`
+                            </tr>`
         }) 
+        output +=
+        `</table>`
+
         document.getElementById("container").innerHTML = output;
     })}
 

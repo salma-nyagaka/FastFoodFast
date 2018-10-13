@@ -28,10 +28,8 @@ window.onload = function(){
                                     <div class="colum"  class="bg-1">
                                         <h2>${res['name']}</h2>
                                         <p>${res['description']}</p>
-                                        <h2>${res['price']}</h2>
-                                        
+                                        <h2>${res['price']}</h2>                                      
                                         <br>
-
                                         <button class="ORDER"  onClick="delete_meal('${res['id']}')">DELETE</button>
                                     </div>
                             </div>`
