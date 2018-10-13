@@ -18,21 +18,42 @@ login.onclick= function(){
     })
     .then(res => res.json())
     .then(data => {
+         
+        if (data["message"] === "user does not exist") {
+                    document.getElementById('output').innerHTML =
+                    "Username does not exist";
+                    document.getElementById('output').style.color = "red";
+        }
+        if (data["message"] === "Wrong password") {
+            document.getElementById('output').innerHTML =
+            "Enter valid password";
+            document.getElementById('output').style.color = "red";
+        }
+
         if (data['message'] === 'successfully logged in'){
+            prompt('Successfully logged in') 
             window.localStorage.setItem('token', data['token'])
             console.log(data['admin'])
+
             if (data['admin'] === true){
+                window.localStorage.setItem('username', data['username'])
+                window.localStorage.setItem('password', data['password'])
                 redirect: window.location.replace("./adminindex.html")
+
+
             }
             else{
-                redirect: window.location.replace("./checkout.html")
+                window.localStorage.setItem('username', data['username'])
+                window.localStorage.setItem('password', data['password'])
+                redirect: window.location.replace("./userindex.html")
+
             }
 
         }
-        else{
-            document.getElementById('loginfail').innerHTML= "Invalid username or password";
-            document.getElementById('loginfail').style.color='red';
-            document.getElementById('loginfail').style.display='block';
-        }
+        // else{
+        //     document.getElementById('loginfail').innerHTML= "Invalid username or password";
+        //     document.getElementById('loginfail').style.color='blue';
+        //     document.getElementById('loginfail').style.display='block';
+        // }
     })
 }

@@ -1,7 +1,7 @@
 body {
     background: white;
     background-image: url("../img/pizza70.jpg");
-    background-size: 100% 625px;;  font-family: "Roboto", sans-serif;
+    background-size: 100% 1000px;;  font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
   }
@@ -17,6 +17,11 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     overflow-x: hidden;
 }
+.column:hover{
+    color: white;
+    transform: scale(1.1); 
+}
+
 
 .sidenav a {
     padding: 6px 8px 6px 16px;
@@ -319,6 +324,7 @@ img {
     margin-right: 8%;
     margin-top: 2px;
     float: center;
+    
 }
 .collapse {
     padding: 2px 16px;
@@ -363,12 +369,11 @@ button {
     float: left;
     width: 25%;
     padding: 10px;
-    margin: 0 0 0 30px;
+    margin: 0 10px 0 80px;
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
     height: 190px;
     opacity: 1.0px;
-    /* background-color:rgb(242, 242, 242); */
     background-color: white;
 }
 

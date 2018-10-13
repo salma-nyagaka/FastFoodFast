@@ -23,6 +23,13 @@ body {
     
 }
 
+
+.column:hover{
+    color: white;
+    transform: scale(1.09); 
+}
+
+
 .sidenav a:hover {
     color: #f1f1f1;
 }
@@ -144,7 +151,6 @@ body {
     margin-top: 1%;
     width: 90%;
     margin-left: 5%;
-    text-align:center;
     overflow: hidden;
     background-color: #fff!important;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
@@ -155,9 +161,11 @@ body {
     display: block;
     color: black;
     text-align: center;
-    padding: 14px 16px;
+    padding: 12px 14px;
+    float: center;
     text-decoration: none;
     font-size: 17px;
+    margin-left: 12px;
    
   
   

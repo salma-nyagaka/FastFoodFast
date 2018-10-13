@@ -1,4 +1,10 @@
 window.onload = function(){
+    if (window.localStorage.getItem('username') == null){
+        document.getElementById('signintext').innerHTML = "SIGN IN";
+    }
+    else{
+        document.getElementById('signintext').innerHTML = "LOG OUT";
+    }
 
     fetch('http://127.0.0.1:5000/api/v2/users/orders',{
         metdod: 'GET',
@@ -12,6 +18,7 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
+        
         let output = '';
         console.log(data)
         data["Orders"].forEach(res=>{
@@ -35,5 +42,20 @@ window.onload = function(){
         }) 
         document.getElementById("container").innerHTML = output;
     })}
+
+var logout = document.getElementById('signintext')
+logout.onclick = function(){
+    if (window.localStorage.getItem('username') == null){
+        redirect: window.location.replace("./login.html");
+    }
+
+    else{
+        localStorage.clear();
+        redirect: window.location.replace("./index.html");
+    }
+}
+    
+    
+            
     
     

@@ -2,6 +2,69 @@ body {
     margin: 0;
     font-size: 28px;
   }
+
+  .container {
+    padding: 2px 16px;
+    margin-left: 15%;
+    margin-right: 8%;
+    margin-top: 2px;
+    float: center;
+}
+
+
+.colum {
+    float: right;
+    width: 33.33%;
+    padding: 10px;
+    height: 400px;
+    font-size: 90%;
+    color: black;
+    
+}
+
+
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    margin: 0 0 0 150px;
+    margin-top: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
+    height: 190px;
+    opacity: 1.0px;
+    /* background-color:rgb(242, 242, 242); */
+    background-color: white;
+}
+
+.column:hover{
+    color: white;
+    transform: scale(1.1); 
+}
+
+.row:after {
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.row:after {
+    display: table;
+    clear: both;
+}
+
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
   
   .header {
     background-color: #f1f1f1;

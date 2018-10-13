@@ -1,12 +1,12 @@
 .login-page {
   width: 100%;
-  padding: 8% 0 0;
+  padding: 2% 0 0;
   margin: auto;
 }
 .form {
   position: relative;
   z-index: 1;
-  height: 390px;
+  height: 450px;
   width: 370px;
   padding: 20px 10px;
   opacity: 0.9;

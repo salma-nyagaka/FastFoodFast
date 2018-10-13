@@ -56,9 +56,20 @@ function food_order(name){
     })
     .then(res=> res.json())
     .then(data=>{
+        if (window.localStorage.getItem('username') == 'username'){
+            document.getElementById('username').value = 'username';
+
 
             alert('Order placed sucessfully') 
-    })}
+    }
+        else{ 
+            alert('Login to place an order')
+        
+        }
+
+})
+}
+
 
 var logout = document.getElementById('signintext')
 logout.onclick = function(){

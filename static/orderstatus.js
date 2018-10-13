@@ -56,7 +56,7 @@ function status(id){
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
         },
         body: JSON.stringify({
-            "status": "accept"
+            "status": "Processing"
            })
     })
     .then(res=> res.json())
