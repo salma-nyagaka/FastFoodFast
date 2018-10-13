@@ -23,6 +23,7 @@ login.onclick= function(){
                     document.getElementById('output').innerHTML =
                     "Username does not exist";
                     document.getElementById('output').style.color = "red";
+
         }
         if (data["message"] === "Wrong password") {
             document.getElementById('output').innerHTML =
