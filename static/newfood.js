@@ -1,12 +1,20 @@
 var newfood = document.getElementById('new')
 
+window.onload = function(){
+
+    if (window.localStorage.getItem('username') == null){
+        document.getElementById('signintext').innerHTML = "SIGN IN";
+    }
+    else{
+        document.getElementById('signintext').innerHTML = "LOG OUT";
+    }
 
 newfood.onclick= function(){
     let name = document.getElementById('name').value;
     let description = document.getElementById('description').value;
     let price = document.getElementById('price').value;
 
-
+    
     fetch('http://127.0.0.1:5000/api/v2/menu',{
         method: 'POST',
         mode:'cors',
@@ -78,4 +86,18 @@ function upload(ev){
     .then(data => {console.log(data)
       
     })
+}}
+
+
+
+var logout = document.getElementById('signintext')
+logout.onclick = function(){
+    if (window.localStorage.getItem('username') == null){
+        redirect: window.location.replace("./login.html");
+    }
+
+    else{
+        localStorage.clear();
+        redirect: window.location.replace("./index.html");
+    }
 }}

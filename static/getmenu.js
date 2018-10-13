@@ -1,5 +1,12 @@
 window.onload = function(){
 
+    if (window.localStorage.getItem('username') == null){
+        document.getElementById('signintext').innerHTML = "SIGN IN";
+    }
+    else{
+        document.getElementById('signintext').innerHTML = "LOG OUT";
+    }
+
     fetch('http://127.0.0.1:5000/api/v2/users/menu',{
         method: 'GET',
         mode:'cors',
@@ -72,69 +79,16 @@ function get_meal(id){
     })
 }
 
-// function update_meal(id){
-
-//     fetch(`http://127.0.0.1:5000/api/v2/menu/${id}`,{
-//         method: 'PUT',
-//         headers: {
-//             'Access-Control-Allow-Origin': '*',
-
-//             'Content-Type': 'application/json',
-//             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-//         },
-//         body: JSON.stringify({
-//             "name": name,
-//             "description": description,
-//             "price": price
-//            })
-//     })
-//     .then(res=> res.json())
-//     .then(data=>{
-//         alert('Meal updated')
-//     })
-// }
 
 
+var logout = document.getElementById('signintext')
+logout.onclick = function(){
+    if (window.localStorage.getItem('username') == null){
+        redirect: window.location.replace("./login.html");
+    }
 
-// var update = document.getElementById('update_meal')
-
-
-// update.onclick= function(id){
-//     let name = document.getElementById('name').value;
-//     let description = document.getElementById('description').value;
-//     let price = document.getElementById('price').value;
-
-
-//     fetch(`http://127.0.0.1:5000/api/v2/menu/${id}`,{
-//         method: 'PUT',
-//         mode:'cors',
-//         headers: {
-//             'Access-Control-Allow-Origin': '*',
-//             'Content-Type': 'application/json',
-//             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-//         },
-//         body: JSON.stringify({
-//             "name": name,
-//             "description": description,
-//             "price": price})
-//     })
-//     .then(res => res.json())
-//     .then(data => {console.log(data)
-//         if (data['message'] === 'Food menu created'){
-//             document.getElementById('name').value = "";
-//             document.getElementById('description').value = "";
-//             document.getElementById('price').value = "";
-//           }
-//         else{
-//             document.getElementById('name').value = "";
-//             document.getElementById('description').value = "";
-//             document.getElementById('price').value = "";
-//             }
-
-//     })
-// }
-
-
-
-
-
+    else{
+        localStorage.clear();
+        redirect: window.location.replace("./index.html");
+    }
+}

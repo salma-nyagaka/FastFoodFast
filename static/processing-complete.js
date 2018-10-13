@@ -1,5 +1,12 @@
 window.onload = function(){
 
+    if (window.localStorage.getItem('username') == null){
+        document.getElementById('signintext').innerHTML = "SIGN IN";
+    }
+    else{
+        document.getElementById('signintext').innerHTML = "LOG OUT";
+    }
+
     fetch('http://127.0.0.1:5000/api/v2/orders/Processing',{
         metdod: 'GET',
         mode:'cors',
@@ -60,5 +67,17 @@ window.onload = function(){
         .then(data=>{
             alert('Order accepted') 
         })
+    }
+    
+    var logout = document.getElementById('signintext')
+    logout.onclick = function(){
+        if (window.localStorage.getItem('username') == null){
+            redirect: window.location.replace("./login.html");
+        }
+    
+        else{
+            localStorage.clear();
+            redirect: window.location.replace("./index.html");
+        }
     }
     

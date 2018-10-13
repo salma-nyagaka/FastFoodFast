@@ -19,3 +19,16 @@ accept.onclick= function(){
     })
    
 }
+
+
+var logout = document.getElementById('signintext')
+logout.onclick = function(){
+    if (window.localStorage.getItem('username') == null){
+        redirect: window.location.replace("./login.html");
+    }
+
+    else{
+        localStorage.clear();
+        redirect: window.location.replace("./index.html");
+    }
+}
