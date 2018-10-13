@@ -148,10 +148,7 @@ body {
 
 
 #navvbar {
-    margin-top: 1%;
-    width: 90%;
-    margin-left: 5%;
-    overflow: hidden;
+    overflow: hidden;  
     background-color: #fff!important;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
   }
@@ -161,14 +158,9 @@ body {
     display: block;
     color: black;
     text-align: center;
-    padding: 12px 14px;
-    float: center;
+    padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    margin-left: 12px;
-   
-  
-  
   }
   .center{
     position: center;
