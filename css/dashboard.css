@@ -435,3 +435,17 @@ table, td, th {
     background-color: rgb(119, 7, 18);
     color: white;
 }
+
+
+.dialogbox{
+    border: 2px solid black;
+    width: 30%;
+    height: 5%;
+    border-radius: 5px 5px 0 0;
+    margin-top: 20%;
+    font-size: 15px;
+    margin:auto;
+    color: black;
+   background: white;
+  }
+

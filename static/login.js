@@ -22,7 +22,7 @@ login.onclick= function(){
         if (data["message"] === "user does not exist") {
                     document.getElementById('output').innerHTML =
                     "Username does not exist";
-                    document.getElementById('output').style.position = "blue";
+                    document.getElementById('output').style.color = "red";
 
         }
         if (data["message"] === "Wrong password") {
@@ -31,20 +31,17 @@ login.onclick= function(){
             document.getElementById('output').style.color = "red";
         }
 
-        if (data['message'] === 'successfully logged in'){ 
-           
-            {document.getElementById('myModal').innerHTML = 
-            `successfully logged in as ${'username'}`;
-            document.getElementById('myModal').style.color="red";
-            window.location.assign("login.html");}
-
+        if (data['message'] === 'successfully logged in'){             
             window.localStorage.setItem('token', data['token'])
-            console.log(data['admin'])
+
 
             if (data['admin'] === true){
+                
                 window.localStorage.setItem('username', data['username'])
                 window.localStorage.setItem('password', data['password'])
-                redirect: window.location.replace("./adminindex.html")
+                redirect: window.location.replace("./adminindex.html") 
+                
+           
 
 
             }
@@ -58,3 +55,5 @@ login.onclick= function(){
         }
     })
 }
+
+

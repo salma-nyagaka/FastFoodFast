@@ -69,8 +69,13 @@ function status(id){
     })
     .then(res=> res.json())
     .then(data=>{
-        alert('Order accepted') 
-    })
+        elem = document.getElementById('dialog');
+        elem.innerHTML ="Order is getting processed";
+        setTimeout(() => {
+            elem.parentNode.removeChild(elem);
+        }, 2000);
+        
+                })
 }
 
    
@@ -90,8 +95,12 @@ function decline(id){
     })
     .then(res=> res.json())
     .then(data=>{
-        alert('Order declined') 
-    })
+        elem = document.getElementById('dialog');
+        elem.innerHTML ="Order declined";
+        setTimeout(() => {
+            elem.parentNode.removeChild(elem);
+        }, 2000);   
+     })
 }
 
 

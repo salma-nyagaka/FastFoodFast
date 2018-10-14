@@ -66,8 +66,11 @@ window.onload = function(){
         })
         .then(res=> res.json())
         .then(data=>{
-            alert('Order accepted') 
-        })
+            elem = document.getElementById('dialog');
+            elem.innerHTML ="Order Completed";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 2000);        })
     }
     
     var logout = document.getElementById('signintext')

@@ -1,13 +1,18 @@
+window.onload = function(){
+
+    if (window.localStorage.getItem('username') == null){
+        document.getElementById('signintext').innerHTML = "SIGN IN";
+    }
+    else{
+        document.getElementById('signintext').innerHTML = "LOG OUT";
+    }
 var newfood = document.getElementById('new')
 
-// window.onload = function(){
-
-//     if (window.localStorage.getItem('username') == null){
-//         document.getElementById('signintext').innerHTML = "SIGN IN";
-//     }
-//     else{
-//         document.getElementById('signintext').innerHTML = "LOG OUT";
-//     }
+elem = document.getElementById('dialog');
+elem.innerHTML ="New meal has been added";
+setTimeout(() => {
+    elem.parentNode.removeChild(elem);
+}, 2000);   
 
 newfood.onclick= function(){
     let name = document.getElementById('name').value;
@@ -87,17 +92,17 @@ function upload(ev){
       
     })
 }}
+}
 
 
+var logout = document.getElementById('signintext')
+logout.onclick = function(){
+    if (window.localStorage.getItem('username') == null){
+        redirect: window.location.replace("./login.html");
+    }
 
-// var logout = document.getElementById('signintext')
-// logout.onclick = function(){
-//     if (window.localStorage.getItem('username') == null){
-//         redirect: window.location.replace("./login.html");
-//     }
-
-//     else{
-//         localStorage.clear();
-//         redirect: window.location.replace("./index.html");
-//     }
-// }}
+    else{
+        localStorage.clear();
+        redirect: window.location.replace("./index.html");
+    }
+}

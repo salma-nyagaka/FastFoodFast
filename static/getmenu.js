@@ -5,9 +5,18 @@ window.onload = function(){
     }
     else{
         document.getElementById('signintext').innerHTML = "LOG OUT";
+          
     }
 
-    fetch('http://127.0.0.1:5000/api/v2/users/menu',{
+elem = document.getElementById('dialog');
+elem.innerHTML =" Successfully logged in as an admin";
+setTimeout(() => {
+    elem.parentNode.removeChild(elem);
+}, 2000);
+
+    
+
+    fetch('http://127.0.0.1:5000/api/v2/menu',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -19,6 +28,7 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
+        
         let output = '';
         console.log(data)
         data["Food menu"].forEach(res=>{
@@ -28,7 +38,7 @@ window.onload = function(){
                                     <div class="colum"  class="bg-1">
                                         <h2>${res['name']}</h2>
                                         <p>${res['description']}</p>
-                                        <h2>${res['price']}</h2>                                      
+                                        <h2>${res['price']}</h2>  
                                         <br>
                                         <button class="ORDER"  onClick="delete_meal('${res['id']}')">DELETE</button>
                                     </div>

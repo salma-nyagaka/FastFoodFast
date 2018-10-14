@@ -56,9 +56,14 @@ function food_order(name){
     })
     .then(res=> res.json())
     .then(data=>{
-
-            alert('Order placed sucessfully') 
-    })}
+        elem = document.getElementById('dialog');
+        elem.innerHTML ="Order placed";
+        setTimeout(() => {
+            elem.parentNode.removeChild(elem);
+        }, 2000);   
+       
+    })
+}
 
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
@@ -68,7 +73,9 @@ logout.onclick = function(){
 
     else{
         localStorage.clear();
-        redirect: window.location.replace("./index.html");
+        if (window.confirm("Do you really want to leave?")) { 
+            window.open("index.html");
+          }        
     }
 }
 
