@@ -1,6 +1,6 @@
 body {
     background: white;
-    background-image: url("../img/pizza70.jpg");
+    background-image: url("../img/food101.jpg");
     background-size: 100% 1000px;;  font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
@@ -416,6 +416,8 @@ table, td, th {
     border-collapse: collapse;
     margin-left: 6%;
     width: 90%;
+    opacity: 0.6;
+
 }
 
 #tablee td, #tablee th {

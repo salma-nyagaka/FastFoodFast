@@ -1,5 +1,5 @@
 body {
-    background-image: url("../img/food25.jpeg");
+    background-image: url("../img/food101.jpg");
   background-size: 100% 600;;  font-family: "Roboto", sans-serif;
     /* background-color: rgb(22, 22, 22); */
     background-color: white;
@@ -403,6 +403,7 @@ table, td, th {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 300%;
+    opacity: 0.6;
 }
 
 #tablee td, #tablee th {

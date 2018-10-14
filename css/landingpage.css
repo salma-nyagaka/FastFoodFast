@@ -139,18 +139,18 @@ body {
       margin-left: 20%;
   
   }
-  .mySlides {display:none;}
+  .mySlides {opacity: 0.9px;}
   
 
 .centered {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
-    margin-left: 20%;
+    margin-left:30%;
     transform: translate(-50%, -50%);
     width: 100%;
     height: 16%;
-    font-size: 360%;
+    font-size: 300%;
     color: white;
 
 

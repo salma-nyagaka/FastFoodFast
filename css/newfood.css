@@ -9,7 +9,7 @@
     height: 340px;
     width: 440px;
     padding: 20px 10px;
-    opacity: 0.9;
+    opacity: 0.6;
     border: solid 1px black;
     background: #FFFFFF;
     margin: 0 auto 100px;
@@ -142,7 +142,7 @@
   }
   body {
     background: white;
-    background-image: url("../img/pizza70.jpg");
+    background-image: url("../img/food101.jpg");
     background-size: 100% 625px;;  font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
@@ -186,7 +186,7 @@
   .dialogbox{
     border: 2px solid black;
     width: 30%;
-    height: 5%;
+    height: 15%;
     border-radius: 5px 5px 0 0;
     margin-top: 20%;
     font-size: 15px;
