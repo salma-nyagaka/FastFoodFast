@@ -360,7 +360,7 @@ button {
     border-style: outset;
     border-color: buttonface;
     border-image: initial;
-    background-color: rgb(119, 7, 18);
+    background-color: rgb(69, 27, 9);
     color: white;
 }
 
@@ -373,8 +373,8 @@ button {
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
     height: 190px;
-    opacity: 1.0px;
-    background-color: white;
+    opacity: 0.9px;
+    background-color: rgba(230, 115, 73, 0.434);
 }
 
 
@@ -416,7 +416,7 @@ table, td, th {
     border-collapse: collapse;
     margin-left: 6%;
     width: 90%;
-    opacity: 0.6;
+    opacity: 0.8;
 
 }
 
@@ -428,13 +428,13 @@ table, td, th {
 
 #tablee tr:nth-child(even){background-color: white;}
 
-#tablee tr:hover {background-color: white;}
+#tablee tr:hover {background-color: rgba(121, 50, 24, 0.434);}
 
 #tablee th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: rgb(119, 7, 18);
+    background-color:rgba(188, 88, 52, 0.434);
     color: white;
 }
 

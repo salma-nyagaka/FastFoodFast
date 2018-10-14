@@ -24,7 +24,7 @@ window.onload = function(){
         data["Food menu"].forEach(res=>{
             output +=` 
                             <div class="column">
-                                <img src="./img/baberque.jpeg" alt="Pizza" >
+                                <img src="./img/food20.jpeg" alt="Pizza"  width="60%" height="180" >
                                     <div class="colum"  class="bg-1">
                                         <h2>${res['name']}</h2>
                                         <p>${res['description']}</p>

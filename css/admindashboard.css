@@ -403,7 +403,7 @@ table, td, th {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 300%;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 #tablee td, #tablee th {
