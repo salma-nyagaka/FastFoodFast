@@ -47,7 +47,12 @@ window.onload = function(){
         `</table>`
 
         document.getElementById("container").innerHTML = output;
-    })}
+    })
+
+    .catch(function(error){
+        window.location="userindex.html"
+    })
+}
 
 
     function status(id){

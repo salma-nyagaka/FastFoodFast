@@ -168,7 +168,7 @@ button {
 
 }
   #navvbar a:hover {
-      background-color: rgb(128, 10, 22);
+      background-color: rgba(60, 16, 0, 0.756);
       color: white;
       -ms-transform: scale(1.5); 
       -webkit-transform: scale(1.05); 

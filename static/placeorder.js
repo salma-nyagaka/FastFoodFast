@@ -65,6 +65,11 @@ function food_order(name){
     })
 }
 
+
+
+
+
+
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
     if (window.localStorage.getItem('username') == null){

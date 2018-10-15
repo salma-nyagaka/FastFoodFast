@@ -284,7 +284,7 @@ h2 {
   }
   
   #navbar a:hover {
-    background-color: #ddd;
+    background-color: rgba(60, 16, 0, 0.756);
     color: black;
   }
   
@@ -318,14 +318,14 @@ img {
 
 
 
-.container {
+ .container {
     padding: 2px 16px;
     margin-left: 15%;
     margin-right: 8%;
     margin-top: 2px;
     float: center;
     
-}
+} 
 .collapse {
     padding: 2px 16px;
     margin-left: 8%;
