@@ -6,7 +6,7 @@ window.onload = function(){
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
 
-    fetch('http://127.0.0.1:5000/api/v2/users/menu',{
+    fetch('https://api-version3.herokuapp.com/api/v2/users/menu',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -18,6 +18,10 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
+        if (data["message"] === "These are the available food items") {
+            document.getElementById('outputt').innerHTML =
+            'Logged in as ' +  window.localStorage.getItem('username');
+          }
         
         let output = '';
         console.log(data)
@@ -42,7 +46,7 @@ window.onload = function(){
     
 function food_order(name){
 
-    fetch(`http://127.0.0.1:5000/api/v2/users/orders`,{
+    fetch(`https://api-version3.herokuapp.com/api/v2/users/orders`,{
         method: 'POST',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -57,18 +61,13 @@ function food_order(name){
     .then(res=> res.json())
     .then(data=>{
         elem = document.getElementById('dialog');
-        elem.innerHTML ="Order placed";
+        elem.innerHTML ="Order has beed added";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
         }, 2000);   
        
     })
 }
-
-
-
-
-
 
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
@@ -83,6 +82,4 @@ logout.onclick = function(){
           }        
     }
 }
-
-
-        
+   

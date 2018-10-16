@@ -1,5 +1,4 @@
 window.onload = function(){
-
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "SIGN IN";
     }
@@ -8,8 +7,7 @@ window.onload = function(){
           
     }
 
-
-    fetch('http://127.0.0.1:5000/api/v2/menu',{
+    fetch('https://api-version3.herokuapp.com/api/v2/menu',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -20,8 +18,7 @@ window.onload = function(){
                 }
     })
     .then(res=>res.json())
-    .then(data =>{
-        
+    .then(data =>{    
         let output = '';
         console.log(data)
         data["Food menu"].forEach(res=>{
@@ -44,7 +41,7 @@ window.onload = function(){
 
 function delete_meal(id){
 
-    fetch(`http://127.0.0.1:5000/api/v2/menu/${id}`,{
+    fetch(`https://api-version3.herokuapp.com/api/v2/menu/${id}`,{
         method: 'DELETE',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -54,16 +51,21 @@ function delete_meal(id){
         },
     })
     .then(res=> res.json())
-    .then(data=>{
-        alert('Successfully deleted') 
-    })
+    .then(data=>{  
+        elem = document.getElementById('dialog');
+        elem.innerHTML ="The meal has been deleted";
+        setTimeout(() => {
+            elem.parentNode.removeChild(elem);
+        }, 2000);  
+        location.reload();
+       })
 }
 
 
 
 function get_meal(id){
 
-    fetch(`http://127.0.0.1:5000/api/v2/menu/${id}`,{
+    fetch(`https://api-version3.herokuapp.com/api/v2/menu/${id}`,{
         method: 'GET',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -97,14 +99,13 @@ logout.onclick = function(){
 
 
 var newfood = document.getElementById('new')
-
 newfood.onclick= function(){
     let name = document.getElementById('name').value;
     let description = document.getElementById('description').value;
     let price = document.getElementById('price').value;
 
     
-    fetch('http://127.0.0.1:5000/api/v2/menu',{
+    fetch('https://api-version3.herokuapp.com/api/v2/menu',{
         method: 'POST',
         mode:'cors',
         headers: {
@@ -118,47 +119,46 @@ newfood.onclick= function(){
             "price": price})
     })
     .then(res => res.json())
-    .then(data => {console.log(data)
+    .then(data => {
+        if (data["message"] === "Enter valid food name") {
+            document.getElementById('outputt').innerHTML =
+            "Food name should only contain alphabets";
+            document.getElementById('outputt').style.color = "red";
+        }
+        if (data["message"] === "Enter valid food description") {
+            document.getElementById('outputt').innerHTML =
+            "Food description should only contain alphabets";
+            document.getElementById('outputt').style.color = "red";
+        }
+        if (data["message"] === "This food already exists") {
+            document.getElementById('outputt').innerHTML =
+            "This food already exists";
+            document.getElementById('outputt').style.color = "red";
+        }
+    
         if (data['message'] === 'Food menu created'){
             document.getElementById('name').value = "name";
             document.getElementById('description').value = "description";
             document.getElementById('price').value = "price";
-            document.getElementById('image').value = "";}
+           
+            document.getElementById('outputt').innerHTML =
+            "New meal has been created";
+            document.getElementById('outputt').style.color = "blue";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 2000);  
+            
+             }
         else{
             document.getElementById('name').value = "";
             document.getElementById('description').value = "";
             document.getElementById('price').value = "";
-            document.getElementById('image').value = "";}
+          }
 
     })
 }
 
-
-var image = document.getElementById('btnSubmit')
-
-
-image.onclick= function(){
-
-document.addEventListener('DOMContentLoaded', init);
-
-function init(){
-    document.getElementById('btnSubmit').addEventListener('click', upload);
-}
-
-function upload(ev){
-    ev.preventDefault();
-
-    let h = new Headers();
-    h.append('Accept', 'application/json');
-
-    let fd = new FormData();
-    fd.append('new', document.getElementById('btnSubmit').value);
-    let myFile = document.getElementById('btnSubmit').files[0];
-    fd.append('avatar', myFile, "avatar.png", "avarar.jpeg", "avatar.jpg");
-
-  
-
-    fetch('http://127.0.0.1:5000/api/v2/menu',{
+    fetch('https://api-version3.herokuapp.com/api/v2/menu',{
         method: 'POST',
         mode:'cors',
         headers: {
@@ -172,12 +172,17 @@ function upload(ev){
             "price": price})
     })
     .then(res => res.json())
-    .then(data => {console.log(data)
+    .then(data => {
+        if (data["message"] === "Insufficient permissions to perform this actions") {
+            document.getElementById('outputt').innerHTML =
+            "You are not allowed to view this page";
+            document.getElementById('outputt').style.color = "red";
+            redirect: window.location.replace("./userindex.html");
+
+        }
+    
       
     })
-}}
-
-
 
 var logout = document.getElementById('signintext')
 logout.onclick = function(){

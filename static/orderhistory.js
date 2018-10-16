@@ -6,7 +6,7 @@ window.onload = function(){
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
 
-    fetch('http://127.0.0.1:5000/api/v2/users/orders',{
+    fetch('https://api-version3.herokuapp.com/api/v2/users/orders',{
         metdod: 'GET',
         mode:'cors',
         headers:{
@@ -55,8 +55,3 @@ logout.onclick = function(){
         redirect: window.location.replace("./index.html");
     }
 }
-    
-    
-            
-    
-    

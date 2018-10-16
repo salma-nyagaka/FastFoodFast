@@ -7,7 +7,7 @@ window.onload = function(){
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
 
-    fetch('http://127.0.0.1:5000/api/v2/orders',{
+    fetch('https://api-version3.herokuapp.com/api/v2/orders',{
         metdod: 'GET',
         mode:'cors',
         headers:{
@@ -16,9 +16,9 @@ window.onload = function(){
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
 
                 }
-    })
+    })  
     .then(res=>res.json())
-    .then(data =>{
+    .then(data =>{   
         let output = `<table id="tablee">
                             <tr>
                             <th>id</th>
@@ -28,8 +28,7 @@ window.onload = function(){
                             <th>price</th>
                             <th>current status</th>
                             <th>update status</th>
-                            </tr>`;
-        console.log(data)
+                            </tr>`;        
         data["Food Orders"].forEach(res=>{
             output +=` 
                             <tr>
@@ -50,16 +49,13 @@ window.onload = function(){
 
         document.getElementById("container").innerHTML = output;
     })
-
-    .catch(function(error){
-        window.location="userindex.html"
-    })}
+}
 
 
         
 function status(id){
     
-    fetch(`http://127.0.0.1:5000/api/v2/update/order/${id}`,{
+    fetch(`https://api-version3.herokuapp.com/api/v2/update/order/${id}`,{
         method: 'PUT',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -73,20 +69,20 @@ function status(id){
     })
     .then(res=> res.json())
     .then(data=>{
+       
         elem = document.getElementById('dialog');
         elem.innerHTML ="Order is getting processed";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
         }, 2000);
-        
-                })
+        location.reload();
+       })
                 
 }
 
    
-function decline(id){
-    
-    fetch(`http://127.0.0.1:5000/api/v2/update/order/${id}`,{
+function decline(id){  
+    fetch(`https://api-version3.herokuapp.com/api/v2/update/order/${id}`,{
         method: 'PUT',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -100,11 +96,21 @@ function decline(id){
     })
     .then(res=> res.json())
     .then(data=>{
+          if (data["message"] === "Insufficient permissions to perform this actions") {
+            document.getElementById('outputt').innerHTML =
+            "You are not allowed to view this page";
+            document.getElementById('outputt').style.color = "red";
+            redirect: window.location.replace("./userindex.html");
+
+        }
+    
         elem = document.getElementById('dialog');
         elem.innerHTML ="Order declined";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
         }, 2000);   
+        location.reload();
+
      })
 }
 
@@ -121,7 +127,4 @@ logout.onclick = function(){
         redirect: window.location.replace("./index.html");
     }
 }
-
-
-
-        
+       

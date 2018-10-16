@@ -6,7 +6,7 @@ window.onload = function(){
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
 
-    fetch('http://127.0.0.1:5000/api/v2/users/menu',{
+    fetch('https://api-version3.herokuapp.com/api/v2/users/menu',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -40,37 +40,6 @@ window.onload = function(){
     })
 }
     
-function food_order(name){
-
-    fetch(`http://127.0.0.1:5000/api/v2/users/orders`,{
-        method: 'POST',
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-
-            'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-        },
-        body: JSON.stringify({
-            "name": name
-           })
-    })
-    .then(res=> res.json())
-    .then(data=>{
-        if (window.localStorage.getItem('username') == 'username'){
-            document.getElementById('username').value = 'username';
-
-
-            alert('Order placed sucessfully') 
-    }
-        else{ 
-            alert('Login to place an order')
-        
-        }
-
-})
-}
-
-
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
     if (window.localStorage.getItem('username') == null){
@@ -82,6 +51,4 @@ logout.onclick = function(){
         redirect: window.location.replace("./index.html");
     }
 }
-
-
-        
+      

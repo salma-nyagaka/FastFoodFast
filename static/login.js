@@ -1,11 +1,9 @@
 var login = document.getElementById('login')
-
-
 login.onclick= function(){
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
 
-    fetch('http://127.0.0.1:5000/api/v2/auth/login',{
+    fetch('https://api-version3.herokuapp.com/api/v2/auth/login',{
         method: 'POST',
         mode:'cors',
         headers: {
@@ -31,19 +29,20 @@ login.onclick= function(){
             document.getElementById('output').style.color = "red";
         }
 
+        if (data["message"] === "This field cannot be left blank") {
+            document.getElementById('output').innerHTML =
+            "This field cannot be left blank";
+            document.getElementById('output').style.color = "red";
+        }
+
         if (data['message'] === 'successfully logged in'){             
             window.localStorage.setItem('token', data['token'])
 
 
-            if (data['admin'] === true){
-                
+            if (data['admin'] === true){  
                 window.localStorage.setItem('username', data['username'])
                 window.localStorage.setItem('password', data['password'])
-                redirect: window.location.replace("./adminindex.html") 
-                
-           
-
-
+                redirect: window.location.replace("./adminindex.html")          
             }
             else{
                 window.localStorage.setItem('username', data['username'])
@@ -55,5 +54,3 @@ login.onclick= function(){
         }
     })
 }
-
-

@@ -1,12 +1,12 @@
 .login-page {
   width: 100%;
   padding: 2% 0 0;
-  margin: auto;
+  margin-top: 30px;
 }
 .form {
   position: relative;
   z-index: 1;
-  height: 470px;
+  height: 400px;
   width: 385px;
   padding: 20px 10px;
   opacity: 0.6;
@@ -180,4 +180,23 @@ a:-webkit-any-link {
     cursor: pointer;
     text-decoration: none;
 
+}
+
+.display{
+  color:whitesmoke;
+  
+}
+
+
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    size: 10px;
+
+    color: black;
 }

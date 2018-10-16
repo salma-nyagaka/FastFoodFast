@@ -22,8 +22,6 @@ body {
     
 }
 
-
-
 .column {
     float: left;
     width: 25%;
@@ -33,7 +31,6 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
     height: 190px;
     opacity: 1.0px;
-    /* background-color:rgb(242, 242, 242); */
     background-color: white;
 }
 
@@ -227,6 +224,4 @@ body {
     background: #3B5998;
     color: white;
   }
-  
-
   

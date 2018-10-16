@@ -1,5 +1,4 @@
 window.onload = function(){
-
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "SIGN IN";
     }
@@ -7,7 +6,7 @@ window.onload = function(){
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
 
-    fetch('http://127.0.0.1:5000/api/v2/orders',{
+    fetch('https://api-version3.herokuapp.com/api/v2/orders',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -19,6 +18,7 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
+        
         let output = `<table id="tablee">
                             <tr>
                             <th>id</th>
@@ -46,9 +46,10 @@ window.onload = function(){
         document.getElementById("container").innerHTML= output;
         
     })
-    .catch(function(error){
-        window.location="userindex.html"
-    })}
+    // .catch(function(error){
+    //     window.location="userindex.html"
+    // })
+}
 
 
 var logout = document.getElementById('signintext')
@@ -70,7 +71,3 @@ function truncate(description){
    else
       return description;
 };
-
-
-
-

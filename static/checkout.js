@@ -5,8 +5,9 @@ window.onload = function(){
     else{
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
+    
 
-    fetch('http://127.0.0.1:5000/api/v2/users/orders/New',{
+    fetch('https://api-version3.herokuapp.com/api/v2/users/orders/New',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -18,35 +19,55 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
-        let output = `<h4><i class="fa fa-shopping-cart"></i>Cart <span class="price" style="color:black">
-                            <b>Price</b>
-                            </span>
-                      </h4>
-                      `;
+        let output = `<table id="tablee">
+        <tr>
+        <th>MY CART</th>
+        <th>PRICE </th>
+        <th>DELETE ORDER</th>   
+        <th>QUANTITY</th>     
+        </tr>`;
         
-        console.log(data)
-
         let Price = 0;
-
-
+       
         data["orders"].forEach(res=>{
 
-            Price += res.price
-            console.log(Price)
-
-            output +=` 
-            <p>${res['food_name']} <span class="price">${res['price']}</span></p>`
+            Price += res.price * res.quantity
+            output += 
+            `<tr>
+            <td>${res['food_name']}</td>
+            <td>${res['price']}</td>
+            <td>  <button class="ORDER"  onClick="delete_order('${res['id']}')">  <span class="glyphicon glyphicon-trash"></button></td>
+            <td> <input type="number" id="myNumber"><button class="ORDER"  )">ORDER</button>
+            </td>
+            </tr>`
             }) 
-
-            output +=`<h4>Total price<span class="price" style="color:black">
-            <b>${Price}</b>
-            </span>
-      </h4>`
+           
+            output +=`
+            <p><tr><td>Total price</td>
+            <td>${Price}</td></tr></p>`
 
         document.getElementById("container").innerHTML = output;
     })
 }
 
+function food_order(quantity){
+
+    fetch(`https://api-version3.herokuapp.com/api/v2/users/orders`,{
+        method: 'POST',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
+        },
+        body: JSON.stringify({
+            "quantity": quantity
+           })
+    })
+    .then(res=> res.json())
+    .then(data=>{          
+    })
+}
 
 
 
@@ -56,7 +77,31 @@ function add(price){
     else
        return description;
  };
- 
+
+function myFunction() {
+    document.getElementById("myNumber").stepUp(1);
+}
+
+function delete_order(id){
+
+    fetch(`https://api-version3.herokuapp.com/api/v2/users/orders/${id}`,{
+        method: 'DELETE',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
+        },
+    })
+    .then(res=> res.json())
+    .then(data=>{
+        elem = document.getElementById('dialog');
+        elem.innerHTML ="The order has been deleted";
+        setTimeout(() => {
+            elem.parentNode.removeChild(elem);
+        }, 2000);  
+            })
+}
 
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
@@ -69,10 +114,4 @@ logout.onclick = function(){
         redirect: window.location.replace("./index.html");
     }
 }
-
-
-
-
-
-
         

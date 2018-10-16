@@ -1,6 +1,5 @@
 var signup = document.getElementById('signup')
 
-
 signup.onclick= function(){
     document.getElementById('account_not_created').style.display='none';
     let username = document.getElementById('username').value;
@@ -8,7 +7,7 @@ signup.onclick= function(){
     let password = document.getElementById('password').value;
     let confirm_password = document.getElementById('confirmPassword').value;
 
-    fetch('http://127.0.0.1:5000/api/v2/auth/signup',{
+    fetch('https://api-version3.herokuapp.com/api/v2/auth/signup',{
         method: 'POST',
         mode:'cors',
         headers: {
@@ -68,14 +67,18 @@ signup.onclick= function(){
             document.getElementById('outputt').style.color = "red";
         }
 
-
-
         if (data['message'] === 'successfully created a new account'){
-            alert('Successfully signed up') 
+            document.getElementById('outputt').innerHTML =
+            "Successfully created a new account";
+            document.getElementById('outputt').style.color = "blue";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 2000);  
             document.getElementById('username').value = "";
             document.getElementById('email').value = "";
             document.getElementById('password').value = "";
-            document.getElementById('confirmPassword').value = "";
+            document.getElementById('confirmPassword').value = "";                   
+
         }
         else{
             document.getElementById('account_not_created').innerHTML= 'User has been not been created, try again';

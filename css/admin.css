@@ -360,16 +360,17 @@ table, td, th {
     color: white;
 }
 
+.display{
+    color:white;
+    margin-left: 600px;
+    
+}
 
-.dialogbox{
-    border: 2px solid black;
+.dialog{
     width: 30%;
-    height: 5%;
-    border-radius: 5px 5px 0 0;
-    margin-top: 20%;
-    font-size: 15px;
-    margin:auto;
+    height: 20px;
     color: black;
-   background: white;
+    font-size: 800px;
+    background: white;
+    border: 2px solid  white;
   }
-
