@@ -27,7 +27,6 @@ window.onload = function(){
                             <th>description</th>
                             <th>price</th>
                             </tr>`;
-        console.log(data)
         data["Orders"].forEach(res=>{
             output +=    ` <tr>
                             <td>${res['id']}</td>

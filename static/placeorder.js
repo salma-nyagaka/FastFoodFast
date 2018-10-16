@@ -60,7 +60,9 @@ function food_order(name){
         elem.innerHTML ="Order has beed added";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
-        }, 2000);   
+        }, 20000);   
+        redirect: window.location.replace("./userindex.html");
+
        
     })
 }

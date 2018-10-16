@@ -142,11 +142,12 @@ newfood.onclick= function(){
            
             document.getElementById('outputt').innerHTML =
             "New meal has been created";
-            document.getElementById('outputt').style.color = "blue";
             setTimeout(() => {
                 elem.parentNode.removeChild(elem);
             }, 2000); 
             
+            document.getElementById('outputt').style.color = "blue";
+           
             
             
              }
