@@ -137,16 +137,18 @@ newfood.onclick= function(){
         }
     
         if (data['message'] === 'Food menu created'){
-            document.getElementById('name').value = "name";
-            document.getElementById('description').value = "description";
-            document.getElementById('price').value = "price";
+            document.getElementById('name').value = "";
+            document.getElementById('description').value = "";
+            document.getElementById('price').value = "";
            
             document.getElementById('outputt').innerHTML =
             "New meal has been created";
             document.getElementById('outputt').style.color = "blue";
             setTimeout(() => {
                 elem.parentNode.removeChild(elem);
-            }, 2000);  
+            }, 2000); 
+            
+            
             
              }
         else{
