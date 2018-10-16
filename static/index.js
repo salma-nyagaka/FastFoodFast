@@ -12,7 +12,7 @@ window.onload = function(){
         headers:{
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
+            // 'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
 
                 }
     })
