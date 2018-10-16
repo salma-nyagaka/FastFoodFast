@@ -7,7 +7,7 @@ window.onload = function(){
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
 
-    fetch('https://api-version3.herokuapp.com/api/v2/orders',{
+    fetch('https://createorders-api.herokuapp.com/api/v2/orders',{
         metdod: 'GET',
         mode:'cors',
         headers:{
@@ -55,7 +55,7 @@ window.onload = function(){
         
 function status(id){
     
-    fetch(`https://api-version3.herokuapp.com/api/v2/update/order/${id}`,{
+    fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
         method: 'PUT',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -82,7 +82,7 @@ function status(id){
 
    
 function decline(id){  
-    fetch(`https://api-version3.herokuapp.com/api/v2/update/order/${id}`,{
+    fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
         method: 'PUT',
         headers: {
             'Access-Control-Allow-Origin': '*',

@@ -7,7 +7,7 @@ window.onload = function(){
     }
     
 
-    fetch('https://api-version3.herokuapp.com/api/v2/users/orders/New',{
+    fetch('https://createorders-api.herokuapp.com/api/v2/users/orders/New',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -52,7 +52,7 @@ window.onload = function(){
 
 function food_order(quantity){
 
-    fetch(`https://api-version3.herokuapp.com/api/v2/users/orders`,{
+    fetch(`https://createorders-api.herokuapp.com/api/v2/users/orders`,{
         method: 'POST',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -84,7 +84,7 @@ function myFunction() {
 
 function delete_order(id){
 
-    fetch(`https://api-version3.herokuapp.com/api/v2/users/orders/${id}`,{
+    fetch(`https://createorders-api.herokuapp.com/api/v2/users/orders/${id}`,{
         method: 'DELETE',
         headers: {
             'Access-Control-Allow-Origin': '*',

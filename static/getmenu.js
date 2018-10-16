@@ -7,7 +7,7 @@ window.onload = function(){
           
     }
 
-    fetch('https://api-version3.herokuapp.com/api/v2/menu',{
+    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -41,7 +41,7 @@ window.onload = function(){
 
 function delete_meal(id){
 
-    fetch(`https://api-version3.herokuapp.com/api/v2/menu/${id}`,{
+    fetch(`https://createorders-api.herokuapp.com/api/v2/menu/${id}`,{
         method: 'DELETE',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -65,7 +65,7 @@ function delete_meal(id){
 
 function get_meal(id){
 
-    fetch(`https://api-version3.herokuapp.com/api/v2/menu/${id}`,{
+    fetch(`https://createorders-api.herokuapp.com/api/v2/menu/${id}`,{
         method: 'GET',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -105,7 +105,7 @@ newfood.onclick= function(){
     let price = document.getElementById('price').value;
 
     
-    fetch('https://api-version3.herokuapp.com/api/v2/menu',{
+    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
         method: 'POST',
         mode:'cors',
         headers: {
@@ -158,7 +158,7 @@ newfood.onclick= function(){
     })
 }
 
-    fetch('https://api-version3.herokuapp.com/api/v2/menu',{
+    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
         method: 'POST',
         mode:'cors',
         headers: {

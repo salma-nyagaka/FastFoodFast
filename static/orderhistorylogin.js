@@ -3,7 +3,7 @@ login.onclick= function(){
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
 
-    fetch('https://api-version3.herokuapp.com/api/v2/auth/login',{
+    fetch('https://createorders-api.herokuapp.com/api/v2/auth/login',{
         method: 'POST',
         mode:'cors',
         headers: {
