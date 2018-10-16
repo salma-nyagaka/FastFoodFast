@@ -20,7 +20,6 @@ window.onload = function(){
     .then(res=>res.json())
     .then(data =>{    
         let output = '';
-        console.log(data)
         data["Food menu"].forEach(res=>{
             output +=` 
                             <div class="column">

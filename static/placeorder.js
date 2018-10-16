@@ -18,10 +18,6 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
-        if (data["message"] === "These are the available food items") {
-            document.getElementById('outputt').innerHTML =
-            'Logged in as ' +  window.localStorage.getItem('username');
-          }
         
         let output = '';
         console.log(data)
