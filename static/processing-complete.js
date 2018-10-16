@@ -51,7 +51,7 @@ window.onload = function(){
 
     function status(id){
         
-        fetch(`https://api-version3.herokuapp.com/api/v2/update/order/${id}`,{
+        fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
             method: 'PUT',
             headers: {
                 'Access-Control-Allow-Origin': '*',
