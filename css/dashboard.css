@@ -438,18 +438,29 @@ table, td, th {
     color: white;
 }
 
-
-.display{
-    color:white;
-    margin-left: 600px;
-    
-}
-
-.dialog{
-    width: 30%;
-    height: 20px;
-    color: black;
-    font-size: 400px;
-    background: white;
-    border: 2px solid  white;
+.output{
+    margin: auto;
+    width: 200px;
+    height: 40px;
+    size: 500px;
+    color:black;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    opacity: 0.6;
+    border: solid 1px rgb(46, 42, 42);
+    background: #FFFFFF;
   }
+
+  .hidden{
+    display:None;
+  
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-left: 20%;
+}
+  

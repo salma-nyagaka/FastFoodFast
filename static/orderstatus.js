@@ -7,7 +7,7 @@ window.onload = function(){
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
 
-    fetch('https://createorders-api.herokuapp.com/api/v2/orders',{
+    fetch(' http://127.0.0.1:5000/api/v2/orders',{
         metdod: 'GET',
         mode:'cors',
         headers:{
@@ -55,7 +55,7 @@ window.onload = function(){
         
 function status(id){
     
-    fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
+    fetch(` http://127.0.0.1:5000/api/v2/update/order/${id}`,{
         method: 'PUT',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -69,20 +69,22 @@ function status(id){
     })
     .then(res=> res.json())
     .then(data=>{
-       
+        let displayWindow = document.getElementById('dialog')
+        displayWindow.classList.remove('hidden');
         elem = document.getElementById('dialog');
         elem.innerHTML ="Order is getting processed";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
         }, 2000);
-        location.reload();
-       })
+        setTimeout(() => {
+        location.reload();}, 3000);         
+    })
                 
 }
 
    
 function decline(id){  
-    fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
+    fetch(` http://127.0.0.1:5000/api/v2/update/order/${id}`,{
         method: 'PUT',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -104,12 +106,15 @@ function decline(id){
 
         }
     
+        let displayWindow = document.getElementById('dialog')
+        displayWindow.classList.remove('hidden');
         elem = document.getElementById('dialog');
-        elem.innerHTML ="Order declined";
+        elem.innerHTML ="Order has been declined";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
-        }, 2000);   
-        location.reload();
+        }, 2000);
+        setTimeout(() => {
+        location.reload();}, 3000);  
 
      })
 }

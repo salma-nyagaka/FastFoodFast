@@ -5,8 +5,7 @@
 <!-- <link rel="stylesheet"  href="./css/dashboard.css" type="text/css"> -->
 <link rel="stylesheet"  href="./css/checkout.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></head> -->
 <body>
 
 
@@ -22,17 +21,22 @@
 <br>
 
 <div  class="display">
-    <h2 id="dialog"></h2>
-</div>        
+  <h3 class="output hidden" id="dialog"></h3>
+</div>         
 <br>
   <div class="col-25">
-    <div class="container" id="container">
-  
+    <div class="container" id="containner">
+  <table id="tablee">
+        <tr> 
+        <th>QUANTITY</th>  
+        <th>DESTINATION</th>     
+   
+        </tr>
+        
     </div>
   </div>
-
  
-        <a href="./checkout.html" class="w3-bar-item w3-button">
+        <!-- <a href="./checkout.html" class="w3-bar-item w3-button"> -->
        <input type="submit" value="Make my Order" class="btn">
         </a>
       </form>
@@ -41,6 +45,6 @@
 </div>
 
 
-<script src="static/checkout.js"></script>></script>
+<script src="static/placeorder.js"></script>></script>
 </body>
 </html>

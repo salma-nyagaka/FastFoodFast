@@ -5,7 +5,7 @@ accept.onclick= function(){
     let username = document.getElementById('status').value;
 
 
-    fetch('https://createorders-api.herokuapp.com/api/v2/update/order/<int:id>',{
+    fetch('http://127.0.0.1:5000/api/v2/update/order/<int:id>',{
         method: 'PUT',
         mode:'cors',
         headers: {

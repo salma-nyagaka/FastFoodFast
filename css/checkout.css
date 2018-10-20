@@ -380,10 +380,10 @@ padding-top: 60px;
 
 .container {
   padding: 2px 16px;
-  margin-left: 15%;
-  margin-right: 8%;
+  margin-left: 65%;
+
   margin-top: 2px;
-  float: center;
+
   
 } 
 .collapse {
@@ -498,19 +498,26 @@ table, td, th {
   color: white;
 }
 
-
-.display{
-  color:white;
-  margin-left: 600px;
-  
+.output{
+  margin: auto;
+  width: 260px;
+  height: 40px;
+  size: 500px;
+  color:black;
+  align-content: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  opacity: 0.6;
+  border: solid 1px rgb(46, 42, 42);
+  background: #FFFFFF;
 }
 
-.dialog{
-  /* border: 2px solid black; */
-  width: 30%;
-  height: 20px;
-  color: black;
-  font-size: 400px;
-  background: white;
-  border: 2px solid  white;
+.hidden{
+  display:None;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-size: 15px;
+  text-transform: uppercase;
 }

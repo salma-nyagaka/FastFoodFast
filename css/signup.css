@@ -2,11 +2,12 @@
   width: 100%;
   padding: 2% 0 0;
   margin-top: 30px;
+  margin: auto;
 }
 .form {
   position: relative;
   z-index: 1;
-  height: 400px;
+  height: 450px;
   width: 385px;
   padding: 20px 10px;
   opacity: 0.6;
@@ -190,13 +191,35 @@ a:-webkit-any-link {
 
 
 h2 {
-    display: block;
-    font-size: 1.5em;
-    -webkit-margin-before: 0.83em;
-    -webkit-margin-after: 0.83em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    size: 10px;
-
-    color: black;
+  display: block;
+  font-size: 1.5em;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  size: 10px;
+  text-transform: uppercase;
+  color: black;
 }
+
+.output{
+margin: auto;
+width: 330px;
+height: 30px;
+padding: 10px;
+align-content: center;
+border: 1px solid black;
+opacity: 0.6;
+border: solid 1px rgb(46, 42, 42);
+background: #FFFFFF;
+text-transform: uppercase;
+border-radius: 6px;
+}
+
+.hidden{
+display:None;
+
+}
+
+
+

@@ -224,4 +224,33 @@ body {
     background: #3B5998;
     color: white;
   }
+
+
+
+  .output{
+    margin: auto;
+    width: 200px;
+    height: 40px;
+    size: 500px;
+    color:black;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    opacity: 0.6;
+    border: solid 1px rgb(46, 42, 42);
+    background: #FFFFFF;
+  }
+
+  .hidden{
+    display:None;
+  
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-left: 20%;
+}
+  
   

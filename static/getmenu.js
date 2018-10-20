@@ -7,11 +7,11 @@ window.onload = function(){
           
     }
 
-    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
+    fetch(' http://127.0.0.1:5000/api/v2/menu',{
         method: 'GET',
-        mode:'cors',
+        // mode:'cors',
         headers:{
-            'Access-Control-Allow-Origin': '*',
+            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
 
@@ -23,7 +23,7 @@ window.onload = function(){
         data["Food menu"].forEach(res=>{
             output +=` 
                             <div class="column">
-                                    <img src="./img/food6.jpeg" alt="Pizza" >
+                                    <img src="${image[res.image] || image["Default"]}"   alt="food image" >
                                     <div class="colum"  class="bg-1">
                                         <h2>${res['name']}</h2>
                                         <p>${res['description']}</p>
@@ -35,12 +35,14 @@ window.onload = function(){
                        
         }) 
         document.getElementById("container").innerHTML = output;
-    })}
+    }
+)
+  }
 
 
 function delete_meal(id){
 
-    fetch(`https://createorders-api.herokuapp.com/api/v2/menu/${id}`,{
+    fetch(` http://127.0.0.1:5000/api/v2/menu/${id}`,{
         method: 'DELETE',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -50,36 +52,20 @@ function delete_meal(id){
         },
     })
     .then(res=> res.json())
-    .then(data=>{  
+    .then(data=>{
+        let displayWindow = document.getElementById('dialog')
+  
         elem = document.getElementById('dialog');
+        displayWindow.classList.remove('hidden');
+
         elem.innerHTML ="The meal has been deleted";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
         }, 2000);  
-        location.reload();
+        setTimeout(() => {
+            location.reload();}, 4000);  
        })
 }
-
-
-
-function get_meal(id){
-
-    fetch(`https://createorders-api.herokuapp.com/api/v2/menu/${id}`,{
-        method: 'GET',
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-
-            'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-        },
-      
-    })
-    .then(res=> res.json())
-    .then(data=>{
-        redirect: window.location.replace("./getmeal.html")
-    })
-}
-
 
 
 var logout = document.getElementById('signintext')
@@ -102,20 +88,22 @@ newfood.onclick= function(){
     let name = document.getElementById('name').value;
     let description = document.getElementById('description').value;
     let price = document.getElementById('price').value;
+    let image = document.getElementById('images').value;
 
     
-    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
+    fetch(' http://127.0.0.1:5000/api/v2/menu',{
         method: 'POST',
-        mode:'cors',
+        // mode:'cors',
         headers: {
-            'Access-Control-Allow-Origin': '*',
+            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
         },
         body: JSON.stringify({
             "name": name,
             "description": description,
-            "price": price})
+            "price": price,
+            "image": image})
     })
     .then(res => res.json())
     .then(data => {
@@ -138,19 +126,11 @@ newfood.onclick= function(){
         if (data['message'] === 'Food menu created'){
             document.getElementById('name').value = "";
             document.getElementById('description').value = "";
-            document.getElementById('price').value = "";
-           
-            document.getElementById('outputt').innerHTML =
-            "New meal has been created";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 2000); 
-            
-            document.getElementById('outputt').style.color = "blue";
-           
-            
-            
+            document.getElementById('price').value = ""; 
+            document.getElementById('images').value = "";           
+                                 
              }
+
         else{
             document.getElementById('name').value = "";
             document.getElementById('description').value = "";
@@ -160,11 +140,11 @@ newfood.onclick= function(){
     })
 }
 
-    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
+    fetch(' http://127.0.0.1:5000/api/v2/menu',{
         method: 'POST',
-        mode:'cors',
+        // mode:'cors',
         headers: {
-            'Access-Control-Allow-Origin': '*',
+            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
         },
@@ -195,5 +175,6 @@ logout.onclick = function(){
     else{
         localStorage.clear();
         redirect: window.location.replace("./index.html");
+        
     }
 }

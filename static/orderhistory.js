@@ -6,7 +6,7 @@ window.onload = function(){
         document.getElementById('signintext').innerHTML = "LOG OUT";
     }
 
-    fetch('https://createorders-api.herokuapp.com/api/v2/users/orders',{
+    fetch(' http://127.0.0.1:5000/api/v2/users/orders',{
         metdod: 'GET',
         mode:'cors',
         headers:{

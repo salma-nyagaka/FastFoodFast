@@ -19,15 +19,24 @@
     </div>
     <br>
   
+<div  class="output hidden" id="output"></div>
 
 <div class="login-page">
   <div class="form">
     <div class="container">ADD A NEW MEAL</div>
-    <div id="outputt"></div>
       <form class="login-form">
           <input type="text" placeholder="Enter food name" id="name" /><br>
           <input type="text" placeholder="Enter description" id="description" /><br>
           <input type="text" placeholder="Enter food price" id="price" /><br>
+          
+          <label class="new" for="images">images
+           <select id ="images">
+             <option value="" >Select an image</option>
+             <option value="Default" >Default image</option>
+             <option value="Burger" >Burger</option>
+             <option value="Burger2" >Burger yummier</option>
+           </select>
+          </label><br><br>
           <button class="input" type="button" id="new">Add new</button><br><br>
           <!-- <input type="file" id="image" accept="image/x-jpeg/x-jpg" /><br>
 
@@ -42,7 +51,8 @@
     <h2 id="dialog"></h2>
 </div>        
 
-
+<script src="static/images.js"></script>
 <script src="static/getmenu.js"></script>
+
 </body>
 </html>

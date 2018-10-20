@@ -3,7 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"  href="./css/dashboard.css" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"  href="./css/checkout.css" type="text/css">
+
+
 </head>
 <body>
 
@@ -12,18 +14,31 @@
 
         <a><span type="button" id="signintext"></span></a>
         <a><span type="button" id="signintext"></span></a>
-        <!-- <a href="./checkout.html">CHECKOUT</a>  -->
+        <a href="./checkout.html">CHECKOUT</a> 
         <a href="./orderhistory.html">ORDER HISTORY</a> 
         <a href="./userindex.html">MENU</a>  
                 <a href="./index.html" class="w3-bar-item w3-button">HOME</a>
 </div>
 
-
+<br>
 <div  class="display">
-                <h2 id="dialog"></h2>
+  <h3 class="output hidden" id="dialog"></h3>
 </div>        
-            
-<div id = "container"> 
+<div id ="container"> </div>
+<div class="container" id="containner">
+    <table id="tablee">
+          <tr> 
+          <th>QUANTITY</th>  
+          <th>DESTINATION</th>     
+     
+          </tr>
+          
+      </div>
+    </div>
+   
+          <!-- <a href="./checkout.html" class="w3-bar-item w3-button"> -->
+         <input type="submit" value="Make my Order" class="btn">
+ 
   <script src="static/placeorder.js"></script>
 </body>
 </html> 

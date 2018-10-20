@@ -1,12 +1,15 @@
+
 window.onload = function(){
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "SIGN IN";
     }
     else{
         document.getElementById('signintext').innerHTML = "LOG OUT";
-    }
 
-    fetch('https://createorders-api.herokuapp.com/api/v2/users/menu',{
+    }
+  
+
+    fetch(' http://127.0.0.1:5000/api/v2/users/menu',{
         method: 'GET',
         mode:'cors',
         headers:{
@@ -22,27 +25,31 @@ window.onload = function(){
         let output = '';
         console.log(data)
         data["Food menu"].forEach(res=>{
+            
             output +=` 
                             <div class="column">
                                 <img src="./img/food6.jpeg" alt="Pizza" >
                                     <div class="colum"  class="bg-1">
                                         <h2>${res['name']}</h2>
                                         <p>${res['description']}</p>
-                                        <h2>${res['price']}</h2>
+                                        <h2 id="price">${res['price']}</h2>
                                         <br>
-                                        <button class="ORDER"  onClick="food_order('${res['name']}')">ORDER</button>
-
+                                        <button class="ORDER" onClick="food_order('${res['name']}')" >ORDER</button>
 
                                     </div>
                             </div>`
             }) 
         document.getElementById("container").innerHTML = output;
+
     })
 }
-    
+
+
+
+ 
 function food_order(name){
 
-    fetch(`https://createorders-api.herokuapp.com/api/v2/users/orders`,{
+    fetch(` http://127.0.0.1:5000/api/v2/users/orders`,{
         method: 'POST',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -56,14 +63,16 @@ function food_order(name){
     })
     .then(res=> res.json())
     .then(data=>{
+        
+        let displayWindow = document.getElementById('dialog')
+        displayWindow.classList.remove('hidden');
         elem = document.getElementById('dialog');
         elem.innerHTML ="Order has beed added";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
-        }, 20000);   
-        redirect: window.location.replace("./userindex.html");
-
-       
+        }, 2000);   
+        setTimeout(() => {
+            location.reload();}, 1000);         
     })
 }
 
@@ -75,9 +84,6 @@ logout.onclick = function(){
 
     else{
         localStorage.clear();
-        if (window.confirm("Do you really want to leave?")) { 
-            window.open("index.html");
-          }        
     }
 }
    

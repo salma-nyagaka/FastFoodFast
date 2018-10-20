@@ -2,8 +2,9 @@ var login = document.getElementById('login')
 login.onclick= function(){
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
+    let displayWindow = document.getElementById('output')
 
-    fetch('https://createorders-api.herokuapp.com/api/v2/auth/login',{
+    fetch(' http://127.0.0.1:5000/api/v2/auth/login',{
         method: 'POST',
         mode:'cors',
         headers: {
@@ -18,22 +19,42 @@ login.onclick= function(){
     .then(data => {
          
         if (data["message"] === "user does not exist") {
-                    document.getElementById('output').innerHTML =
-                    "Username does not exist";
-                    document.getElementById('output').style.color = "red";
+            elem = document.getElementById('output');
+            displayWindow.classList.remove('hidden');
+            elem.innerHTML ="Username not found";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 3000);   
+            document.getElementById('output').style.color = "red";
+            setTimeout(() => {
+                location.reload();}, 1000);    
 
         }
+        
         if (data["message"] === "Wrong password") {
-            document.getElementById('output').innerHTML =
-            "Enter valid password";
+            elem = document.getElementById('output');
+            displayWindow.classList.remove('hidden');
+            elem.innerHTML ="Wrong password";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 3000);   
             document.getElementById('output').style.color = "red";
+            setTimeout(() => {
+                location.reload();}, 1000);    
+        }
+         
+        if (data["message"] === "Username field cannot be left blank") {
+            elem = document.getElementById('output');
+            displayWindow.classList.remove('hidden');
+            elem.innerHTML ="Enter valid pashhhhsword";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 3000);   
+            document.getElementById('output').style.color = "red";
+            setTimeout(() => {
+                location.reload();}, 1000);    
         }
 
-        if (data["message"] === "This field cannot be left blank") {
-            document.getElementById('output').innerHTML =
-            "This field cannot be left blank";
-            document.getElementById('output').style.color = "red";
-        }
 
         if (data['message'] === 'successfully logged in'){             
             window.localStorage.setItem('token', data['token'])
@@ -42,12 +63,28 @@ login.onclick= function(){
             if (data['admin'] === true){  
                 window.localStorage.setItem('username', data['username'])
                 window.localStorage.setItem('password', data['password'])
-                redirect: window.location.replace("./adminindex.html")          
+                
+                elem = document.getElementById('output');
+                displayWindow.classList.remove('hidden');
+                elem.innerHTML ="Successfullly logged in";
+                setTimeout(() => {
+                    elem.parentNode.removeChild(elem);
+                }, 2000);   
+                setTimeout(() => {
+                redirect: window.location.replace("./adminindex.html");}, 1900);         
             }
             else{
                 window.localStorage.setItem('username', data['username'])
                 window.localStorage.setItem('password', data['password'])
-                redirect: window.location.replace("./userindex.html")
+
+                elem = document.getElementById('output');
+                displayWindow.classList.remove('hidden');
+                elem.innerHTML ="Successfullly logged in";
+                setTimeout(() => {
+                    elem.parentNode.removeChild(elem);
+                }, 2000);   
+                setTimeout(() => {
+                redirect: window.location.replace("./userindex.html");}, 1900);  
 
             }
 
