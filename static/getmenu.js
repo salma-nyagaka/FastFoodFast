@@ -120,6 +120,24 @@ newfood.onclick= function(){
             "This food already exists";
             document.getElementById('outputt').style.color = "red";
         }
+
+        if (data["message"] === "Name cannot be left blank") {
+            document.getElementById('outputt').innerHTML =
+            "Name cannot be left blank";
+            document.getElementById('outputt').style.color = "red";
+        }
+
+        if (data["message"] === "'Description cannot be left blank") {
+            document.getElementById('outputt').innerHTML =
+            "'Description cannot be left blank";
+            document.getElementById('outputt').style.color = "red";
+        }
+
+        if (data["message"] === "Image cannot be left blank") {
+            document.getElementById('outputt').innerHTML =
+            "This food already exists";
+            document.getElementById('outputt').style.color = "red";
+        }
     
         if (data['message'] === 'Food menu created'){
             document.getElementById('name').value = "";
