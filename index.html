@@ -3,94 +3,32 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"  href="./css/landingpage.css" type="text/css">
-<link rel="stylesheet"  href="./css/media-queries.css" type="text/css">
+
 </head>
 <body>
 
 <div id="navbar">
-    <a href="./login.html">LOGIN</a>
-    <a href="userindex.html" class="w3-bar-item w3-button">MENU</a>
-    <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
-    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a><span type="button" id="signintext"></span></a>
+    <a><span type="button" id="signintext"></span></a>
     <a href="#" class="w3-bar-item w3-button">HOME</a>
 </div>
 
 
 <div class="centered">FAST FOOD FAST</div> 
 
-    <img  class="mySlides" src="./img/pizza70.jpg" alt="Hamburger Catering" width="100%" height="625">
+    <img  class="image" src="./img/food100.jpg" alt="Hamburger Catering" width="100%" height="625">
 </div>
-     
-<div id="about">
-   <div class="row2">
-          <h1>ABOUT US</h1><br>
-          <p> Fast Food Fast was created in 2006 out of a passion for amazing food and service. The then one-man operation saw rapid 
-            growth after making its first three deliveries. Through word of mouth,
-            a lot of hard work and commitment to producing mouth watering food and refreshing drinks,  Fast Food Fast
-            has become one of the most beloved fast food restaurants companies.</p>
-          <p>We believe that using the freshest ingredients produces the best results.
-            And we are obsessed with creating customized menus and culinary masterpieces for our clients.</p>
-          <p> Simply put: we exist to make your vision a reality.
-          </p>
-          <p> We offer fast and free delivery</p>
-          <br><br>
-      </div>
-  </div>
+
+<h2 class="menu">THE MENU</h2> 
+<div  class="display">
+    <h3 class="output hidden" id="dialog"></h3>
 </div> 
 
-      
-        <!-- Contact Section -->
-<div  id="contact"  class="bg-1">
-      <h1>CONTACT US</h1><hr> 
-      <div class="row">
-        
+<div id = "container">  
 
-    <div class="column" class="bg-1">
-        <h2>Phone_number: 0727808123</h2>
-        <h2>Email Address: salispecials@gmail.com</h2>
-    </div>
-      
-    <div class="column" class="bg-1">
-          <h2>Location: Lumumba Avenue,42LivingStreet , Eldoret, Kenya</h2>
-          <h2>Opening hours: 8:00AM-9:00PM</h2>
-    </div>
-          
-    <div class="column"  class="bg-1">
-          <h2>Facebook: @FastFoodFast</h2>
-          <h2>Instagram: @FastFoodFast</h2>
-    </div>
+    <script src="static/images.js"></script>
 
-  </div>
-</div>
-<script src="static/getmenu.js"></script>
+<script src="static/index.js"></script>
 
-<script>
-window.onscroll = function() {myFunction()};
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
-
-<script>
-    var myIndex = 0;
-    carousel();
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 2000); }
-    </script>
 </body>
 </html>

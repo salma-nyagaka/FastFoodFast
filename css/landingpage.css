@@ -2,7 +2,62 @@ body {
     margin: 0;
     font-size: 28px;
   }
-  
+
+  .container {
+    padding: 2px 16px;
+    margin-left: 15%;
+    margin-right: 8%;
+    margin-top: 2px;
+    float: center;
+}
+
+.colum {
+    float: right;
+    width: 23.33%;
+    height: 400px;
+    font-size: 90%;
+    color: black;
+    
+}
+.column:hover{
+    color: white;
+    transform: scale(1.1); 
+}
+
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    margin: 0 10px 0 80px;
+    margin-top: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
+    height: 190px;
+    opacity: 0.9px;
+    background-color: white;
+}
+
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.row:after {
+    display: table;
+    clear: both;
+}
+
+
+
   .header {
     background-color: #f1f1f1;
     padding: 30px;
@@ -26,7 +81,7 @@ body {
   }
   
   #navbar a:hover {
-    background-color: #ddd;
+    background-color: rgba(60, 16, 0, 0.756);
     color: black;
   }
   
@@ -81,40 +136,32 @@ body {
 
 .centered {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: 20%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 16%;
+    top: 60%;
+    left: 24%;
     font-size: 360%;
     color: white;
 
 
 }
 
+.menu {
+    margin-left: 40%;
+    font-size: 160%;
+    color: black;
 
-  p {
-      display: block;
-      text-align: center;
-      font-size: 16px;
-      margin-left: 20%;
-      margin-right: 20%;
-       font-family: "Times New Roman", Georgia, Serif;
-  
-  }
-  
-  /* * {
-      box-sizing: border-box;
-  } */
-  
-  .column {
-      float: left;
-      width: 33.33%;
-      height: 180px;
-      font-size: 12px;
-  }
-  
+
+}
+
+p {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "Times New Roman", Georgia, Serif;
+
+}
+   
   .row:after {
       content: "";
       display: table;
@@ -164,6 +211,33 @@ body {
     background: #3B5998;
     color: white;
   }
-  
 
+
+
+  .output{
+    margin: auto;
+    width: 200px;
+    height: 40px;
+    size: 500px;
+    color:black;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    opacity: 0.6;
+    border: solid 1px rgb(46, 42, 42);
+    background: #FFFFFF;
+  }
+
+  .hidden{
+    display:None;
+  
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-left: 20%;
+}
+  
   

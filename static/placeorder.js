@@ -1,10 +1,17 @@
-window.onload = function(){
 
-    fetch('http://127.0.0.1:5000/api/v2/users/menu',{
+window.onload = function(){
+    if (window.localStorage.getItem('username') == null){
+        document.getElementById('signintext').innerHTML = "SIGN IN";
+    }
+    else{
+        document.getElementById('signintext').innerHTML = "LOG OUT";
+
+    }
+  
+
+    fetch(' http://127.0.0.1:5000/api/v2/users/menu',{
         method: 'GET',
-        mode:'cors',
         headers:{
-            'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
 
@@ -16,31 +23,33 @@ window.onload = function(){
         let output = '';
         console.log(data)
         data["Food menu"].forEach(res=>{
+            
             output +=` 
                             <div class="column">
-                                <img src="./img/baberque.jpeg" alt="Pizza" >
+                                <img src="./img/food6.jpeg" alt="Pizza" >
                                     <div class="colum"  class="bg-1">
                                         <h2>${res['name']}</h2>
                                         <p>${res['description']}</p>
-                                        <h2>${res['price']}</h2>
+                                        <h2 id="price">${res['price']}</h2>
                                         <br>
-                                        <button class="ORDER"  onClick="food_order('${res['name']}')">ORDER</button>
-
+                                        <button class="ORDER" onClick="food_order('${res['name']}')" >ORDER</button>
 
                                     </div>
                             </div>`
             }) 
         document.getElementById("container").innerHTML = output;
+
     })
 }
-    
+
+
+
+ 
 function food_order(name){
 
-    fetch(`http://127.0.0.1:5000/api/v2/users/orders`,{
+    fetch(` http://127.0.0.1:5000/api/v2/users/orders`,{
         method: 'POST',
         headers: {
-            'Access-Control-Allow-Origin': '*',
-
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
         },
@@ -50,38 +59,27 @@ function food_order(name){
     })
     .then(res=> res.json())
     .then(data=>{
-        if (window.localStorage.getItem('username') == "username"){
-            document.getElementById('username').value = "";
-
-
-            alert('Order placed sucessfully') 
-    }
-        else{ 
-            alert('Login to place an order')
         
-        }
-
-})
+        let displayWindow = document.getElementById('dialog')
+        displayWindow.classList.remove('hidden');
+        elem = document.getElementById('dialog');
+        elem.innerHTML ="Order has beed added";
+        setTimeout(() => {
+            elem.parentNode.removeChild(elem);
+        }, 2000);   
+        setTimeout(() => {
+            location.reload();}, 1000);         
+    })
 }
 
-var logout = document.getElementById('logout')
+var logout = document.getElementById('signintext')
 logout.onclick = function(){
-    if (window.localStorage.getItem('username') == ""){
-        redirect: window.location.replace("./userindex.html");
-            alert('You are not logged in') 
-
+    if (window.localStorage.getItem('username') == null){
+        redirect: window.location.replace("./login.html");
     }
 
     else{
         localStorage.clear();
-        redirect: window.location.replace("./index.html");
-         alert('Successfully logged out') 
-
     }
 }
-
-
-
-
-
-        
+   

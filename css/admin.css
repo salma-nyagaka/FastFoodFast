@@ -23,6 +23,13 @@ body {
     
 }
 
+
+.column:hover{
+    color: white;
+    transform: scale(1.09); 
+}
+
+
 .sidenav a:hover {
     color: #f1f1f1;
 }
@@ -39,23 +46,23 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
-.button {
-    background-color: rgb(119, 7, 18); /* Green */
-    border: none;
-    color: rgb(119, 7, 18);
+button {
+    align-items: flex-start;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    width: 130px;
-    height: 40px;
-    margin-left:17%;
-    margin-top: 18%;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+    background-color: rgb(69, 27, 9);
+    color: white;
 }
+
+
 
 .button1 {
     background-color:rgb(119, 7, 18); 
@@ -141,11 +148,7 @@ body {
 
 
 #navvbar {
-    margin-top: 1%;
-    width: 90%;
-    margin-left: 5%;
-    text-align:center;
-    overflow: hidden;
+    overflow: hidden;  
     background-color: #fff!important;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
   }
@@ -158,9 +161,6 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-   
-  
-  
   }
   .center{
     position: center;
@@ -168,7 +168,7 @@ body {
 
 }
   #navvbar a:hover {
-      background-color: rgb(128, 10, 22);
+      background-color: rgba(60, 16, 0, 0.756);
       color: white;
       -ms-transform: scale(1.5); 
       -webkit-transform: scale(1.05); 
@@ -266,16 +266,14 @@ img {
     
     .column {
         float: left;
-        width: 30%;
+        width: 25%;
         padding: 10px;
-        margin: 0 0 0 30px;
-        margin-bottom: 30px;
+        margin: 0 10px 0 80px;
         margin-top: 2%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
-        height: 200px;
-    
-        /* background-color:rgb(242, 242, 242); */
-        background-color: white;
+        height: 190px;
+        opacity: 0.9px;
+        background-color: rgba(188, 88, 52, 0.434);
     }
     
 .row:after {
@@ -319,7 +317,7 @@ table, td, th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: rgb(119, 7, 18);
+    background-color: rgba(188, 88, 52, 0.434);
     color: white;
 }
 .btn-basic {
@@ -362,4 +360,35 @@ table, td, th {
     color: white;
 }
 
-   
+.display{
+    color:black;
+    size: 50px;
+
+    
+}
+
+.output{
+    margin: auto;
+    width: 250px;
+    height: 40px;
+    size: 500px;
+
+    color:black;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    opacity: 0.6;
+    border: solid 1px rgb(46, 42, 42);
+    background: #FFFFFF;
+  }
+
+.hidden{
+display:None;
+
+}
+
+h3 {
+font-size: 1.5em;
+font-size: 15px;
+text-transform: uppercase;
+}
