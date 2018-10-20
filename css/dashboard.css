@@ -1,7 +1,7 @@
 body {
     background: white;
-    background-image: url("../img/pizza70.jpg");
-    background-size: 100% 625px;;  font-family: "Roboto", sans-serif;
+    background-image: url("../img/food101.jpg");
+    background-size: 100% 1000px;;  font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
   }
@@ -17,6 +17,11 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     overflow-x: hidden;
 }
+.column:hover{
+    color: white;
+    transform: scale(1.1); 
+}
+
 
 .sidenav a {
     padding: 6px 8px 6px 16px;
@@ -279,7 +284,7 @@ h2 {
   }
   
   #navbar a:hover {
-    background-color: #ddd;
+    background-color: rgba(60, 16, 0, 0.756);
     color: black;
   }
   
@@ -313,13 +318,14 @@ img {
 
 
 
-.container {
+ .container {
     padding: 2px 16px;
     margin-left: 15%;
     margin-right: 8%;
     margin-top: 2px;
     float: center;
-}
+    
+} 
 .collapse {
     padding: 2px 16px;
     margin-left: 8%;
@@ -354,7 +360,7 @@ button {
     border-style: outset;
     border-color: buttonface;
     border-image: initial;
-    background-color: rgb(119, 7, 18);
+    background-color: rgb(69, 27, 9);
     color: white;
 }
 
@@ -363,13 +369,12 @@ button {
     float: left;
     width: 25%;
     padding: 10px;
-    margin: 0 0 0 30px;
+    margin: 0 10px 0 80px;
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
     height: 190px;
-    opacity: 1.0px;
-    /* background-color:rgb(242, 242, 242); */
-    background-color: white;
+    opacity: 0.9px;
+    background-color: rgba(230, 115, 73, 0.434);
 }
 
 
@@ -411,6 +416,8 @@ table, td, th {
     border-collapse: collapse;
     margin-left: 6%;
     width: 90%;
+    opacity: 0.9;
+
 }
 
 #tablee td, #tablee th {
@@ -421,12 +428,39 @@ table, td, th {
 
 #tablee tr:nth-child(even){background-color: white;}
 
-#tablee tr:hover {background-color: white;}
+#tablee tr:hover {background-color: rgba(121, 50, 24, 0.434);}
 
 #tablee th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: rgb(119, 7, 18);
+    background-color:rgba(188, 88, 52, 0.434);
     color: white;
 }
+
+.output{
+    margin: auto;
+    width: 200px;
+    height: 40px;
+    size: 500px;
+    color:black;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    opacity: 0.6;
+    border: solid 1px rgb(46, 42, 42);
+    background: #FFFFFF;
+  }
+
+  .hidden{
+    display:None;
+  
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-left: 20%;
+}
+  

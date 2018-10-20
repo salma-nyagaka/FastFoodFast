@@ -9,10 +9,10 @@
   height: 360px;
   width: 390px;
   padding: 20px 10px;
-  opacity: 0.8;
+  opacity: 0.6;
   border: solid 1px rgb(46, 42, 42);
   background: #FFFFFF;
-  margin: 0 auto 100px;
+  margin: auto;
   text-align: center;
   border-radius: 6px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -29,7 +29,7 @@
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  color: grey;
+  /* color: grey; */
 }
 .dropbtn {
   background-color: #4CAF50;
@@ -141,7 +141,7 @@ cursor: pointer;
 }
 body {
   background: white;
-  background-image: url("../img/pizza70.jpg");
+  background-image: url("../img/food101.jpg");
   background-size: 100% 625px;;  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
@@ -164,7 +164,7 @@ body {
 }
 
 #navbar a:hover {
-  background-color: #ddd;
+  background-color: rgba(60, 16, 0, 0.756);
   color: black;
 }
 
@@ -179,4 +179,44 @@ a:-webkit-any-link {
     color:whitesmoke;
     cursor: pointer;
     text-decoration: none;
+}
+
+.display{
+  color:whitesmoke;
+  
+}
+
+
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    size: 10px;
+    text-transform: uppercase;
+    color: black;
+}
+
+
+
+.output{
+  margin: auto;
+  width: 210px;
+  height: 30px;
+  padding: 10px;
+  align-content: center;
+  border: 1px solid black;
+  opacity: 0.6;
+  border: solid 1px rgb(46, 42, 42);
+  background: #FFFFFF;
+  text-transform: uppercase;
+  border-radius: 6px;
+}
+
+.hidden{
+  display:None;
+
 }

@@ -8,27 +8,36 @@
 
 <div id="navbar">
         <a href="./signup.html">SIGN UP</a>
-        <a href="userindex.html" class="w3-bar-item w3-button">MENU</a>
-        <a href="index.html#contact" class="w3-bar-item w3-button">CONTACT</a>
-        <a href="index.html#about" class="w3-bar-item w3-button">ABOUT</a>
         <a href="index.html" class="w3-bar-item w3-button">HOME</a>
 </div>
-                
-                
+<br>
+<div  class="output hidden" id="output"></div>
+  
 <div class="login-page">
   <div class="form">
    <div class="container">LOGIN TO ORDER</div>
+   <div  class="output hidden" id="dialog"></div>
+
+
       <form class="login-form">
       <br>
-      <input type="text" placeholder="username" id="username" />
+     
+      <input type="text" placeholder="username" id="username"  required/>
       <br>
-      <input type="password" placeholder="password" id="password" />
+      <input type="password" placeholder="password" id="password" required/>
       <button class="input" type="button" id="login">LOG IN</button>
-      <h5 id="loginfail"></h5> <br><br>
+                  <!-- <input class="input" type="submit" value="login" id="login"></button> -->
+     
+     <h5 id="loginfail"></h5> <br><br>
       <p class="message">Not registered? <a href="signup.html">Create an account</a></p>
       </form>
   </div>
-</div>
+
+  
+
+</div> 
 <script src="static/login.js"></script>
 </body>
 </html>
+
+</script>

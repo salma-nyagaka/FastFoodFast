@@ -7,9 +7,7 @@ accept.onclick= function(){
 
     fetch('http://127.0.0.1:5000/api/v2/update/order/<int:id>',{
         method: 'PUT',
-        mode:'cors',
         headers: {
-            'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
 
@@ -18,4 +16,17 @@ accept.onclick= function(){
             "status": "accept"})
     })
    
+}
+
+
+var logout = document.getElementById('signintext')
+logout.onclick = function(){
+    if (window.localStorage.getItem('username') == null){
+        redirect: window.location.replace("./login.html");
+    }
+
+    else{
+        localStorage.clear();
+        redirect: window.location.replace("./index.html");
+    }
 }
