@@ -93,9 +93,7 @@ newfood.onclick= function(){
     
     fetch(' http://127.0.0.1:5000/api/v2/menu',{
         method: 'POST',
-        // mode:'cors',
         headers: {
-            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
         },
@@ -142,9 +140,7 @@ newfood.onclick= function(){
 
     fetch(' http://127.0.0.1:5000/api/v2/menu',{
         method: 'POST',
-        // mode:'cors',
         headers: {
-            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
         },

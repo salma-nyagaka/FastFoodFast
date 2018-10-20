@@ -47,10 +47,12 @@ window.onload = function(){
         elem = document.getElementById('dialog');
         displayWindow.classList.remove('hidden');
 
-        elem.innerHTML ="The meal has been deleted";
+        elem.innerHTML ="LOGIN TO ORDER";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
-        }, 2000);  
+        }, 2000);
+        setTimeout(() => {
+            location.reload();}, 4000);   
        
        }
     
