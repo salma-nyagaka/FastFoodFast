@@ -28,7 +28,7 @@ login.onclick= function(){
                 location.reload();}, 1000);    
 
         }
-        
+
         if (data["message"] === "Wrong password") {
             elem = document.getElementById('output');
             displayWindow.classList.remove('hidden');
@@ -40,18 +40,33 @@ login.onclick= function(){
             setTimeout(() => {
                 location.reload();}, 1000);    
         }
-         
-        if (data["message"] === "Username field cannot be left blank") {
+        
+        if (data["message"] === "Username cannot be left blank") {
             elem = document.getElementById('output');
             displayWindow.classList.remove('hidden');
-            elem.innerHTML ="Enter valid pashhhhsword";
+            elem.innerHTML ="Username cannot be left blank ";
             setTimeout(() => {
                 elem.parentNode.removeChild(elem);
             }, 3000);   
             document.getElementById('output').style.color = "red";
             setTimeout(() => {
                 location.reload();}, 1000);    
+
         }
+
+        if (data["message"] === "Password cannot be left blank") {
+            elem = document.getElementById('output');
+            displayWindow.classList.remove('hidden');
+            elem.innerHTML ="Password cannot be left blank ";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 3000);   
+            document.getElementById('output').style.color = "red";
+            setTimeout(() => {
+                location.reload();}, 1000);    
+
+        }        
+        
 
 
         if (data['message'] === 'successfully logged in'){             

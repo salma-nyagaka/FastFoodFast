@@ -119,6 +119,46 @@ signup.onclick= function(){
                 location.reload();}, 1000);  
         }
 
+        if (data["message"] === "Username cannot be left blank") {
+            elem = document.getElementById('outputt');
+            displayWindow.classList.remove('hidden');
+            elem.innerHTML ="Username cannot be left blank ";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 3000);   
+            document.getElementById('outputt').style.color = "red";
+            setTimeout(() => {
+                location.reload();}, 1000);    
+
+        }
+
+        if (data["message"] === "Password cannot be left blank") {
+            elem = document.getElementById('outputt');
+            displayWindow.classList.remove('hidden');
+            elem.innerHTML ="Password cannot be left blank ";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 3000);   
+            document.getElementById('outputt').style.color = "red";
+            setTimeout(() => {
+                location.reload();}, 1000);    
+
+        } 
+
+        if (data["message"] === "Email cannot be left blank") {
+            elem = document.getElementById('outputt');
+            displayWindow.classList.remove('hidden');
+            elem.innerHTML ="Email cannot be left blank ";
+            setTimeout(() => {
+                elem.parentNode.removeChild(elem);
+            }, 3000);   
+            document.getElementById('outputt').style.color = "red";
+            setTimeout(() => {
+                location.reload();}, 1000);    
+
+        }      
+        
+
         if (data['message'] === 'successfully created a new account'){
             elem = document.getElementById('outputt');
             displayWindow.classList.remove('hidden');
