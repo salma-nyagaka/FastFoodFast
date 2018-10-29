@@ -86,9 +86,9 @@ a {
   color:white;
 }
 
-hr {
+/* hr {
   border: 1px solid lightgrey;
-}
+} */
 
 
 .btn:hover {
@@ -378,14 +378,14 @@ padding-top: 60px;
 
 
 
-.container {
+/* .container {
   padding: 2px 16px;
   margin-left: 65%;
 
   margin-top: 2px;
 
   
-} 
+}  */
 .collapse {
   padding: 2px 16px;
   margin-left: 8%;
@@ -398,7 +398,7 @@ padding-top: 60px;
 .colum {
   float: right;
   width: 33.33%;
-  padding: 10px;
+  padding: 8px;
   height: 400px;
   font-size: 90%;
   color: black;
@@ -408,28 +408,12 @@ padding-top: 60px;
 * {
   box-sizing: border-box;
 }
-button {
-  align-items: flex-start;
-  text-align: center;
-  cursor: default;
-  color: buttontext;
-  background-color: buttonface;
-  box-sizing: border-box;
-  padding: 2px 6px 3px;
-  border-width: 2px;
-  border-style: outset;
-  border-color: buttonface;
-  border-image: initial;
-  /* background-color: rgb(69, 27, 9); */
-  color: white;
-}
-
 
 .column {
   float: left;
   width: 25%;
-  padding: 10px;
-  margin: 0 10px 0 80px;
+  /* padding: 10px; */
+  margin: 0 10px 0 50px;
   margin-top: 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
   height: 190px;
@@ -464,44 +448,41 @@ button {
 }
 table {
   margin-top: 5%;
-
   border-collapse: collapse;
-}
-
-table, td, th {
-  border: 1px solid black;
-}
-#tablee {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  margin:auto;
-  width: 38%;
-  opacity: 0.9;
-
 }
 
 #tablee td, #tablee th {
-  border: 1px solid grey;
-  padding: 8px;
+  border: 1px solid white;
   background-color: white;
+  font-size: 13px;
+  height: 20%;
+  padding: 8px;
+  width: 100%;
+  
 }
 
-#tablee tr:nth-child(even){background-color: white;}
-
-#tablee tr:hover {background-color: rgba(121, 50, 24, 0.434);}
+/* #tablee tr:hover {background-color: rgba(121, 50, 24, 0.434);} */
 
 #tablee th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   text-align: left;
-  background-color:rgba(188, 88, 52, 0.434);
+  width: 100%;
+  border: 1px solid rgb(69, 27, 9);
+  background-color:rgb(69, 27, 9);
   color: white;
+  font-size: 14px;
+  padding: 4px;
+  font-weight: normal;
+
+
 }
 
 .output{
   margin: auto;
   width: 260px;
   height: 40px;
+  text-align: center;
   size: 500px;
   color:black;
   align-content: center;
@@ -520,4 +501,25 @@ h3 {
   font-size: 1.5em;
   font-size: 15px;
   text-transform: uppercase;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-radius: 45%;
+  border-top: 10px solid #0d4c76;
+  width: 40px;
+  height: 40px;
+  margin:auto;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

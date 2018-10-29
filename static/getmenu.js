@@ -1,72 +1,116 @@
+//perform some tas when the page loads/ execute a script once a page has loaded
 window.onload = function(){
+
+    //passing a keyName that returns a key's value or  null if the key does not exist
     if (window.localStorage.getItem('username') == null){
-        document.getElementById('signintext').innerHTML = "SIGN IN";
+        document.getElementById('signintext').innerHTML = "LOG IN";
+        document.getElementById('signintext').setAttribute("href", "./login.html");
+
     }
     else{
         document.getElementById('signintext').innerHTML = "LOG OUT";
-          
-    }
+        document.getElementById('signintext').setAttribute("href", "./index.html");
 
-    fetch(' http://127.0.0.1:5000/api/v2/menu',{
+    }
+    // returns an object as  Promise that contains various information 
+    //takes one argument which is the path to the resource you want to fetch and returns a response
+    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
+        
         method: 'GET',
-        // mode:'cors',
         headers:{
-            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
 
                 }
     })
+     
+    // JSON extracts the JSON body content from the response
+
     .then(res=>res.json())
-    .then(data =>{    
+    .then(data =>{ 
+
+        if(data['message'] === "These are meals") {
+           
         let output = '';
         data["Food menu"].forEach(res=>{
             output +=` 
-                            <div class="column">
+                            <div class="column" id="adminmenu">
                                     <img src="${image[res.image] || image["Default"]}"   alt="food image" >
                                     <div class="colum"  class="bg-1">
-                                        <h2>${res['name']}</h2>
-                                        <p>${res['description']}</p>
-                                        <h2>${res['price']}</h2>  
-                                        <br>
+                                        <h2 id="menuname">${res['name']}</h2>
+                                        <p id="menudescription">${res['description']}</p>
+                                        <h2 id="menuprice">${res['price']}</h2>  
                                         <button class="ORDER"  onClick="delete_meal('${res['id']}')">DELETE</button>
                                     </div>
                             </div>`
                        
         }) 
         document.getElementById("container").innerHTML = output;
+
     }
-)
-  }
-
-
+        else{
+            let displayWindow = document.getElementById('dialog')
+            elem = document.getElementById('dialog');
+            displayWindow.classList.remove('hidden');
+            let element = document.createElement('p')
+            element.innerHTML =  `${data["message"]}`;
+            element.id = "theoutput"
+            document.getElementById('dialog').appendChild(element)
+    
+        }}
+    )
+        .catch(function(error){
+        console.log(error)            
+            })
+    }
+    
 function delete_meal(id){
 
-    fetch(` http://127.0.0.1:5000/api/v2/menu/${id}`,{
+    fetch(`https://createorders-api.herokuapp.com/api/v2/menu/${id}`,{
         method: 'DELETE',
         headers: {
             'Access-Control-Allow-Origin': '*',
-
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
         },
     })
     .then(res=> res.json())
     .then(data=>{
+
+        if(data['message'] === "Successfully Deleted") {
+            let displayWindow = document.getElementById('dialog')
+
+            elem = document.getElementById('dialog');
+            displayWindow.classList.remove('hidden');
+
+            let element = document.createElement('p')
+            element.innerHTML =  "Successfully deleted";
+            element.id = "theoutput"
+            document.getElementById('dialog').appendChild(element)
+
+            setTimeout(() => {
+                element.parentNode.removeChild(element);
+            }, 3000);  
+          
+            setTimeout(() => {
+                location.reload();}, 1000);        
+       
+    }
+    else{
         let displayWindow = document.getElementById('dialog')
-  
         elem = document.getElementById('dialog');
         displayWindow.classList.remove('hidden');
+        let element = document.createElement('p')
+        element.innerHTML =  `${data["message"]}`;
+        element.id = "theoutput"
+        document.getElementById('dialog').appendChild(element)
 
-        elem.innerHTML ="The meal has been deleted";
-        setTimeout(() => {
-            elem.parentNode.removeChild(elem);
-        }, 2000);  
-        setTimeout(() => {
-            location.reload();}, 4000);  
-       })
+    }}
+)
+    .catch(function(error){
+    console.log(error)            
+        })
 }
-
 
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
@@ -80,116 +124,3 @@ logout.onclick = function(){
         redirect: window.location.replace("./index.html");
     }
 }
-
-
-
-var newfood = document.getElementById('new')
-newfood.onclick= function(){
-    let name = document.getElementById('name').value;
-    let description = document.getElementById('description').value;
-    let price = document.getElementById('price').value;
-    let image = document.getElementById('images').value;
-
-    
-    fetch(' http://127.0.0.1:5000/api/v2/menu',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-        },
-        body: JSON.stringify({
-            "name": name,
-            "description": description,
-            "price": price,
-            "image": image})
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data["message"] === "Enter valid food name") {
-            document.getElementById('outputt').innerHTML =
-            "Food name should only contain alphabets";
-            document.getElementById('outputt').style.color = "red";
-        }
-        if (data["message"] === "Enter valid food description") {
-            document.getElementById('outputt').innerHTML =
-            "Food description should only contain alphabets";
-            document.getElementById('outputt').style.color = "red";
-        }
-        if (data["message"] === "This food already exists") {
-            document.getElementById('outputt').innerHTML =
-            "This food already exists";
-            document.getElementById('outputt').style.color = "red";
-        }
-
-        if (data["message"] === "Name cannot be left blank") {
-            document.getElementById('outputt').innerHTML =
-            "Name cannot be left blank";
-            document.getElementById('outputt').style.color = "red";
-        }
-
-        if (data["message"] === "'Description cannot be left blank") {
-            document.getElementById('outputt').innerHTML =
-            "'Description cannot be left blank";
-            document.getElementById('outputt').style.color = "red";
-        }
-
-        if (data["message"] === "Image cannot be left blank") {
-            document.getElementById('outputt').innerHTML =
-            "This food already exists";
-            document.getElementById('outputt').style.color = "red";
-        }
-    
-        if (data['message'] === 'Food menu created'){
-            document.getElementById('name').value = "";
-            document.getElementById('description').value = "";
-            document.getElementById('price').value = ""; 
-            document.getElementById('images').value = "";           
-                                 
-             }
-
-        else{
-            document.getElementById('name').value = "";
-            document.getElementById('description').value = "";
-            document.getElementById('price').value = "";
-          }
-
-    })
-}
-
-    fetch(' http://127.0.0.1:5000/api/v2/menu',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-        },
-        body: JSON.stringify({
-            "name": name,
-            "description": description,
-            "price": price})
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data["message"] === "Insufficient permissions to perform this actions") {
-            document.getElementById('outputt').innerHTML =
-            "You are not allowed to view this page";
-            document.getElementById('outputt').style.color = "red";
-            redirect: window.location.replace("./userindex.html");
-
-        }
-    
-      
-    })
-
-var logout = document.getElementById('signintext')
-logout.onclick = function(){
-    if (window.localStorage.getItem('username') == null){
-        redirect: window.location.replace("./login.html");
-    }
-
-    else{
-        localStorage.clear();
-        redirect: window.location.replace("./index.html");
-        
-    }
-}
-

@@ -9,28 +9,28 @@
 
 
     <div id="navbar">
-          <a><span type="button" id="signintext"></span></a>
-          <a><span type="button" id="signintext"></span></a>         
-          <a href="./newfood.html">NEW MEAL</a>
-          <a href="./complete.html">COMPLETE ORDERS</a>
-          <a href="./accept.html">STATUS</a>
-          <a href="./ordered.html">ORDERS</a>
-          <a href="./adminindex.html">MENU</a>
+      <a id="signintext"></a>
+      <a id="signintext"></a>        
+      <a href="./newfood.html">NEW MEAL</a>
+      <a href="./complete.html">COMPLETE ORDERS</a>
+      <a href="./accept.html">STATUS</a>
+      <a href="./ordered.html">ORDERS</a>
+      <a href="./adminindex.html">MENU</a>
     </div>
     <br>
   
-<div  class="display">
-      <h3 class="output hidden" id="dialog"></h3>
-</div> 
-<div class="login-page">
+      <div class="output hidden" id="dialog"></div>
+<div class="login-page" id="newmeal">
   <div class="form">
     <div class="container">ADD A NEW MEAL</div>
       <form class="login-form">
+          <div class="loader hidden" id="loader"></div>
+
           <input type="text" placeholder="Enter food name" id="name" /><br>
           <input type="text" placeholder="Enter description" id="description" /><br>
           <input type="text" placeholder="Enter food price" id="price" /><br>
           
-          <label class="new" for="images">images
+          <label class="new" for="images">Images
            <select id ="images">
              <option value="" >Select an image</option>
              <option value="Default" >Default image</option>
@@ -40,10 +40,6 @@
            </select>
           </label><br><br>
           <button class="input" type="button" id="new">Add new</button><br><br>
-          <!-- <input type="file" id="image" accept="image/x-jpeg/x-jpg" /><br>
-
-          <button id="btnSubmit">Upload avatar</button> -->
-
         </div>    
       </form>
   </div>

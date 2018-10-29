@@ -6,39 +6,65 @@
 <link rel="stylesheet"  href="./css/checkout.css" type="text/css">
 
 
+
 </head>
 <body>
 
 <div id="navbar">
-        <a id="output"></a>
-
-        <a><span type="button" id="signintext"></span></a>
-        <a><span type="button" id="signintext"></span></a>
-        <a href="./checkout.html">CHECKOUT</a> 
-        <a href="./orderhistory.html">ORDER HISTORY</a> 
-        <a href="./userindex.html">MENU</a>  
-                <a href="./index.html" class="w3-bar-item w3-button">HOME</a>
+      <a id="output"></a>
+      <a id="signintext"></a>
+      <a id="signintext"></a>
+      <a href="./orderhistory.html">ORDER HISTORY</a> 
+      <a href="./userindex.html">MENU</a>  
+      <a href="./index.html" class="w3-bar-item w3-button">HOME</a>
 </div>
 
 <br>
 <div  class="display">
   <h3 class="output hidden" id="dialog"></h3>
-</div>        
-<div id ="container"> </div>
-<div class="container" id="containner">
-    <table id="tablee">
-          <tr> 
-          <th>QUANTITY</th>  
-          <th>DESTINATION</th>     
-     
-          </tr>
-          
-      </div>
+</div>    
+
+<div class="container" id="grid">
+
+  <div id="container"></div>
+    <div id="containner">
+
+      <div class = "table">
+        <table id="tablee">
+            <tr> 
+            <th>NAME</th>  
+            <th>PRICE</th>  
+            <th>QUANTITY</th> 
+            <th>TOTAL</th>   
+            <th>DELETE</th> </tr>     
+
+          </table>
+          <br><hr id ="hr">
+          <p class="totalcosts" id = "total">TOTAL:</p>
+          <p><button class="order" id="myorders" onClick="makeOrder()">CHECKOUT</button></p>
+            
     </div>
+  </div>
+          
+</div>
+
+<div class="quantity-page hidden" id="foodquantity">
+    <div class="quantity"><p id ="quantitystyle">ADD QUANTITY</p></div><br>
+          <div class="loader hidden" id="loader"></div>
+
+          <input type="number" min="0" oninput="this.value=(parseInt(this.value)||0)"  placeholder="0" id="quantity" /><br><br>
+         
+          <button class="input" type="button" id="newOrder">ADD TO CART</button>
+          <button class="input" type="button" id="close" onclick="closeDialog()">CLOSE</button><br><br>
+
+        </div>    
+  </div>
+</div>
+
+
    
-          <!-- <a href="./checkout.html" class="w3-bar-item w3-button"> -->
-         <input type="submit" value="Make my Order" class="btn">
- 
+  <script src="static/images.js"></script>
+
   <script src="static/placeorder.js"></script>
 </body>
 </html> 

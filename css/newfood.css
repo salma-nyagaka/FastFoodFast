@@ -6,7 +6,7 @@
   .form {
     position: relative;
     z-index: 1;
-    height: 300px;
+    height: 320px;
     width: 440px;
     padding: 25px 10px;
     opacity: 0.6;
@@ -106,8 +106,7 @@
   .form .register-form {
     display: none;
   }
-  .container {
-    position: relative;
+  .quantity {
     z-index: 1;
     max-width: 300px;
     margin: 0 auto;
@@ -186,9 +185,9 @@
   .output{
     margin: auto;
     width: 250px;
-    height: 40px;
+    height: 60px;
     size: 500px;
-
+    text-align: center;
     color:black;
     align-content: center;
     border: 1px solid black;
@@ -207,4 +206,25 @@ h3 {
 font-size: 1.5em;
 font-size: 15px;
 text-transform: uppercase;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-radius: 45%;
+  border-top: 10px solid #0d4c76;
+  width: 40px;
+  height: 40px;
+  margin:auto;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

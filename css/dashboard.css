@@ -248,6 +248,12 @@ label {
   display: block;
 }
 
+
+.containner{
+    border: 2px solid black;
+
+
+}
 .icon-container {
   margin-bottom: 20px;
   padding: 7px 0;
@@ -319,13 +325,13 @@ img {
 
 
  .container {
-    padding: 2px 16px;
-    margin-left: 15%;
-    margin-right: 8%;
-    margin-top: 2px;
-    float: center;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* padding: 2px 16px; */
+    /* float: center; */
+ }
     
-} 
+
 .collapse {
     padding: 2px 16px;
     margin-left: 8%;
@@ -336,9 +342,7 @@ img {
 
 
 .colum {
-    float: right;
-    width: 33.33%;
-    padding: 10px;
+    width: 3.33%;
     height: 400px;
     font-size: 90%;
     color: black;
@@ -348,36 +352,30 @@ img {
 * {
     box-sizing: border-box;
 }
-button {
-    align-items: flex-start;
-    text-align: center;
-    cursor: default;
-    color: buttontext;
-    background-color: buttonface;
-    box-sizing: border-box;
-    padding: 2px 6px 3px;
+button { 
     border-width: 2px;
-    border-style: outset;
-    border-color: buttonface;
-    border-image: initial;
     background-color: rgb(69, 27, 9);
     color: white;
 }
 
 
 .column {
-    float: left;
-    width: 25%;
-    padding: 10px;
-    margin: 0 10px 0 80px;
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
     height: 190px;
     opacity: 0.9px;
+    padding: 7px;
     background-color: rgba(230, 115, 73, 0.434);
 }
 
 
+/* .section.menu{
+    width: 99%;
+    display: grid;
+    grid-template-columns:  repeat(4, 1fr);
+} */
+
+
 .row:after {
     content: "";
     display: table;
@@ -401,46 +399,13 @@ button {
     .column {
         width: 100%;
     }
-}
-table {
-    margin-top: 5%;
-
-    border-collapse: collapse;
-}
-
-table, td, th {
-    border: 1px solid black;
-}
-#tablee {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    margin-left: 6%;
-    width: 90%;
-    opacity: 0.9;
-
-}
-
-#tablee td, #tablee th {
-    border: 1px solid grey;
-    padding: 8px;
-    background-color: white;
-}
-
-#tablee tr:nth-child(even){background-color: white;}
-
-#tablee tr:hover {background-color: rgba(121, 50, 24, 0.434);}
-
-#tablee th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color:rgba(188, 88, 52, 0.434);
-    color: white;
 }
 
 .output{
     margin: auto;
     width: 200px;
+    text-align: center;
+    text-align: center;
     height: 40px;
     size: 500px;
     color:black;
@@ -463,4 +428,108 @@ table, td, th {
     text-transform: uppercase;
     margin-left: 20%;
 }
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 45%;
+    border-top: 10px solid #0d4c76;
+    width: 40px;
+    height: 40px;
+    margin:auto;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
   
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+.order{    
+    background-color: rgb(69, 27, 9);
+    color: white;
+  }
+  
+
+#foodquantity{
+    position: fixed;
+    top: 12%;
+    left: 35%;
+    width: 20%;
+    text-align: center;
+    background-color: white;
+}
+
+input#quantity{
+    border: 1px solid black;
+    size: 20%;
+}
+
+.totalcosts{
+    border: 1px solid black;
+    width: 40%;
+    margin-left: 30%;
+    background: white;
+    font-size: 12px;
+    
+}
+
+#myorders{
+    margin-left: 108px;
+
+
+}
+#tablee {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    /* margin-left: 6%; */
+    width: 100%;
+}
+
+#tableee {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    margin: auto;
+    width: 80%;
+}
+
+#tableee td, #tablee th {
+    border: 1px solid grey;
+    padding: 8px;
+    background-color: white;
+}
+
+#tableee tr:nth-child(even){background-color: white;}
+
+#tableee tr:hover {background-color: white;}
+
+#tableee th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgba(188, 88, 52, 0.434);
+    color: white;
+}
+
+.table{
+    height: auto;
+    width: 100%;
+    border: 2px solidrgba(188, 88, 52, 0.434);
+    background: white;
+}
+
+hr {
+    border: 1px solid rgba(0, 0, 0, 0.564);
+}
+
+#quantitystyle{
+    background-color:  rgb(69, 27, 9);
+    color: white;
+    margin-top: 0px;
+}

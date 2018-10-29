@@ -1,12 +1,17 @@
 window.onload = function(){
     if (window.localStorage.getItem('username') == null){
-        document.getElementById('signintext').innerHTML = "SIGN IN";
+        document.getElementById('signintext').innerHTML = "LOG IN";
+        document.getElementById('signintext').setAttribute("href", "./login.html");
+
     }
     else{
         document.getElementById('signintext').innerHTML = "LOG OUT";
+        document.getElementById('signintext').setAttribute("href", "./index.html");
+
     }
 
-    fetch(' http://127.0.0.1:5000/api/v2/users/orders',{
+        
+    fetch('https://createorders-api.herokuapp.com/api/v2/users/orders',{
         metdod: 'GET',
         headers:{
             'Content-Type': 'application/json',
@@ -16,11 +21,13 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
-        
-        let output = `<table id="tablee">
+
+        if(data['Orders']) {
+       
+        let output = `<table id="tableee">
                             <tr>
                             <th>id</th>
-                            <th>username</th>
+                            <th>date</th>
                             <th>food_name</th>
                             <th>description</th>
                             <th>price</th>
@@ -28,7 +35,7 @@ window.onload = function(){
         data["Orders"].forEach(res=>{
             output +=    ` <tr>
                             <td>${res['id']}</td>
-                            <td>${res['username']}</td>
+                            <td>${res['date']}</td>
                             <td>${res['food_name']}</td>
                             <td>${res['description']}</td>
                             <td>${res['price']}</td>
@@ -39,7 +46,22 @@ window.onload = function(){
 
         `</table>`
         document.getElementById("container").innerHTML = output;
-    })}
+    }
+        else{
+            let displayWindow = document.getElementById('dialog')
+            elem = document.getElementById('dialog');
+            displayWindow.classList.remove('hidden');
+            let element = document.createElement('p')
+            element.innerHTML =  `${data["message"]}`;
+            element.id = "theoutput"
+            document.getElementById('dialog').appendChild(element)
+        }}
+    )
+        .catch(function(error){
+        console.log(error)            
+            })
+    }
+
 
 var logout = document.getElementById('signintext')
 logout.onclick = function(){

@@ -7,9 +7,10 @@ signup.onclick= function(){
     let password = document.getElementById('password').value;
     let confirm_password = document.getElementById('confirmPassword').value;
     let displayWindow = document.getElementById('outputt')
+    // let loadingWindow = document.getElementById('loader')
+    // element = document.getElementById('loader');
 
-
-    fetch(' http://127.0.0.1:5000/api/v2/auth/signup',{
+    fetch('https://createorders-api.herokuapp.com/api/v2/auth/signup',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -20,153 +21,22 @@ signup.onclick= function(){
             "password": password,
             "confirm_password": confirm_password})
     })
+
     .then(res => res.json())
     .then(data => {
-        if (data["message"] === "Password do not match") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Password do not match";
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            setTimeout(() => {
-                location.reload();}, 1000);   
-        }
-
-
-        if (data["message"] === "Password is too short") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Password do not match";
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            setTimeout(() => {
-                location.reload();}, 1000);  
-                
-        }
-        if (data["message"] === "Username is too short") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Username must be more than 6 characters";
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            setTimeout(() => {
-                location.reload();}, 1000);   
-
-        }
-        if (data["message"] === "Enter valid username") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Username can only contain alphanumerics";
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            setTimeout(() => {
-                location.reload();}, 1000);  
-        }
-
-        if (data["message"] === "Enter valid password") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Passwords can only contain alphanumerics";
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            setTimeout(() => {
-                location.reload();}, 1000);  
-        }
-
-        if (data["message"] === "Enter valid email") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Enter valid email";
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            setTimeout(() => {
-                location.reload();}, 1000);  
-        }
-
-        if (data["message"] === "Username exists") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Username exists";
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            setTimeout(() => {
-                location.reload();}, 1000);  
-        }
-
-        if (data["message"] === "Email address exists") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Email address exists";
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            setTimeout(() => {
-                location.reload();}, 1000);  
-        }
-
-        if (data["message"] === "Username cannot be left blank") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML ="Username cannot be left blank ";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                location.reload();}, 1000);    
-
-        }
-
-        if (data["message"] === "Password cannot be left blank") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML ="Password cannot be left blank ";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                location.reload();}, 1000);    
-
-        } 
-
-        if (data["message"] === "Email cannot be left blank") {
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML ="Email cannot be left blank ";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
-            document.getElementById('outputt').style.color = "red";
-            setTimeout(() => {
-                location.reload();}, 1000);    
-
-        }      
+        elem = document.getElementById('outputt');
+        displayWindow.classList.remove('hidden');      
         
-
         if (data['message'] === 'successfully created a new account'){
-            elem = document.getElementById('outputt');
-            displayWindow.classList.remove('hidden');
-            elem.innerHTML = "Successfully created a new account";
-            document.getElementById('outputt').style.color = "blue";
+            let element = document.createElement('p')
+            element.innerHTML =  "Successfully created a new account";
+            element.id = "theoutput"
+            document.getElementById('outputt').appendChild(element)
+
             setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 3000);   
+                element.parentNode.removeChild(element);
+            }, 3000);  
+
             setTimeout(() => {
                 location.reload();}, 1000);  
             document.getElementById('username').value = "";
@@ -175,13 +45,18 @@ signup.onclick= function(){
             document.getElementById('confirmPassword').value = "";
         }
         else{
-            document.getElementById('account_not_created').innerHTML= 'ACCOUNT NOT CREATED';
-            document.getElementById('account_not_created').style.color='red';
-            document.getElementById('account_not_created').style.display='block';
-            document.getElementById('username').value = "";
-            document.getElementById('email').value = "";
-            document.getElementById('password').value = "";
-            document.getElementById('confirmPassword').value = "";
+            let element = document.createElement('p')
+            element.innerHTML =  `${data["message"]}`;
+            element.id = "theoutput"
+            document.getElementById('outputt').appendChild(element)
+          
+            setTimeout(() => {
+                element.parentNode.removeChild(element);
+            }, 3000); 
+            
+            setTimeout(() => {
+                location.reload();}, 1000);  
+            
         }
 
     })

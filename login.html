@@ -15,21 +15,22 @@
   
 <div class="login-page">
   <div class="form">
-   <div class="container">LOGIN TO ORDER</div>
+   <div class="container">LOGIN</div>
    <div  class="output hidden" id="dialog"></div>
 
+   <div class="loader hidden" id="loader"></div>
 
       <form class="login-form">
       <br>
      
       <input type="text" placeholder="username" id="username"  required/>
       <br>
-      <input type="password" placeholder="password" id="password" required/>
+      <input type="password" placeholder="password" id="password" required/>   
       <button class="input" type="button" id="login">LOG IN</button>
                   <!-- <input class="input" type="submit" value="login" id="login"></button> -->
      
      <h5 id="loginfail"></h5> <br><br>
-      <p class="message">Not registered? <a href="signup.html">Create an account</a></p>
+      <p class="message">Not registered? <a href="signup.html" id="sign-up">Create an account</a></p>
       </form>
   </div>
 

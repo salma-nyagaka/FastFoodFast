@@ -13,7 +13,7 @@ body {
 
 .colum {
     float: right;
-    width: 23.33%;
+    width: 43.33%;
     height: 400px;
     font-size: 90%;
     color: black;
@@ -27,12 +27,12 @@ body {
 
 .column {
     float: left;
-    width: 25%;
-    padding: 10px;
-    margin: 0 10px 0 80px;
+    width: 23%;
+    padding: 8px;
+    margin: 0 10px 0 70px;
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
-    height: 190px;
+    height: 170px;
     opacity: 0.9px;
     background-color: white;
 }
@@ -145,7 +145,7 @@ body {
 }
 
 .menu {
-    margin-left: 40%;
+    margin-left: 42%;
     font-size: 160%;
     color: black;
 
@@ -219,6 +219,8 @@ p {
     width: 200px;
     height: 40px;
     size: 500px;
+    text-align: center;
+
     color:black;
     align-content: center;
     border: 1px solid black;
@@ -240,4 +242,52 @@ p {
     margin-left: 20%;
 }
   
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 45%;
+    border-top: 10px solid #0d4c76;
+    width: 40px;
+    height: 40px;
+    margin:auto;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
   
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+  .meal{
+    margin: auto;
+    width: 400px;
+    height: 80px;
+    size: 1000px;
+    color:black;
+    align-content: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    opacity: 0.6;
+    border: solid 1px black;
+    background: #FFFFFF;
+  }
+
+  .hidden{
+    display:None;
+  
+  }
+
+.order{
+    margin-left: 20%;
+}
+
+.contact{
+    border: 2px solid black;
+}
