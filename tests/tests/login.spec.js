@@ -1,4 +1,3 @@
-
 // Test the functionality of a login page
 describe('User login ', () => {
   beforeAll(async () => {
