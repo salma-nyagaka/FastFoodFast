@@ -68,7 +68,7 @@ window.onload = function(){
             elem.parentNode.removeChild(elem);
         }, 2000);
         setTimeout(() => {
-            location.reload();}, 4000);   
+            location.reload();}, 1900);   
        
        }
     

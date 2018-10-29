@@ -126,7 +126,7 @@ function food_order(name, quantity){
             elem.parentNode.removeChild(elem);
         }, 2000);   
         setTimeout(() => {
-            location.reload();}, 1000);         
+            location.reload();}, 1900);         
     })
 }
 
@@ -164,7 +164,7 @@ function my_cart(clickedItem){
                     displayWindow.classList.remove('hidden');
                     elem.innerHTML ="Quantity cannot be zero";
                     setTimeout(() => {
-                        location.reload();}, 1000);  }  
+                        location.reload();}, 1900);  }  
                     })  
 
         }
@@ -191,7 +191,7 @@ function my_cart(clickedItem){
                 displayWindow.classList.remove('hidden');
                 elem.innerHTML ="Quantity cannot be zero";
                 setTimeout(() => {
-                    location.reload();}, 1000);  }              
+                    location.reload();}, 1900);  }              
         
         })  
 

@@ -9,7 +9,6 @@ window.onload = function(){
         document.getElementById('signintext').setAttribute("href", "./index.html");
 
     }
-
         
     fetch('https://createorders-api.herokuapp.com/api/v2/users/orders',{
         metdod: 'GET',

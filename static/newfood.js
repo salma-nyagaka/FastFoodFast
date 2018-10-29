@@ -38,11 +38,11 @@ newfood.onclick= function(){
 
             setTimeout(() => {
                 element.parentNode.removeChild(element);
-            }, 3000000);  
+            }, 2000);  
 
 
             setTimeout(() => {
-                location.reload();}, 30000000000);                                   
+                location.reload();}, 1900);                                   
              
         }
         else{
@@ -53,10 +53,10 @@ newfood.onclick= function(){
           
             setTimeout(() => {
                 element.parentNode.removeChild(element);
-            }, 3000); 
+            }, 2000); 
             
             setTimeout(() => {
-                location.reload();}, 1000);  
+                location.reload();}, 1900);  
 
             
           }

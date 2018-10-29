@@ -41,10 +41,11 @@ login.onclick= function(){
     
                 setTimeout(() => {
                     element.parentNode.removeChild(element);
-                }, 3000);  
+                }, 2000);  
   
                 setTimeout(() => {
-                redirect: window.location.replace("./adminindex.html");}, 1900);         
+                redirect: window.location.replace("./adminindex.html");}, 1900); 
+                     
                 }
 
                 else{
@@ -58,10 +59,14 @@ login.onclick= function(){
         
                     setTimeout(() => {
                         element.parentNode.removeChild(element);
-                    }, 3000);  
+                    }, 2000);  
 
                     setTimeout(() => {
-                    redirect: window.location.replace("./userindex.html");}, 1900);         
+                    redirect: window.location.replace("./userindex.html");}, 1900);  
+                    document.getElementById('username').value = "";
+                    document.getElementById('email').value = "";
+                    document.getElementById('password').value = "";
+                    document.getElementById('confirmPassword').value = "";       
                     
                 }
 
@@ -75,10 +80,14 @@ login.onclick= function(){
           
             setTimeout(() => {
                 element.parentNode.removeChild(element);
-            }, 3000); 
+            }, 2000); 
             
             setTimeout(() => {
-                location.reload();}, 1000);  
+                location.reload();}, 1900); 
+                document.getElementById('username').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('password').value = "";
+                document.getElementById('confirmPassword').value = ""; 
 
         }
     })

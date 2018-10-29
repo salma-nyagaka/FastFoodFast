@@ -90,10 +90,10 @@ function delete_meal(id){
 
             setTimeout(() => {
                 element.parentNode.removeChild(element);
-            }, 3000);  
+            }, 2000);  
           
             setTimeout(() => {
-                location.reload();}, 1000);        
+                location.reload();}, 1900);        
        
     }
     else{
