@@ -1,3 +1,4 @@
+//function to get all the users orders
 window.onload = function(){
     let loadingWindow = document.getElementById('loader')
     element = document.getElementById('loader');
@@ -14,6 +15,8 @@ window.onload = function(){
 
 
     }
+
+    //returns a promise which is a reponse to a request   
     fetch('https://createorders-api.herokuapp.com/api/v2/orders',{
         method: 'GET',
         headers:{
@@ -22,9 +25,12 @@ window.onload = function(){
 
                 }
     })
+
+    // JSON extracts the JSON body content from the response
     .then(res=>res.json())
     .then(data =>{
-     let loadingWindow = document.getElementById('loader')
+
+    let loadingWindow = document.getElementById('loader')
     element = document.getElementById('loader');
     loadingWindow.classList.add('hidden');
 
@@ -63,13 +69,12 @@ window.onload = function(){
         
         }
         else{
-            let displayWindow = document.getElementById('dialog')
             elem = document.getElementById('dialog');
-            displayWindow.classList.remove('hidden');
-            let element = document.createElement('p')
+            elem.classList.remove('hidden');
+            element = document.createElement('p')
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
-            document.getElementById('dialog').appendChild(element)
+            elem.appendChild(element)
 
         }}
     )
@@ -78,6 +83,7 @@ window.onload = function(){
         })
 }
 
+//function to logout
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
     if (window.localStorage.getItem('username') == null){

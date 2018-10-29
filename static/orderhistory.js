@@ -1,3 +1,4 @@
+//function to get all the users order history
 window.onload = function(){
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
@@ -9,7 +10,8 @@ window.onload = function(){
         document.getElementById('signintext').setAttribute("href", "./index.html");
 
     }
-        
+      
+    //returns a promise which is a reponse to a request   
     fetch('https://createorders-api.herokuapp.com/api/v2/users/orders',{
         metdod: 'GET',
         headers:{
@@ -18,11 +20,11 @@ window.onload = function(){
     
                 }
     })
+
     .then(res=>res.json())
     .then(data =>{
 
-        if(data['Orders']) {
-       
+        if(data['Orders']) {   
         let output = `<table id="tableee">
                             <tr>
                             <th>id</th>
@@ -47,13 +49,12 @@ window.onload = function(){
         document.getElementById("container").innerHTML = output;
     }
         else{
-            let displayWindow = document.getElementById('dialog')
             elem = document.getElementById('dialog');
-            displayWindow.classList.remove('hidden');
-            let element = document.createElement('p')
+            elem.classList.remove('hidden');
+            element = document.createElement('p')
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
-            document.getElementById('dialog').appendChild(element)
+            elem.appendChild(element)
         }}
     )
         .catch(function(error){

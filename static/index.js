@@ -1,3 +1,4 @@
+//function to load the page with the menu
 window.onload = function(){
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
@@ -11,6 +12,7 @@ window.onload = function(){
 
     }
     
+    //returns a promise which is a reponse to a request   
     fetch('https://createorders-api.herokuapp.com/api/v2/users/menu',{
         method: 'GET',
         headers:{
@@ -19,6 +21,8 @@ window.onload = function(){
 
                 }
     })
+
+    //JSON extracts the JSON body content from the response
     .then(res=>res.json())
     .then(data =>{ 
         if (data['message'] === 'These are the available food items'){
@@ -55,13 +59,11 @@ window.onload = function(){
         })
 }
 
-
-  function order(){
-
-        let displayWindow = document.getElementById('dialog')
-  
+//function to add a popup if the user orders without login in
+function order(){
+ 
         elem = document.getElementById('dialog');
-        displayWindow.classList.remove('hidden');
+        elem.classList.remove('hidden');
 
         elem.innerHTML ="LOGIN TO ORDER";
         setTimeout(() => {
@@ -71,7 +73,8 @@ window.onload = function(){
             location.reload();}, 1900);   
        
        }
-    
+
+//function to logout
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
     if (window.localStorage.getItem('username') == null){
@@ -84,6 +87,7 @@ logout.onclick = function(){
     }
 }
 
+//function to go back to the dashboard when in the home page
 var back = document.getElementById('back')
 back.onclick = function(){
    

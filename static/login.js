@@ -1,3 +1,4 @@
+//function to login a user
 var login = document.getElementById('login')
 login.onclick= function(){
     let username = document.getElementById('username').value;
@@ -8,7 +9,8 @@ login.onclick= function(){
     element = document.getElementById('loader');
 
 
-
+     
+    //returns a promise which is a reponse to a request 
     fetch('https://createorders-api.herokuapp.com/api/v2/auth/login',{
         method: 'POST',
         headers: {
@@ -18,15 +20,19 @@ login.onclick= function(){
             "username": username,
             "password": password})
     })
+
+    
     .then(res => res.json())
     .then(data => {
          
         elem = document.getElementById('output');
-        displayWindow.classList.remove('hidden');
+        element = document.createElement('p')
+        elem.classList.remove('hidden');
   
         if (data['message'] === 'successfully logged in'){    
             window.localStorage.setItem('token', data['token'])
          
+                //if admin redirect to admin index
                 if (data['admin'] === true){ 
                     window.localStorage.setItem('token', data['token'])
  
@@ -34,46 +40,51 @@ login.onclick= function(){
                 window.localStorage.setItem('username', data['username'])
                 window.localStorage.setItem('password', data['password'])
                 
-                let element = document.createElement('p')
+               
                 element.innerHTML =  "Successfully logged in";
                 element.id = "theoutput"
-                document.getElementById('output').appendChild(element)
-      
+                elem.appendChild(element)
+    
                 setTimeout(() => {
-                redirect: window.location.replace("./adminindex.html");}, 1900); 
-                document.getElementById('username').value = "";
-                document.getElementById('password').value = "";
-                     
+                    element.parentNode.removeChild(element);
+                }, 3000);  
+  
+                setTimeout(() => {
+                redirect: window.location.replace("./adminindex.html");}, 1900);         
                 }
 
+                //if user redirect to user dashboard
                 else{
                     window.localStorage.setItem('username', data['username'])
                     window.localStorage.setItem('password', data['password'])
 
-                    let element = document.createElement('p')
                     element.innerHTML =  "Successfully logged in";
                     element.id = "theoutput"
-                    document.getElementById('output').appendChild(element)
+                    elem.appendChild(element)
         
                     setTimeout(() => {
-                    redirect: window.location.replace("./userindex.html");}, 1900);  
-                    document.getElementById('username').value = "";
-                    document.getElementById('password').value = "";
+                        element.parentNode.removeChild(element);
+                    }, 3000);  
+
+                    setTimeout(() => {
+                    redirect: window.location.replace("./userindex.html");}, 1900);         
                     
                 }
 
         
         }
+
         else{
-            let element = document.createElement('p')
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
-            document.getElementById('output').appendChild(element)
-
+            elem.appendChild(element)
+          
             setTimeout(() => {
-                location.reload();}, 1900); 
-                document.getElementById('username').value = "";
-                document.getElementById('password').value = "";
+                element.parentNode.removeChild(element);
+            }, 3000); 
+            
+            setTimeout(() => {
+                location.reload();}, 1000);  
 
         }
     })

@@ -1,10 +1,5 @@
+//function to get all the orders
 window.onload = function(){
-    // let loadingWindow = document.getElementById('loader')
-    // element = document.getElementById('loader');
-    // setTimeout(() => {
-    // loadingWindow.classList.remove('hidden');
-    // }, 20);
-    
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
         document.getElementById('signintext').setAttribute("href", "./login.html");
@@ -15,14 +10,18 @@ window.onload = function(){
         document.getElementById('signintext').setAttribute("href", "./index.html");
 
     }
+
+     //returns all the orders which is a response to a request
     fetch('https://createorders-api.herokuapp.com/api/v2/orders',{
-        metdod: 'GET',
+        method: 'GET',
         headers:{
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
 
                 }
-    })  
+    }) 
+    
+    // JSON extracts the JSON body content from the response 
     .then(res=>res.json())
     .then(data =>{  
         
@@ -60,17 +59,15 @@ window.onload = function(){
 
         output +=
         `</table>`
-
         document.getElementById("container").innerHTML = output;
     }
         else{
-            let displayWindow = document.getElementById('dialog')
             elem = document.getElementById('dialog');
-            displayWindow.classList.remove('hidden');
-            let element = document.createElement('p')
+            elem.classList.remove('hidden');
+            element = document.createElement('p')
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
-            document.getElementById('dialog').appendChild(element)
+            elem.appendChild(element)
 
         }}
     )
@@ -80,7 +77,7 @@ window.onload = function(){
 }
 
 
-        
+//function to update order status to processing        
 function status(id){
     
     fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
@@ -95,18 +92,17 @@ function status(id){
     })
     .then(res=> res.json())
     .then(data=>{
-        let displayWindow = document.getElementById('dialog')
-        displayWindow.classList.remove('hidden');
         elem = document.getElementById('dialog');
+        elem.classList.remove('hidden');
         elem.innerHTML ="Order is getting processed";
        
         setTimeout(() => {
-        location.reload();}, 200);         
+        location.reload();}, 1000);         
     })
                 
 }
 
-   
+//function to update order status to declined         
 function decline(id){  
     fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
         method: 'PUT',
@@ -128,17 +124,17 @@ function decline(id){
 
         }
     
-        let displayWindow = document.getElementById('dialog')
-        displayWindow.classList.remove('hidden');
         elem = document.getElementById('dialog');
+        elem.classList.remove('hidden');
         elem.innerHTML ="Order has been declined";
         
         setTimeout(() => {
-        location.reload();}, 200);  
+        location.reload();}, 1000);  
 
      })
 }
 
+//function to logout
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
     if (window.localStorage.getItem('username') == null){

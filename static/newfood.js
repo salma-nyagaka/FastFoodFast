@@ -1,3 +1,4 @@
+//function to place a new meal
 if (window.localStorage.getItem('username') == null){
     document.getElementById('signintext').innerHTML = "LOG IN";
     document.getElementById('signintext').setAttribute("href", "./login.html");
@@ -14,16 +15,16 @@ newfood.onclick= function(){
     let description = document.getElementById('description').value;
     let price = document.getElementById('price').value;
     let image = document.getElementById('images').value;
-    let displayWindow = document.getElementById('dialog')
 
-
-    
+    //returns a promise which is a reponse to a request   
     fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
         },
+
+        //declaring content type
         body: JSON.stringify({
             "name": name,
             "description": description,
@@ -32,8 +33,10 @@ newfood.onclick= function(){
     })
     .then(res => res.json())
     .then(data => {
+
         elem = document.getElementById('dialog');
-        displayWindow.classList.remove('hidden');
+        elem.classList.remove('hidden');
+        let element = document.createElement('p')
 
         if (data['message'] === 'Food menu created'){
             document.getElementById('name').value = "";
@@ -41,30 +44,19 @@ newfood.onclick= function(){
             document.getElementById('price').value = ""; 
             document.getElementById('images').value = "";  
                     
-            let element = document.createElement('p')
             element.innerHTML =  "Food menu created";
             element.id = "theoutput"
-            document.getElementById('dialog').appendChild(element)
-
-            // setTimeout(() => {
-            //     element.parentNode.removeChild(element);
-            // }, 2000);  
-
+            elem.appendChild(element)
 
             setTimeout(() => {
                 location.reload();}, 1900);                                   
              
         }
         else{
-            let element = document.createElement('p')
             element.innerHTML =  `${data["message"]}`;
             element.id = "newoutput"
-            document.getElementById('dialog').appendChild(element)
-          
-            // setTimeout(() => {
-            //     element.parentNode.removeChild(element);
-            // }, 2000); 
-            
+            elem.appendChild(element)
+  
             setTimeout(() => {
                 location.reload();}, 1900);  
 
@@ -74,7 +66,7 @@ newfood.onclick= function(){
     })
 }
 
-
+//function to logout
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
     

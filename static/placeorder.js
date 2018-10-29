@@ -1,3 +1,4 @@
+//function for a user to get the menu and place an order
 window.onload = function(){
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
@@ -39,7 +40,7 @@ window.onload = function(){
         }
     }
   
-
+    //returns a promise which is a reponse to a request of getting all the menu  
     fetch('https://createorders-api.herokuapp.com/api/v2/users/menu',{
         method: 'GET',
         headers:{
@@ -102,6 +103,7 @@ function makeOrder(){
     }
 }
  
+//function to place an order
 function food_order(name, quantity){
 
     fetch(`https://createorders-api.herokuapp.com/api/v2/users/orders`,{
@@ -126,10 +128,12 @@ function food_order(name, quantity){
             elem.parentNode.removeChild(elem);
         }, 2000);   
         setTimeout(() => {
-            location.reload();}, 1100);         
+            location.reload();}, 1000);         
     })
 }
 
+
+//function to append orders to the shopping cart and add the quantity
 let number = 0;
 
 function my_cart(clickedItem){
@@ -166,7 +170,7 @@ function my_cart(clickedItem){
                     displayWindow.classList.remove('hidden');
                     elem.innerHTML ="Quantity cannot be zero";
                     setTimeout(() => {
-                        location.reload();}, 10);  }  
+                        location.reload();}, 900);  }  
                     })  
 
         }
@@ -193,7 +197,7 @@ function my_cart(clickedItem){
                 displayWindow.classList.remove('hidden');
                 elem.innerHTML ="Quantity cannot be zero";
                 setTimeout(() => {
-                    location.reload();}, 10);  }              
+                    location.reload();}, 900);  }              
         
         })  
 
@@ -205,44 +209,16 @@ function closeDialog() {
     qInputDiv.classList.add("hidden")
 } 
 
-function deleteOrder(target){
-  
+//function to delete an order from the shopping cart
+function deleteOrder(target){ 
     let parentOrder = target.parentNode.parentNode
     let name = parentOrder.querySelector(".name").innerHTML
     localStorage.removeItem(`tocart${name}`)
-    location.reload();
+    setTimeout(() => {
 
-    console.log(name)
-}
+    location.reload();}, 90);}
 
-
-function delete_order(id){
-
-    fetch(`http://127.0.0.1:5000/api/v2/users/orders/${id}`,{
-        method: 'DELETE',
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-
-            'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-        },
-    })
-    .then(res=> res.json())
-    .then(data=>{
-        let displayWindow = document.getElementById('dialog')
-  
-        elem = document.getElementById('dialog');
-        displayWindow.classList.remove('hidden');
-
-        elem.innerHTML ="Your order has been deleted";
-        setTimeout(() => {
-            elem.parentNode.removeChild(elem);
-        }, 2000);  
-        setTimeout(() => {
-            location.reload();}, 10);  
-})}
-
-
+//function to logout
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
     if (window.localStorage.getItem('username') == null){

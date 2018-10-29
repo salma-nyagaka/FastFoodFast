@@ -1,9 +1,8 @@
-//perform some tas when the page loads/ execute a script once a page has loaded
+//function to login
 window.onload = function(){
 
-  
 
-    //passing a keyName that returns a key's value or  null if the key does not exist
+    //passing a keyName that returns a key's value or returns null if the key does not exist
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
         document.getElementById('signintext').setAttribute("href", "./login.html");
@@ -14,9 +13,8 @@ window.onload = function(){
         document.getElementById('signintext').setAttribute("href", "./index.html");
 
     }
-    // returns an object as  Promise that contains various information 
-    //takes one argument which is the path to the resource you want to fetch and returns a response
-    
+
+    //returns a promise which is a reponse to a request of getting all the menu   
     fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
         
         method: 'GET',
@@ -28,13 +26,10 @@ window.onload = function(){
     })
      
     // JSON extracts the JSON body content from the response
-
     .then(res=>res.json())
     .then(data =>{ 
 
-
         if(data['message'] === "These are meals") {
-           
         let output = '';
         data["Food menu"].forEach(res=>{
             output +=` 
@@ -68,8 +63,8 @@ window.onload = function(){
             })
     }
     
+//function to delete a meal item
 function delete_meal(id){
-
     fetch(`https://createorders-api.herokuapp.com/api/v2/menu/${id}`,{
         method: 'DELETE',
         headers: {
@@ -81,42 +76,40 @@ function delete_meal(id){
     .then(res=> res.json())
     .then(data=>{
 
-        if(data['message'] === "Successfully Deleted") {
-            let displayWindow = document.getElementById('dialog')
+                if(data['message'] === "Successfully Deleted") {
+                    elem = document.getElementById('dialog');
+                    elem.classList.remove('hidden');
+                    let element = document.createElement('p')
+                    element.innerHTML =  "Successfully deleted";
+                    element.id = "theoutput"
+                    elem.appendChild(element)
 
-            elem = document.getElementById('dialog');
-            displayWindow.classList.remove('hidden');
+                    setTimeout(() => {
+                        location.reload();}, 900);        
+            
+            }
+                else{
+                    elem = document.getElementById('dialog');
+                    elem.classList.remove('hidden');
+                    let element = document.createElement('p')
+                    element.innerHTML =  `${data["message"]}`;
+                    element.id = "theoutput"
+                    elem.appendChild(element)
 
-            let element = document.createElement('p')
-            element.innerHTML =  "Successfully deleted";
-            element.id = "theoutput"
-            document.getElementById('dialog').appendChild(element)
-
-            setTimeout(() => {
-                location.reload();}, 200);        
-       
-    }
-    else{
-        let displayWindow = document.getElementById('dialog')
-        elem = document.getElementById('dialog');
-        displayWindow.classList.remove('hidden');
-        let element = document.createElement('p')
-        element.innerHTML =  `${data["message"]}`;
-        element.id = "theoutput"
-        document.getElementById('dialog').appendChild(element)
-
-    }}
+                }
+            }
 )
     .catch(function(error){
     console.log(error)            
         })
 }
 
+//function to logout
 var logout = document.getElementById('signintext')
 logout.onclick = function(){
     
     if (window.localStorage.getItem('username') == null){
-        redirect: window.location.replace("./login.html");
+        redirect: window.location.replace("./adminindex.html");
     }
 
     else{
