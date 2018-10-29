@@ -1,4 +1,8 @@
 window.onload = function(){
+    let loadingWindow = document.getElementById('loader')
+    element = document.getElementById('loader');
+    loadingWindow.classList.remove('hidden');
+
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
         document.getElementById('signintext').setAttribute("href", "./login.html");
@@ -20,18 +24,21 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
+     let loadingWindow = document.getElementById('loader')
+    element = document.getElementById('loader');
+    loadingWindow.classList.add('hidden');
+
         if(data['Food Orders']) {
             
                 let output = `<table id="tablee">
                                     <tr>
-                                    <th>id</th>
-                                    <th>username</th>
-                                    <th>date</th>
-                                    <th>food_name</th>
-                                    <th>description</th>
-                                    <th>price</th>
-                                    <th>current status</th>
-                                    <th>view order details</th>
+                                    <th>ID</th>
+                                    <th>USERNAME</th>
+                                    <th>DATE</th>
+                                    <th>FOOD_NAME</th>
+                                    <th>DESCRIPTION</th>
+                                    <th>PRICE</th>
+                                    <th>STATUS</th>
 
                                     </tr>`;
                                     
@@ -46,7 +53,6 @@ window.onload = function(){
                                     <td>${t}</td>
                                     <td>${res['price']}</td>
                                     <td>${res['status']}</td>
-                                    <td><button class="ORDER"  onClick="specific_order('${res['id']}')">VIEW</button></td>
 
                                 </tr>`
                 }) 
@@ -71,60 +77,6 @@ window.onload = function(){
     console.log(error)            
         })
 }
-
-
-function specific_order(id){
-
-fetch(`http://127.0.0.1:5000/api/v2/orders/${id}`,{
-    method: 'GET',
-    headers:{
-        'Content-Type': 'application/json',
-        'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-
-            }
-})
-.then(res=>res.json())
-.then(data =>{
-    
-    let output = `<table id="tablee">
-                        <tr>
-                        <th>id</th>
-                        <th>username</th>
-                        <th>date</th>
-                        <th>food_name</th>
-                        <th>description</th>
-                        <th>price</th>
-                        <th>current status</th>
-                        <th>view order details</th>
-
-                        </tr>`;
-                        
-    data["Specific order"].forEach(res=>{
-        truncate(res['description'])
-        let t =  truncate(res['description'])
-        output +=`     <tr>
-                        <td>${res['id']}</td>
-                        <td>${res['username']}</td>
-                        <td>${res['date']}</td>
-                        <td>${res['food_name']}</td>
-                        <td>${t}</td>
-                        <td>${res['price']}</td>
-                        <td>${res['status']}</td>
-                        <td><button class="ORDER">VIEW</a></button></td>
-
-                       </tr>`
-    }) 
-        output +=
-        `</table`
-    document.getElementById("containnner").innerHTML= output;
-    
-})
-
-
-}
-
-
-
 
 var logout = document.getElementById('signintext')
 logout.onclick = function(){

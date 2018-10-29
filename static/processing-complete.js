@@ -1,4 +1,5 @@
 window.onload = function(){
+
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
         document.getElementById('signintext').setAttribute("href", "./login.html");
@@ -20,6 +21,9 @@ window.onload = function(){
     })
     .then(res=>res.json())
     .then(data =>{
+        let loadingWindow = document.getElementById('loader')
+        element = document.getElementById('loader');
+        loadingWindow.classList.add('hidden')
 
         if(data['Updated orders']) {          
         let output = `<table id="tablee">
@@ -85,13 +89,6 @@ window.onload = function(){
             displayWindow.classList.remove('hidden');
             elem = document.getElementById('dialog');
             elem.innerHTML ="Order has been completed";
-            setTimeout(() => {
-                elem.parentNode.removeChild(elem);
-            }, 2000);
-
-            let loadingWindow = document.getElementById('loader')
-            element = document.getElementById('loader');
-            loadingWindow.classList.remove('hidden');
 
             setTimeout(() => {
             location.reload();}, 1900);  

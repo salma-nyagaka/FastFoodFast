@@ -38,13 +38,11 @@ login.onclick= function(){
                 element.innerHTML =  "Successfully logged in";
                 element.id = "theoutput"
                 document.getElementById('output').appendChild(element)
-    
-                setTimeout(() => {
-                    element.parentNode.removeChild(element);
-                }, 2000);  
-  
+      
                 setTimeout(() => {
                 redirect: window.location.replace("./adminindex.html");}, 1900); 
+                document.getElementById('username').value = "";
+                document.getElementById('password').value = "";
                      
                 }
 
@@ -58,15 +56,9 @@ login.onclick= function(){
                     document.getElementById('output').appendChild(element)
         
                     setTimeout(() => {
-                        element.parentNode.removeChild(element);
-                    }, 2000);  
-
-                    setTimeout(() => {
                     redirect: window.location.replace("./userindex.html");}, 1900);  
                     document.getElementById('username').value = "";
-                    document.getElementById('email').value = "";
                     document.getElementById('password').value = "";
-                    document.getElementById('confirmPassword').value = "";       
                     
                 }
 
@@ -77,17 +69,11 @@ login.onclick= function(){
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
             document.getElementById('output').appendChild(element)
-          
-            setTimeout(() => {
-                element.parentNode.removeChild(element);
-            }, 2000); 
-            
+
             setTimeout(() => {
                 location.reload();}, 1900); 
                 document.getElementById('username').value = "";
-                document.getElementById('email').value = "";
                 document.getElementById('password').value = "";
-                document.getElementById('confirmPassword').value = ""; 
 
         }
     })

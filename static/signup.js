@@ -38,7 +38,8 @@ signup.onclick= function(){
             }, 3000);  
 
             setTimeout(() => {
-                location.reload();}, 1000);  
+                redirect: window.location.replace("./login.html");}, 1900); 
+                
             document.getElementById('username').value = "";
             document.getElementById('email').value = "";
             document.getElementById('password').value = "";
@@ -55,7 +56,7 @@ signup.onclick= function(){
             }, 3000); 
             
             setTimeout(() => {
-                location.reload();}, 1000);  
+                location.reload();}, 1900);  
             
         }
 

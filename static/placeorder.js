@@ -126,7 +126,7 @@ function food_order(name, quantity){
             elem.parentNode.removeChild(elem);
         }, 2000);   
         setTimeout(() => {
-            location.reload();}, 1900);         
+            location.reload();}, 1100);         
     })
 }
 
@@ -154,17 +154,19 @@ function my_cart(clickedItem){
                 if (foodQuantity > 0) {
                     let price = clickedItem.parentNode.querySelector("#price").innerHTML;
                     window.localStorage.setItem(`tocart${name}`, `${name} ${price} ${foodQuantity}`)
-                    location.reload()    
+                    location.reload()   
+                    
+                    
                 }
                 else{
                     let qInputDiv = document.getElementById("foodquantity")
-                    qInputDiv.classList.add("hidden")                    
+                    qInputDiv.classList.add("hidden")                   
                     let displayWindow = document.getElementById('dialog')
                     elem = document.getElementById('dialog');
                     displayWindow.classList.remove('hidden');
                     elem.innerHTML ="Quantity cannot be zero";
                     setTimeout(() => {
-                        location.reload();}, 1900);  }  
+                        location.reload();}, 10);  }  
                     })  
 
         }
@@ -191,7 +193,7 @@ function my_cart(clickedItem){
                 displayWindow.classList.remove('hidden');
                 elem.innerHTML ="Quantity cannot be zero";
                 setTimeout(() => {
-                    location.reload();}, 1900);  }              
+                    location.reload();}, 10);  }              
         
         })  
 
@@ -237,7 +239,7 @@ function delete_order(id){
             elem.parentNode.removeChild(elem);
         }, 2000);  
         setTimeout(() => {
-            location.reload();}, 1900);  
+            location.reload();}, 10);  
 })}
 
 

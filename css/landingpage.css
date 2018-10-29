@@ -213,23 +213,18 @@ p {
   }
 
 
-
   .output{
     margin: auto;
-    width: 200px;
-    height: 40px;
+    width: 280px;
+    height: 83px;
     size: 500px;
     text-align: center;
-
     color:black;
     align-content: center;
     border: 1px solid black;
     border-radius: 6px;
-    opacity: 0.6;
-    border: solid 1px rgb(46, 42, 42);
-    background: #FFFFFF;
+    border: solid 1px black;
   }
-
   .hidden{
     display:None;
   
@@ -268,7 +263,7 @@ p {
   .meal{
     margin: auto;
     width: 400px;
-    height: 80px;
+    height: 90px;
     size: 1000px;
     color:black;
     align-content: center;

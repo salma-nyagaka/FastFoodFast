@@ -45,7 +45,7 @@ window.onload = function(){
             elem = document.getElementById('dialog');
             displayWindow.classList.remove('hidden');
             let element = document.createElement('p')
-            element.innerHTML =  `No meal item`;
+            element.innerHTML =  `No meal items available for now`;
             element.id = "theoutput"
             document.getElementById('dialog').appendChild(element)
 

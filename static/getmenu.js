@@ -1,6 +1,8 @@
 //perform some tas when the page loads/ execute a script once a page has loaded
 window.onload = function(){
 
+  
+
     //passing a keyName that returns a key's value or  null if the key does not exist
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
@@ -14,6 +16,7 @@ window.onload = function(){
     }
     // returns an object as  Promise that contains various information 
     //takes one argument which is the path to the resource you want to fetch and returns a response
+    
     fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
         
         method: 'GET',
@@ -28,6 +31,7 @@ window.onload = function(){
 
     .then(res=>res.json())
     .then(data =>{ 
+
 
         if(data['message'] === "These are meals") {
            
@@ -89,11 +93,7 @@ function delete_meal(id){
             document.getElementById('dialog').appendChild(element)
 
             setTimeout(() => {
-                element.parentNode.removeChild(element);
-            }, 2000);  
-          
-            setTimeout(() => {
-                location.reload();}, 1900);        
+                location.reload();}, 200);        
        
     }
     else{

@@ -393,6 +393,8 @@ font-size: 15px;
 text-transform: uppercase;
 }
 
+
+/*borrowed from w3 schools */
 .loader {
     border: 10px solid #f3f3f3;
     border-radius: 45%;

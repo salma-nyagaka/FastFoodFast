@@ -1,3 +1,13 @@
+if (window.localStorage.getItem('username') == null){
+    document.getElementById('signintext').innerHTML = "LOG IN";
+    document.getElementById('signintext').setAttribute("href", "./login.html");
+
+}
+else{
+    document.getElementById('signintext').innerHTML = "LOG OUT";
+    document.getElementById('signintext').setAttribute("href", "./index.html");
+
+}
 var newfood = document.getElementById('new')
 newfood.onclick= function(){
     let name = document.getElementById('name').value;
@@ -36,9 +46,9 @@ newfood.onclick= function(){
             element.id = "theoutput"
             document.getElementById('dialog').appendChild(element)
 
-            setTimeout(() => {
-                element.parentNode.removeChild(element);
-            }, 2000);  
+            // setTimeout(() => {
+            //     element.parentNode.removeChild(element);
+            // }, 2000);  
 
 
             setTimeout(() => {
@@ -51,9 +61,9 @@ newfood.onclick= function(){
             element.id = "newoutput"
             document.getElementById('dialog').appendChild(element)
           
-            setTimeout(() => {
-                element.parentNode.removeChild(element);
-            }, 2000); 
+            // setTimeout(() => {
+            //     element.parentNode.removeChild(element);
+            // }, 2000); 
             
             setTimeout(() => {
                 location.reload();}, 1900);  
@@ -62,4 +72,18 @@ newfood.onclick= function(){
           }
 
     })
+}
+
+
+var logout = document.getElementById('signintext')
+logout.onclick = function(){
+    
+    if (window.localStorage.getItem('username') == null){
+        redirect: window.location.replace("./login.html");
+    }
+
+    else{
+        localStorage.clear();
+        redirect: window.location.replace("./index.html");
+    }
 }

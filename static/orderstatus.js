@@ -1,5 +1,10 @@
 window.onload = function(){
-
+    // let loadingWindow = document.getElementById('loader')
+    // element = document.getElementById('loader');
+    // setTimeout(() => {
+    // loadingWindow.classList.remove('hidden');
+    // }, 20);
+    
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
         document.getElementById('signintext').setAttribute("href", "./login.html");
@@ -19,19 +24,24 @@ window.onload = function(){
                 }
     })  
     .then(res=>res.json())
-    .then(data =>{   
+    .then(data =>{  
+        
+        let loadingWindow = document.getElementById('loader')
+        element = document.getElementById('loader');
+        loadingWindow.classList.add('hidden');
+
             
         if(data['Food Orders']) {       
 
         let output = `<table id="tablee">
                             <tr>
-                            <th>id</th>
-                            <th>username</th>
-                            <th>food_name</th>
-                            <th>description</th>
-                            <th>price</th>
-                            <th>current status</th>
-                            <th>update status</th>
+                            <th>ID</th>
+                            <th>USERNAME</th>
+                            <th>FOOD_NAME</th>
+                            <th>DESCRI[TION</th>
+                            <th>PRICE</th>
+                            <th>CURRENT STATUS</th>
+                            <th>UPDATE STATUS</th>
                             </tr>`;        
         data["Food Orders"].forEach(res=>{
             output +=` 
@@ -89,17 +99,9 @@ function status(id){
         displayWindow.classList.remove('hidden');
         elem = document.getElementById('dialog');
         elem.innerHTML ="Order is getting processed";
+       
         setTimeout(() => {
-            elem.parentNode.removeChild(elem);
-        }, 2000);
-
-        let loadingWindow = document.getElementById('loader')
-        element = document.getElementById('loader');
-        loadingWindow.classList.remove('hidden');
-
-
-        setTimeout(() => {
-        location.reload();}, 1900);         
+        location.reload();}, 200);         
     })
                 
 }
@@ -130,16 +132,9 @@ function decline(id){
         displayWindow.classList.remove('hidden');
         elem = document.getElementById('dialog');
         elem.innerHTML ="Order has been declined";
-        setTimeout(() => {
-            elem.parentNode.removeChild(elem);
-        }, 2000);
-
-        let loadingWindow = document.getElementById('loader')
-        element = document.getElementById('loader');
-        loadingWindow.classList.remove('hidden');
         
         setTimeout(() => {
-        location.reload();}, 1900);  
+        location.reload();}, 200);  
 
      })
 }
