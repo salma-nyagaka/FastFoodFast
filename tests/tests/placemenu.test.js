@@ -46,12 +46,11 @@ describe('New meal', () => {
       image: 'Burger',
       price: '200'
     }
-   
-   
+    
     await page.type('#name', meal.name)
     await page.type('#description', meal.description)
-    await page.type('#price', meal.image)
-    await page.type('#images', meal.price)
+    await page.type('#images', meal.image)
+    await page.type('#price', meal.price)
     await page.click('#new')
 
 
