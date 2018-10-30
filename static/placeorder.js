@@ -16,7 +16,6 @@ window.onload = function(){
     let costs = 0;
     for (let key in localStorage){
         if (key.slice(0, 6) === "tocart"){
-            // console.log(this.localStorage[key])
             let item = localStorage[key]
             let name = item.split(" ")[0]
             let price = item.split(" ")[1]

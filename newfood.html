@@ -28,7 +28,7 @@
 
           <input type="text" placeholder="Enter food name" id="name" /><br>
           <input type="text" placeholder="Enter description" id="description" /><br>
-          <input type="text" placeholder="Enter food price" id="price" /><br>
+          <input type="text" placeholder="Enter food price" id="price" oninput="this.value=(parseInt(this.value)||0)"/><br>
           
           <label class="new" for="images">Images
            <select id ="images">
