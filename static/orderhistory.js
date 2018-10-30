@@ -12,7 +12,7 @@ window.onload = function(){
     }
       
     //returns a promise which is a reponse to a request   
-    fetch('https://createorders-api.herokuapp.com/api/v2/users/orders',{
+    fetch(`${url}/users/orders`,{
         metdod: 'GET',
         headers:{
             'Content-Type': 'application/json',

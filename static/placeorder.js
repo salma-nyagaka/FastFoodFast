@@ -41,7 +41,7 @@ window.onload = function(){
     }
   
     //returns a promise which is a reponse to a request of getting all the menu  
-    fetch('https://createorders-api.herokuapp.com/api/v2/users/menu',{
+    fetch(`${url}/users/menu`,{
         method: 'GET',
         headers:{
             'Content-Type': 'application/json',
@@ -118,7 +118,7 @@ function foodOrder(name, quantity){
     let phonenumber = document.getElementById('phonenumber').value;
 
 
-    fetch(`https://createorders-api.herokuapp.com/api/v2/users/orders`,{
+    fetch(`${url}/users/orders`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

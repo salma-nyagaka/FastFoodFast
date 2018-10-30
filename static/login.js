@@ -8,7 +8,7 @@ login.onclick= function(){
 
      
     //returns a promise which is a reponse to a request 
-    fetch('https://createorders-api.herokuapp.com/api/v2/auth/login',{
+    fetch(`${url}/auth/login`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -13,7 +13,7 @@ window.onload = function(){
     }
     
     //returns a promise which is a reponse to a request of getting all the accepted orders  
-    fetch('https://createorders-api.herokuapp.com/api/v2/orders/Processing',{
+    fetch(`${url}/orders/Processing`,{
         metdod: 'GET',
         headers:{
             'Content-Type': 'application/json',
@@ -84,7 +84,7 @@ window.onload = function(){
 
 //function to update status to complete
 function completeStatus(id){       
-    fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
+    fetch(`${url}/update/order/${id}`,{
         method: 'PUT',
         headers: {  
             'Content-Type': 'application/json',

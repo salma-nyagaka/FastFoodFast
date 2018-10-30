@@ -8,7 +8,7 @@ signup.onclick= function(){
     let password = document.getElementById('password').value;
     let confirm_password = document.getElementById('confirmPassword').value;
 
-    fetch('https://createorders-api.herokuapp.com/api/v2/auth/signup',{
+    fetch(`${url}/auth/signup`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

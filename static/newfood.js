@@ -17,7 +17,7 @@ newfood.onclick= function(){
     let image = document.getElementById('images').value;
 
     //returns a promise which is a reponse to a request   
-    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
+    fetch(`${url}/menu`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -12,7 +12,7 @@ window.onload = function(){
     }
 
     //returns a promise which is a reponse to a request of getting all the menu   
-    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{       
+    fetch(`${url}/menu`,{       
         method: 'GET',
         headers:{
             'Content-Type': 'application/json',

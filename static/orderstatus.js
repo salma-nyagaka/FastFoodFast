@@ -14,8 +14,6 @@ window.onload = function(){
 
     }
 
-    let url = "https://createorders-api.herokuapp.com/api/v2";
-
      //returns all the orders which is a response to a request
     fetch(`${url}/orders`,{
         method: 'GET',
@@ -92,7 +90,7 @@ window.onload = function(){
 //function to update order status to processing        
 function acceptStatus(id){
     
-    fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
+    fetch(`${url}/update/order/${id}`,{
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -116,7 +114,7 @@ function acceptStatus(id){
 
 //function to update order status to declined         
 function declineStatus(id){  
-    fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
+    fetch(`${url}update/order/${id}`,{
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
