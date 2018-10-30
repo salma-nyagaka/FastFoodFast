@@ -32,6 +32,8 @@ window.onload = function(){
                             <th>FOOD_NAME</th>
                             <th>DESCRIPTION</th>
                             <th>PRICE</th>
+                            <th>QUANTITY</th>
+                            <th>STATUS</th>
                             <th>PHONE NUMBER</th>
 
                             </tr>`;
@@ -42,6 +44,8 @@ window.onload = function(){
                             <td>${res['food_name']}</td>
                             <td>${res['description']}</td>
                             <td>${res['price']}</td>
+                            <td>${res['quantity']}</td>
+                            <td>${res['status']}</td>
                             <td>${res['phonenumber']}</td>
 
                             </tr>`

@@ -12,8 +12,7 @@ window.onload = function(){
     }
 
     //returns a promise which is a reponse to a request of getting all the menu   
-    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{
-        
+    fetch('https://createorders-api.herokuapp.com/api/v2/menu',{       
         method: 'GET',
         headers:{
             'Content-Type': 'application/json',
@@ -36,7 +35,7 @@ window.onload = function(){
                                         <h2 id="menuname">${res['name']}</h2>
                                         <p id="menudescription">${res['description']}</p>
                                         <h2 id="menuprice">${res['price']}</h2>  
-                                        <button class="ORDER"  onClick="delete_meal('${res['id']}')">DELETE</button>
+                                        <button class="ORDER"  onClick="deleteMeal('${res['id']}')">DELETE</button>
                                     </div>
                             </div>`
                        
@@ -70,7 +69,7 @@ window.onload = function(){
     }
     
 //function to delete a meal item
-function delete_meal(id){
+function deleteMeal(id){
     fetch(`https://createorders-api.herokuapp.com/api/v2/menu/${id}`,{
         method: 'DELETE',
         headers: {
@@ -112,8 +111,7 @@ function delete_meal(id){
 
 //function to logout
 var logout = document.getElementById('signintext')
-logout.onclick = function(){
-    
+logout.onclick = function(){   
     if (window.localStorage.getItem('username') == null){
         redirect: window.location.replace("./adminindex.html");
     }

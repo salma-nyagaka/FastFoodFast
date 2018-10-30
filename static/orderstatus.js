@@ -1,5 +1,8 @@
 //function to get all the orders
 window.onload = function(){
+    // let url = "https://createorders-api.herokuapp.com/api/v2";
+    
+
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
         document.getElementById('signintext').setAttribute("href", "./login.html");
@@ -11,8 +14,10 @@ window.onload = function(){
 
     }
 
+    let url = "https://createorders-api.herokuapp.com/api/v2";
+
      //returns all the orders which is a response to a request
-    fetch('https://createorders-api.herokuapp.com/api/v2/orders',{
+    fetch(`${url}/orders`,{
         method: 'GET',
         headers:{
             'Content-Type': 'application/json',
@@ -49,8 +54,8 @@ window.onload = function(){
                             <td>${res['price']}</td>
                             <td>${res['phonenumber']}</td>
                             <td>${res['status']}</td>
-                            <td><button class="ORDER"  onClick="status('${res['id']}')">Accept</button>
-                            <button class="ORDER"  onClick="decline('${res['id']}')">Decline</button>
+                            <td><button class="ORDER"  onClick="acceptStatus('${res['id']}')">Accept</button>
+                            <button class="ORDER"  onClick="declineStatus('${res['id']}')">Decline</button>
                             </td>
                             </tr>`
         }) 
@@ -85,7 +90,7 @@ window.onload = function(){
 
 
 //function to update order status to processing        
-function status(id){
+function acceptStatus(id){
     
     fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
         method: 'PUT',
@@ -110,7 +115,7 @@ function status(id){
 }
 
 //function to update order status to declined         
-function decline(id){  
+function declineStatus(id){  
     fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
         method: 'PUT',
         headers: {

@@ -49,7 +49,7 @@ window.onload = function(){
                             <td>${res['price']}</td>
                             <td>${res['phonenumber']}</td>
                             <td>${res['status']}</td>
-                            <td><button class="ORDER"  onClick="status('${res['id']}')">Complete</button>    
+                            <td><button class="ORDER"  onClick="completeStatus('${res['id']}')">Complete</button>    
                             </td>
                             </tr>`
         }) 
@@ -83,7 +83,7 @@ window.onload = function(){
 }
 
 //function to update status to complete
-function status(id){       
+function completeStatus(id){       
     fetch(`https://createorders-api.herokuapp.com/api/v2/update/order/${id}`,{
         method: 'PUT',
         headers: {  

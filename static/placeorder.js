@@ -66,7 +66,7 @@ window.onload = function(){
                                         <h2>${res['description']}</h2>
                                         <h2 id="price">${res['price']}</h2>
                                         <br>
-                                        <button class="ORDER" onClick="my_cart(this)" id="makeOrder">ORDER</button>
+                                        <button class="ORDER" onClick="myCart(this)" id="makeOrder">ORDER</button>
 
                                     </div>
                             </div>`
@@ -107,14 +107,14 @@ function makeOrder(){
         let foodQuantity = item.getElementsByClassName("quantity")[0].innerHTML
         let phonenumber =  item.getElementsByClassName("phonenumber")[0]
 
-        food_order(name,foodQuantity, phonenumber);
+        foodOrder(name,foodQuantity, phonenumber);
         localStorage.removeItem(`tocart${name}`);
 
     }
 }
  
 //function to place an order
-function food_order(name, quantity){
+function foodOrder(name, quantity){
     let phonenumber = document.getElementById('phonenumber').value;
 
 
@@ -164,7 +164,7 @@ else{
 //function to append orders to the shopping cart
 let number = 0;
 
-function my_cart(clickedItem){
+function myCart(clickedItem){
     let name = clickedItem.parentNode.querySelector("h2").innerHTML;
     let clickedItemId = `tocart${name}`
 

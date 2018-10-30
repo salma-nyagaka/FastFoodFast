@@ -37,7 +37,7 @@ window.onload = function(){
                                 <h2>${res['description']}</h2>
                                 <h2>${res['price']}</h2>  
                                 <br>
-                                <button class="order"  onClick=order()>ORDER</button>
+                                <button class="order"  onClick=makeOrder()>ORDER</button>
                             </div>
                     </div>`
                        
@@ -60,7 +60,7 @@ window.onload = function(){
 }
 
 //function to add a popup if the user orders without login in
-function order(){
+function makeOrder(){
  
         elem = document.getElementById('dialog');
         elem.classList.remove('hidden');
