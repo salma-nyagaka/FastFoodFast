@@ -7,7 +7,6 @@ signup.onclick= function(){
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     let confirm_password = document.getElementById('confirmPassword').value;
-    let displayWindow = document.getElementById('outputt')
 
     fetch('https://createorders-api.herokuapp.com/api/v2/auth/signup',{
         method: 'POST',
@@ -43,6 +42,7 @@ signup.onclick= function(){
             document.getElementById('email').value = "";
             document.getElementById('password').value = "";
             document.getElementById('confirmPassword').value = "";
+
         }
         else{
             element.innerHTML =  `${data["message"]}`;

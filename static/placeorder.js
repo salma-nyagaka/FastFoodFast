@@ -20,7 +20,6 @@ window.onload = function(){
             let name = item.split(" ")[0]
             let price = item.split(" ")[1]
             let foodQuantity = item.split(" ")[2]
-            let totalPrice = item.split(" ")[3]
           
             totalPrice = +price * +foodQuantity 
             costs += +totalPrice
@@ -31,8 +30,9 @@ window.onload = function(){
                 <td class="quantity" id="foodQuantity"> ${foodQuantity}</td>
                 <td>${totalPrice}</td>
                 <td><button class="order" onclick="deleteOrder(this)" id="delete">Delete</span></button></td>
-            </tr>`      
- 
+            </tr>`  
+                
+           
             document.getElementById("tablee").innerHTML += order;
             document.getElementById("total").innerHTML = `TOTAL COSTS: ${costs}`;
 
@@ -82,6 +82,15 @@ window.onload = function(){
         element.id = "theoutput"
         document.getElementById('dialog').appendChild(element)
 
+        if (window.localStorage.getItem('username') == null){
+            elem = document.getElementById('dialog');
+                    elem.classList.remove('hidden');
+                    let element = document.createElement('p')
+                    element.innerHTML =  "please login to view";
+                    element.id = "theoutput"
+                    elem.appendChild(element)
+        }
+
     }}
 )
     .catch(function(error){
@@ -96,8 +105,9 @@ function makeOrder(){
     for (let item of itemsToOrder){
         let name = item.getElementsByClassName("name")[0].innerHTML
         let foodQuantity = item.getElementsByClassName("quantity")[0].innerHTML
+        let phonenumber =  item.getElementsByClassName("phonenumber")[0]
 
-        food_order(name,foodQuantity);
+        food_order(name,foodQuantity, phonenumber);
         localStorage.removeItem(`tocart${name}`);
 
     }
@@ -105,6 +115,8 @@ function makeOrder(){
  
 //function to place an order
 function food_order(name, quantity){
+    let phonenumber = document.getElementById('phonenumber').value;
+
 
     fetch(`https://createorders-api.herokuapp.com/api/v2/users/orders`,{
         method: 'POST',
@@ -114,22 +126,38 @@ function food_order(name, quantity){
         },
         body: JSON.stringify({
             "name": name,
-            "quantity": quantity
+            "quantity": quantity,
+            "phonenumber": phonenumber
         })
     })
     .then(res=> res.json())
     .then(data=>{
+        if(data['food_order'] === "order placed sucessfully") {
+
+
+        window.localStorage.setItem('phonenumber', data['phonenumber'])
         
-        let displayWindow = document.getElementById('dialog')
-        displayWindow.classList.remove('hidden');
         elem = document.getElementById('dialog');
+        elem.classList.remove('hidden');
         elem.innerHTML ="Order has beed added";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
         }, 2000);   
         setTimeout(() => {
             location.reload();}, 1000);         
-    })
+    }
+else{
+        elem = document.getElementById('dialog');
+        elem.classList.remove('hidden');
+        let element = document.createElement('p')
+        element.innerHTML = `${data["message"]}`;
+        element.id = "newoutput"
+        elem.appendChild(element)
+
+        setTimeout(() => {
+            location.reload();}, 1900); 
+
+}})
 }
 
 
@@ -157,7 +185,7 @@ function my_cart(clickedItem){
                 let foodQuantity = +qInput.value;
                 if (foodQuantity > 0) {
                     let price = clickedItem.parentNode.querySelector("#price").innerHTML;
-                    window.localStorage.setItem(`tocart${name}`, `${name} ${price} ${foodQuantity}`)
+                    window.localStorage.setItem(`tocart${name}`, `${name} ${price} ${foodQuantity} ${phonenumber}`)
                     location.reload()   
                     
                     
@@ -174,7 +202,7 @@ function my_cart(clickedItem){
                     })  
 
         }
-        window.localStorage.setItem(`tocart${name}`, `${name} ${price} ${foodQuantity}`)
+        window.localStorage.setItem(`tocart${name}`, `${name} ${price} ${foodQuantity} ${phonenumber}`)
 
     }
 
@@ -185,7 +213,7 @@ function my_cart(clickedItem){
             let foodQuantity = +document.getElementById("quantity").value;
             if (foodQuantity > 0) {
                 let price = clickedItem.parentNode.querySelector("#price").innerHTML;
-                window.localStorage.setItem(`tocart${name}`, `${name} ${price} ${foodQuantity}`)
+                window.localStorage.setItem(`tocart${name}`, `${name} ${price} ${foodQuantity} ${phonenumber}`)
                 location.reload()    
     
             }
@@ -197,7 +225,8 @@ function my_cart(clickedItem){
                 displayWindow.classList.remove('hidden');
                 elem.innerHTML ="Quantity cannot be zero";
                 setTimeout(() => {
-                    location.reload();}, 900);  }              
+                    location.reload();}, 900);  
+                }              
         
         })  
 

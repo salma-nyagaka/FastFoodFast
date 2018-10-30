@@ -7,7 +7,7 @@
   position: relative;
   z-index: 1;
   height: 350px;
-  width: 390px;
+  width: 370px;
   padding: 20px 10px;
   opacity: 0.6;
   border: solid 1px rgb(46, 42, 42);
@@ -204,7 +204,7 @@ h2 {
 .output{
   margin: auto;
   width: 210px;
-  height: 50px;
+  overflow: hidden;
   padding: 6px;
   text-align: center;
   align-content: center;

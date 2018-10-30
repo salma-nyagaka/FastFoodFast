@@ -1,8 +1,5 @@
 //function to get all the users orders
 window.onload = function(){
-    let loadingWindow = document.getElementById('loader')
-    element = document.getElementById('loader');
-    loadingWindow.classList.remove('hidden');
 
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
@@ -12,7 +9,6 @@ window.onload = function(){
     else{
         document.getElementById('signintext').innerHTML = "LOG OUT";
         document.getElementById('signintext').setAttribute("href", "./index.html");
-
 
     }
 
@@ -30,10 +26,6 @@ window.onload = function(){
     .then(res=>res.json())
     .then(data =>{
 
-    let loadingWindow = document.getElementById('loader')
-    element = document.getElementById('loader');
-    loadingWindow.classList.add('hidden');
-
         if(data['Food Orders']) {
             
                 let output = `<table id="tablee">
@@ -44,6 +36,7 @@ window.onload = function(){
                                     <th>FOOD_NAME</th>
                                     <th>DESCRIPTION</th>
                                     <th>PRICE</th>
+                                    <th>PHONE NUMBER</th>
                                     <th>STATUS</th>
 
                                     </tr>`;
@@ -58,6 +51,7 @@ window.onload = function(){
                                     <td>${res['food_name']}</td>
                                     <td>${t}</td>
                                     <td>${res['price']}</td>
+                                    <td>${res['phonenumber']}</td>
                                     <td>${res['status']}</td>
 
                                 </tr>`
@@ -75,6 +69,15 @@ window.onload = function(){
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
             elem.appendChild(element)
+
+            if (window.localStorage.getItem('username') == null){
+                elem = document.getElementById('dialog');
+                        elem.classList.remove('hidden');
+                        let element = document.createElement('p')
+                        element.innerHTML =  "please login to view";
+                        element.id = "theoutput"
+                        elem.appendChild(element)
+            }
 
         }}
     )

@@ -27,11 +27,13 @@ window.onload = function(){
         if(data['Orders']) {   
         let output = `<table id="tableee">
                             <tr>
-                            <th>id</th>
-                            <th>date</th>
-                            <th>food_name</th>
-                            <th>description</th>
-                            <th>price</th>
+                            <th>ID</th>
+                            <th>DATE</th>
+                            <th>FOOD_NAME</th>
+                            <th>DESCRIPTION</th>
+                            <th>PRICE</th>
+                            <th>PHONE NUMBER</th>
+
                             </tr>`;
         data["Orders"].forEach(res=>{
             output +=    ` <tr>
@@ -40,6 +42,8 @@ window.onload = function(){
                             <td>${res['food_name']}</td>
                             <td>${res['description']}</td>
                             <td>${res['price']}</td>
+                            <td>${res['phonenumber']}</td>
+
                             </tr>`
                        
         }) 
@@ -55,6 +59,15 @@ window.onload = function(){
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
             elem.appendChild(element)
+
+            if (window.localStorage.getItem('username') == null){
+                elem = document.getElementById('dialog');
+                        elem.classList.remove('hidden');
+                        let element = document.createElement('p')
+                        element.innerHTML =  "please login to view";
+                        element.id = "theoutput"
+                        elem.appendChild(element)
+            }
         }}
     )
         .catch(function(error){

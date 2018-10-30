@@ -55,6 +55,15 @@ window.onload = function(){
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
             document.getElementById('dialog').appendChild(element)
+
+            if (window.localStorage.getItem('username') == null){
+                elem = document.getElementById('dialog');
+                        elem.classList.remove('hidden');
+                        let element = document.createElement('p')
+                        element.innerHTML =  "please login to view";
+                        element.id = "theoutput"
+                        elem.appendChild(element)
+            }
     
         }}
     )

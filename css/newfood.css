@@ -185,7 +185,7 @@
   .output{
     margin: auto;
     width: 250px;
-    height: 60px;
+    overflow: hidden;
     size: 500px;
     text-align: center;
     color:black;

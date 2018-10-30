@@ -365,8 +365,8 @@ width: 100%;
 img {
   /* margin-top: 30px; */
   border-radius: 5px 5px 0 0;
-  width:60%;
-   height:170px;
+  width: 55%;
+   height:180px;
   }
 .sticky + .content {
 padding-top: 60px;
@@ -397,7 +397,7 @@ padding-top: 60px;
 
 .colum {
   float: right;
-  width: 33.33%;
+  width: 44.60%;
   padding: 8px;
   height: 400px;
   font-size: 90%;
@@ -411,12 +411,12 @@ padding-top: 60px;
 
 .column {
   float: left;
-  width: 25%;
+  width: 27%;
   /* padding: 10px; */
-  margin: 0 10px 0 50px;
+  margin: 0 20px 0 30px;
   margin-top: 2%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
-  height: 190px;
+  height: 199px;
   opacity: 0.9px;
   background-color: rgba(230, 115, 73, 0.434);
 }
@@ -447,41 +447,38 @@ padding-top: 60px;
   }
 }
 table {
-  margin-top: 5%;
+  margin-top: 7%;
   border-collapse: collapse;
 }
 
 #tablee td, #tablee th {
-  border: 1px solid white;
-  background-color: white;
-  font-size: 13px;
+  /* border: 1px solid white; */
+  opacity: 0.8px;
+  padding: 7px;
+  background-color: rgba(230, 115, 73, 0.434);
+    font-size: 13px;
   height: 20%;
   padding: 8px;
-  width: 100%;
+  width: 80%;
+  
   
 }
-
-/* #tablee tr:hover {background-color: rgba(121, 50, 24, 0.434);} */
 
 #tablee th {
   padding-top: 1px;
   padding-bottom: 1px;
   text-align: left;
-  width: 100%;
+  width: 80%;
   border: 1px solid rgb(69, 27, 9);
   background-color:rgb(69, 27, 9);
   color: white;
   font-size: 14px;
-  padding: 4px;
   font-weight: normal;
-
-
 }
 
 .output{
   margin: auto;
   width: 260px;
-  height: 40px;
   text-align: center;
   size: 500px;
   color:black;
@@ -491,6 +488,8 @@ table {
   opacity: 0.6;
   border: solid 1px rgb(46, 42, 42);
   background: #FFFFFF;
+  overflow: hidden
+
 }
 
 .hidden{

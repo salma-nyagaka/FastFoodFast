@@ -2,10 +2,7 @@
 var login = document.getElementById('login')
 login.onclick= function(){
     let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
-    let displayWindow = document.getElementById('output')
-    
-    let loadingWindow = document.getElementById('loader')
+    let password = document.getElementById('password').value;    
     element = document.getElementById('loader');
 
 

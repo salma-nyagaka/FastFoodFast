@@ -2,7 +2,7 @@
 
 Fast food fast is a fast food delivery application
 
-Site is published at https://api-version3.herokuapp.com/
+Site is published at https://userinterfaceapi.herokuapp.com
 
 # How it Works
 - User can signin/signout from the app. 

@@ -311,7 +311,7 @@ h2 {
 img {
     /* margin-top: 30px; */
     border-radius: 5px 5px 0 0;
-    width:60%;
+    width:50%;
      height:170px;
     }
 .sticky + .content {
@@ -332,19 +332,14 @@ img {
  }
     
 
-.collapse {
-    padding: 2px 16px;
-    margin-left: 8%;
-    margin-right: 8%;
-    margin-top: 20px;
-    width:30%;
-}
+
 
 
 .colum {
-    width: 3.33%;
-    height: 400px;
-    font-size: 90%;
+    width: 43.33%;
+    height: 210px;
+    overflow: hidden;
+    font-size: 80%;
     color: black;
     
 }
@@ -353,7 +348,7 @@ img {
     box-sizing: border-box;
 }
 button { 
-    border-width: 2px;
+    border-width: 1px;
     background-color: rgb(69, 27, 9);
     color: white;
 }
@@ -362,7 +357,7 @@ button {
 .column {
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
-    height: 190px;
+    height: 194px;
     opacity: 0.9px;
     padding: 7px;
     background-color: rgba(230, 115, 73, 0.434);
@@ -406,7 +401,6 @@ button {
     width: 200px;
     text-align: center;
     text-align: center;
-    height: 40px;
     size: 500px;
     color:black;
     align-content: center;
@@ -415,6 +409,8 @@ button {
     opacity: 0.6;
     border: solid 1px rgb(46, 42, 42);
     background: #FFFFFF;
+    overflow: hidden
+
   }
 
   .hidden{
@@ -467,21 +463,38 @@ button {
 }
 
 input#quantity{
-    border: 1px solid black;
-    size: 20%;
+    position: fixed;
+    left: 36%;
+    width: 18%;
+    text-align: center;
+    background-color: white;
+    
 }
 
 .totalcosts{
     border: 1px solid black;
     width: 40%;
+    height: 30px;
     margin-left: 30%;
     background: white;
     font-size: 12px;
-    
+    padding: 4px;
+    border-radius: 7%;
+    }
+
+.phonenumber{
+    width: 60%;
+    height: 30px;
+    margin-left: 20%;
+    background: white;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 7%;
 }
 
+
 #myorders{
-    margin-left: 108px;
+    margin-left: 125px;
 
 
 }
@@ -516,13 +529,12 @@ input#quantity{
     background-color: rgba(188, 88, 52, 0.434);
     color: white;
 }
-
+/* 
 .table{
     height: auto;
     width: 100%;
-    border: 2px solidrgba(188, 88, 52, 0.434);
     background: white;
-}
+} */
 
 hr {
     border: 1px solid rgba(0, 0, 0, 0.564);
@@ -532,4 +544,12 @@ hr {
     background-color:  rgb(69, 27, 9);
     color: white;
     margin-top: 0px;
+}
+
+.table{
+    height: auto;
+    width: 100%;
+    opacity: 0.9px;
+    border-radius: 10px;
+    background-color: rgba(230, 115, 73, 0.434);
 }

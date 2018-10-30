@@ -29,13 +29,14 @@ window.onload = function(){
         if(data['Updated orders']) {          
         let output = `<table id="tablee">
                         <tr>
-                        <th>id</th>
-                        <th>username</th>
-                        <th>food_name</th>
-                        <th>description</th>
-                        <th>price</th>
-                        <th>current status</th>
-                        <th>update status</th>
+                        <th>ID</th>
+                        <th>USERNAME</th>
+                        <th>FOOD_NAME</th>
+                        <th>DESCRIPTION</th>
+                        <th>PRICE</th>
+                        <th>PHONE NUMBER</th>
+                        <th>CURRENT STATUS</th>
+                        <th>UPDATE STATUS</th>
                         </tr>`;
 
         data["Updated orders"].forEach(res=>{
@@ -46,6 +47,7 @@ window.onload = function(){
                             <td>${res['food_name']}</td>
                             <td>${res['description']}</td>
                             <td>${res['price']}</td>
+                            <td>${res['phonenumber']}</td>
                             <td>${res['status']}</td>
                             <td><button class="ORDER"  onClick="status('${res['id']}')">Complete</button>    
                             </td>
@@ -63,6 +65,15 @@ window.onload = function(){
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
             elem.appendChild(element)
+
+            if (window.localStorage.getItem('username') == null){
+                elem = document.getElementById('dialog');
+                        elem.classList.remove('hidden');
+                        let element = document.createElement('p')
+                        element.innerHTML =  "please login to view";
+                        element.id = "theoutput"
+                        elem.appendChild(element)
+            }
 
         }}
     )
@@ -92,6 +103,7 @@ function status(id){
         setTimeout(() => {
         location.reload();}, 1900);  
         })
+
         
 }
    

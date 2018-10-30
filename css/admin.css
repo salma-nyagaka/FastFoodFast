@@ -250,31 +250,31 @@ img {
      height:160px;
     }
 
-    .colum {
-        float: right;
-        width: 33.33%;
-        padding: 10px;
-        height: 400px;
-        font-size: 90%;
-        color: black;
-        
-    }
+.colum {
+    float: right;
+    width: 33.33%;
+    padding: 10px;
+    height: 400px;
+    font-size: 90%;
+    color: black;
     
-    * {
-        box-sizing: border-box;
-    }
-    
-    .column {
-        float: left;
-        width: 25%;
-        padding: 10px;
-        margin: 0 10px 0 80px;
-        margin-top: 2%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
-        height: 190px;
-        opacity: 0.9px;
-        background-color: rgba(188, 88, 52, 0.434);
-    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    margin: 0 10px 0 80px;
+    margin-top: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
+    height: 190px;
+    opacity: 0.9px;
+    background-color: rgba(188, 88, 52, 0.434);
+}
     
 .row:after {
     content: "";
@@ -370,7 +370,6 @@ table, td, th {
 .output{
     margin: auto;
     width: 250px;
-    height: 63px;
     size: 500px;
     text-align: center;
     color:black;
@@ -380,6 +379,7 @@ table, td, th {
     opacity: 0.6;
     border: solid 1px rgb(46, 42, 42);
     background: #FFFFFF;
+    overflow: hidden
   }
 
 .hidden{

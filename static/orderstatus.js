@@ -23,11 +23,7 @@ window.onload = function(){
     
     // JSON extracts the JSON body content from the response 
     .then(res=>res.json())
-    .then(data =>{  
-        
-        let loadingWindow = document.getElementById('loader')
-        element = document.getElementById('loader');
-        loadingWindow.classList.add('hidden');
+    .then(data =>{ 
 
             
         if(data['Food Orders']) {       
@@ -39,6 +35,7 @@ window.onload = function(){
                             <th>FOOD_NAME</th>
                             <th>DESCRI[TION</th>
                             <th>PRICE</th>
+                            <th>PHONE NUMBER</th>
                             <th>CURRENT STATUS</th>
                             <th>UPDATE STATUS</th>
                             </tr>`;        
@@ -50,6 +47,7 @@ window.onload = function(){
                             <td>${res['food_name']}</td>
                             <td>${res['description']}</td>
                             <td>${res['price']}</td>
+                            <td>${res['phonenumber']}</td>
                             <td>${res['status']}</td>
                             <td><button class="ORDER"  onClick="status('${res['id']}')">Accept</button>
                             <button class="ORDER"  onClick="decline('${res['id']}')">Decline</button>
@@ -68,6 +66,15 @@ window.onload = function(){
             element.innerHTML =  `${data["message"]}`;
             element.id = "theoutput"
             elem.appendChild(element)
+
+            if (window.localStorage.getItem('username') == null){
+                elem = document.getElementById('dialog');
+                        elem.classList.remove('hidden');
+                        let element = document.createElement('p')
+                        element.innerHTML =  "please login to view";
+                        element.id = "theoutput"
+                        elem.appendChild(element)
+            }
 
         }}
     )

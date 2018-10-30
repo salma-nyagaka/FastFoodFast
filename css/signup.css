@@ -8,7 +8,7 @@
   position: relative;
   z-index: 1;
   height: 450px;
-  width: 385px;
+  width: 370px;
   padding: 20px 10px;
   opacity: 0.6;
   border: solid 1px black;
@@ -205,7 +205,7 @@ h2 {
 .output{
 margin: auto;
 width: 330px;
-height: 50px;
+overflow: hidden;
 padding: 10px;
 text-align: center;
 align-content: center;
