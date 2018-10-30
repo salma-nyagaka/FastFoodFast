@@ -1,17 +1,14 @@
 //function to login
 window.onload = function(){
 
-
     //passing a keyName that returns a key's value or returns null if the key does not exist
     if (window.localStorage.getItem('username') == null){
         document.getElementById('signintext').innerHTML = "LOG IN";
         document.getElementById('signintext').setAttribute("href", "./login.html");
-
     }
     else{
         document.getElementById('signintext').innerHTML = "LOG OUT";
         document.getElementById('signintext').setAttribute("href", "./index.html");
-
     }
 
     //returns a promise which is a reponse to a request of getting all the menu   

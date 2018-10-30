@@ -42,14 +42,13 @@ window.onload = function(){
                                     </tr>`;
                                     
                 data["Food Orders"].forEach(res=>{
-                    truncate(res['description'])
-                    let t =  truncate(res['description'])
+                   
                     output +=`     <tr>
                                     <td>${res['id']}</td>
                                     <td>${res['username']}</td>
                                     <td>${res['date']}</td>
                                     <td>${res['food_name']}</td>
-                                    <td>${t}</td>
+                                    <td>${res['description']}</td>
                                     <td>${res['price']}</td>
                                     <td>${res['phonenumber']}</td>
                                     <td>${res['status']}</td>
@@ -99,10 +98,3 @@ logout.onclick = function(){
     }
 }
 
-
-function truncate(description){
-   if (description.length >= 7)
-      return description.substring(0, 7) + '...';
-   else
-      return description;
-};

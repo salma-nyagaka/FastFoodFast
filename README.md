@@ -40,8 +40,3 @@ git clone -b api-v2 https://github.com/salma-nyagaka/FastFoodFast.git
 | GET    | /api/v2/menu                    | Admin gets the available menu         | 
 | GET    | /api/v2/menu                    | Admin adds a meal option to the menu  | 
 | DELETE | /api/v2/menu                    | Admin adds a meal option to the menu  | 
-
-
-
-
-

@@ -474,12 +474,13 @@ input#quantity{
 .totalcosts{
     border: 1px solid black;
     width: 40%;
-    height: 30px;
+    /* height: 30px; */
     margin-left: 30%;
     background: white;
     font-size: 12px;
     padding: 4px;
     border-radius: 7%;
+    overflow: hidden;
     }
 
 .phonenumber{

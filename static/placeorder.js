@@ -11,11 +11,12 @@ window.onload = function(){
 
     }
     
-    let costs = 0;
 
+    //adds the food quantity to the shopping cart
+    let costs = 0;
     for (let key in localStorage){
         if (key.slice(0, 6) === "tocart"){
-            console.log(this.localStorage[key])
+            // console.log(this.localStorage[key])
             let item = localStorage[key]
             let name = item.split(" ")[0]
             let price = item.split(" ")[1]
@@ -161,7 +162,7 @@ else{
 }
 
 
-//function to append orders to the shopping cart and add the quantity
+//function to append orders to the shopping cart
 let number = 0;
 
 function my_cart(clickedItem){
