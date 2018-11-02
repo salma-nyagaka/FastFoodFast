@@ -17,3 +17,32 @@ describe('Order history page', () => {
 
     })
 });
+
+describe('Ge', () => {
+  beforeAll(async () => {
+
+    await page.goto('http://127.0.0.1:8080/login.html')
+  });
+
+  it('User should be able to login', async () => {
+    const login = {
+
+      username: 'Admin',
+      password: 'Admin123',
+
+    };
+
+    await page.type('#username', login.username)
+    await page.type('#password', login.password)
+    await page.click('#login')
+
+
+    await page.waitForSelector('#theoutput');
+      const message = await page.$eval('#theoutput', mess => (mess.innerHTML
+   ));
+    expect(message).toMatch("Successfully logged in");
+}) 
+
+
+})
+

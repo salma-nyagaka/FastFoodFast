@@ -36,7 +36,7 @@ describe('New meal page', () => {
 describe('New meal', () => {
   beforeAll(async () => {
 
-    await page.goto('http://127.0.0.1:8080/newfood.html')
+    await page.goto('http://127.0.0.1:8080/login.html')
   });
 
   it('User should be able to login with correct credentials', async () => {
@@ -58,27 +58,107 @@ describe('New meal', () => {
     expect(message).toMatch("Successfully logged in");
 }) 
 
-  it('Admin should be able to create a new meal', async () => {
-     const meal = {
-      name: 'Burger',
-      description: 'Cheese',
-      image: 'Burger',
-      price: '200'
-    }
-    
-    await page.type('#name', meal.name)
-    await page.type('#description', meal.description)
-    await page.type('#images', meal.image)
-    await page.type('#price', meal.price)
-    await page.click('#new')
+describe('New meal', () => {
+  beforeEach(async () => {
+
+    await page.goto('http://127.0.0.1:8080/newfood.html')
+  });
+
+    it('Two meals with the same name should not be created', async () => {
+
+      const meal = {
+        name: 'Burger',
+        description: 'Cheese',
+        image: 'Burger',
+        price: '200'
+      }
+      
+      await page.type('#name', meal.name)
+      await page.type('#description', meal.description)
+      await page.type('#images', meal.image)
+      await page.type('#price', meal.price)
+      await page.click('#new')
 
 
-    await page.waitForSelector('#newoutput');
-      const message = await page.$eval('#newoutput', mess => (mess.innerHTML
-   ));
-    expect(message).toMatch("The new meal has been created");
+      await page.waitForSelector('#theoutput');
+        const message = await page.$eval('#theoutput', mess => (mess.innerHTML
+    ));
+
+      expect(message).toMatch("This food already exists");
+
+      }) 
+
+    })
+  
+
+describe('New meal', () => {
+    beforeEach(async () => {
+  
+      await page.goto('http://127.0.0.1:8080/newfood.html')
+    });
+  
+  
+  
+      it('Name field cannot be left blank', async () => {
+  
+        const meal = {
+          name: '',
+          description: 'Cheese',
+          image: 'Burger',
+          price: '200'
+        }
+        
+        await page.type('#name', meal.name)
+        await page.type('#description', meal.description)
+        await page.type('#images', meal.image)
+        await page.type('#price', meal.price)
+        await page.click('#new')
+  
+  
+        await page.waitForSelector('#theoutput');
+          const message = await page.$eval('#theoutput', mess => (mess.innerHTML
+      ));
+  
+        expect(message).toMatch("Name cannot be left blank");
+  
+        }) 
+  
+      })
 
 
-
-}) 
+  describe('New meal', () => {
+    beforeEach(async () => {
+  
+      await page.goto('http://127.0.0.1:8080/newfood.html')
+    });
+  
+  
+  
+      it('Description field cannot be left blank', async () => {
+  
+        const meal = {
+          name: 'Chips',
+          description: '',
+          image: 'Burger',
+          price: '200'
+        }
+        
+        await page.type('#name', meal.name)
+        await page.type('#description', meal.description)
+        await page.type('#images', meal.image)
+        await page.type('#price', meal.price)
+        await page.click('#new')
+  
+  
+        await page.waitForSelector('#theoutput');
+          const message = await page.$eval('#theoutput', mess => (mess.innerHTML
+      ));
+  
+        expect(message).toMatch("Description cannot be left blank");
+  
+        }) 
+  
+      }) 
 })
+
+

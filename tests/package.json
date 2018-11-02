@@ -4,7 +4,7 @@
   "description": "",
   "main": "accounts.spec.js",
   "scripts": {
-    "test": " jest --watchAll "
+    "test": " jest --watchAll --coverage=true "
   },
   "jest": {
     "automock": false,
@@ -20,6 +20,8 @@
     "faker": "^4.1.0",
     "jest": "^23.6.0",
     "jest-puppeteer": "^3.4.0",
+    "jsdom": "13.0.0",
+    "jsdom-global": "3.0.2",
     "nyc": "^13.1.0",
     "puppeteer": "^1.9.0",
     "puppeteer-to-istanbul": "^1.2.2"

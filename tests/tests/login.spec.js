@@ -22,6 +22,7 @@ describe('User login ', () => {
       const message = await page.$eval('#theoutput', mess => (mess.innerHTML
    ));
     expect(message).toMatch("Successfully logged in");
+
 }) 
 })
 
@@ -48,6 +49,8 @@ describe('User login ', () => {
       const message = await page.$eval('#theoutput', mess => (mess.innerHTML
    ));
     expect(message).toMatch("Password cannot be left blank");
+    // browser.close();
+
 }) 
 })
 
@@ -126,7 +129,10 @@ describe('User login', () => {
       const message = await page.$eval('#theoutput', mess => (mess.innerHTML
    ));
     expect(message).toMatch("user does not exist");
+
 }) 
+
+
 })
 
 
