@@ -1,3 +1,33 @@
+/* @media screen and (max-width: 640px) {
+    .colum {
+        float: right;
+        width: 43.33%;
+        height: 210px;
+        overflow: hidden;
+        font-size: 80%;
+        color: black;
+        
+    }
+    .column:hover{
+        color: white;
+        transform: scale(1.1); 
+    } */
+    
+/*     
+    .column {
+        float: left;
+        width: 35%;
+        padding: 8px;
+        margin: 0 10px 0 70px;
+        margin-top: 2%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
+        height: 170px;
+        opacity: 0.9px;
+        background-color: white;
+    }
+    
+    
+  } */
 body {
     margin: 0;
     font-size: 28px;
@@ -36,12 +66,6 @@ body {
     content: "";
     display: table;
     clear: both;
-}
-
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
 }
 
 .row:after {
@@ -87,23 +111,7 @@ body {
     padding: 0px;
   }
   
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
 
-  /* .container{
-      padding-top: 20px;
-      margin-top:20px;
-      height: 90%;
-
-      
-  }
-   */
-  .sticky + .content {
-    padding-top: 60px;
-  }
   h1 {
       display: block;
       font-size: 32px;
@@ -124,8 +132,7 @@ body {
       margin-left: 20%;
   
   }
-  .mySlides {display:none;}
-  
+
 
 .centered {
     position: absolute;
@@ -141,8 +148,6 @@ body {
     margin-left: 42%;
     font-size: 160%;
     color: black;
-
-
 }
 
 p {
@@ -163,49 +168,6 @@ p {
 
   }
   
-
-  
-  .column2 {
-      float: left;
-      width: 33.33%;
-      padding: 5px;
-  }
-  
-  .row2::after {
-      justify-content: center;
-      clear: both;
-      width: 100%;
-  
-    }
-
-    div {
-        display: inherit;    }
-  
-  
-  @media screen and (max-width: 600px) {
-      .column {
-          width: 100%;
-      }
-  }
-  .bg-1 {
-        background:  rgb(21, 19, 19);
-        color: #bdbdbd;
-    }
-    .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-  }
-  
-  .facebook {
-    background: #3B5998;
-    color: white;
-  }
-
-
   .output{
     margin: auto;
     width: 250px;
@@ -231,29 +193,6 @@ p {
     text-transform: uppercase;
     margin-left: 20%;
 }
-  
-.loader {
-    border: 10px solid #f3f3f3;
-    border-radius: 45%;
-    border-top: 10px solid #0d4c76;
-    width: 40px;
-    height: 40px;
-    margin:auto;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-
 
   .meal{
     margin: auto;
@@ -276,8 +215,4 @@ p {
 
 .order{
     margin-left: 20%;
-}
-
-.contact{
-    border: 2px solid black;
 }

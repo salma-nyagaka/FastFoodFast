@@ -2,119 +2,6 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-.sidenav {
-    height: 100%;
-    width: 220px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    overflow-x: hidden;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 19px;
-    color: white;
-    display: block;
-    
-}
-
-
-.column:hover{
-    color: white;
-    transform: scale(1.09); 
-}
-
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.main {
-    margin-left: 160px; 
-    font-size: 28px; 
-    padding: 0px 10px;
-    position: fixed;
-
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-button {
-    align-items: flex-start;
-    text-align: center;
-    cursor: default;
-    color: buttontext;
-    background-color: buttonface;
-    box-sizing: border-box;
-    padding: 2px 6px 3px;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonface;
-    border-image: initial;
-    background-color: rgb(69, 27, 9);
-    color: white;
-}
-
-
-
-.button1 {
-    background-color:rgb(119, 7, 18); 
-    color: black; 
-    border: 2px solid rgb(119, 7, 18);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-}
-
-
-.button1:hover {
-    border: 0 px solid white;
-    background-color: rgb(87, 4, 12);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(1.1);
-
-    color: white;
-}
-
-.main-panel {
-    position: relative;
-    float: right;
-    width: calc(100% - 260px);
-    -webkit-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    -moz-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    -o-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    max-height: 100%;
-}
-
-.main-panel>.content {
-    margin-top: 70px;
-    padding: 30px 15px;
-    min-height: calc(100% - 123px);
-}
-
-.main-panel>.footer {
-    border-top: 1px solid #e7e7e7;
-}
-
-.main-panel>.navbar {
-    margin-bottom: 0;
-}
-
-.btn-group,
-.btn-group-vertical {
-    position: relative;
-    margin: 10px 1px;
-}
 
 #navbar {
   overflow: hidden;  
@@ -127,7 +14,7 @@ button {
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 1px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -176,52 +63,33 @@ button {
     }
 
 
-    #navbar {
-        margin-top: 1%;
-        width: 60%;
-        margin-left:20%;
-        text-align:center;
-        overflow: hidden;
-        background-color: #fff!important;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
-      }
-      
-      #navbar a {
-        float: right;
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        margin-left: 6px; 
-      
-      
-     
-    
-    
+#navbar {
+    margin-top: 1%;
+    width: 60%;
+    margin-left:20%;
+    text-align:center;
+    overflow: hidden;
+    background-color: #fff!important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.481), 0 2px 10px 0 rgba(0,0,0,0.12)
     }
-      #navbar a:hover {
-          background-color: rgb(128, 10, 22);
-          color: white;
-          -ms-transform: scale(1.5); 
-          -webkit-transform: scale(1.05); 
-          transform: scale(1.05);
-        }
     
+#navbar a {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 6px; 
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
-
-.sticky + .content {
-  padding-top: 60px;
-}
-.column2 {
-    float: left;
-    width: 33.33%;
+#navbar a:hover {
+    background-color: rgb(128, 10, 22);
+    color: white;
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 
@@ -265,28 +133,19 @@ img {
 }
 
 .column {
-    float: left;
-    width: 25%;
-    padding: 10px;
-    margin: 0 10px 0 80px;
     margin-top: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.789);
-    height: 190px;
+    height: 194px;
     opacity: 0.9px;
-    background-color: rgba(188, 88, 52, 0.434);
+    padding: 7px;
+    background-color: rgba(230, 115, 73, 0.434);
 }
-    
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-}
 table {
     margin-top: 5%;
 
@@ -320,57 +179,15 @@ table, td, th {
     background-color: rgba(188, 88, 52, 0.434);
     color: white;
 }
-.btn-basic {
-    font-size:15px;
-    margin-top: 2%;
-    height: 29px;
-    width: 10%;
-    background-color: rgb(119, 7, 18); 
-    color: white;
-}
-.btn-bassic {
-    font-size:15px;
-    margin-top: 2%;
-    height: 29px;
-    width: 21%;
-    background-color: rgb(119, 7, 18); 
-    color: white;
-}
-
- 
-
- 
-
-.btn-danger {
-    font-size:15px;
-    margin-top: 2%;
-    height: 25px;
-    width: 21%;
-    background-color: red;
-    color: white;
-     
-    }
-
-.btn-primary {
-    font-size:15px;
-    margin-top: 2%;
-    height: 25px;
-    width: 21%;
-    background-color: rgb(28, 28, 182); 
-    color: white;
-}
 
 .display{
     color:black;
-    size: 50px;
-
-    
+    size: 50px; 
 }
 
 .output{
-    margin: auto;
-    width: 250px;
-    size: 500px;
+    margin-left: 40%;
+    width: 20%;
     text-align: center;
     color:black;
     align-content: center;
@@ -383,9 +200,12 @@ table, td, th {
   }
 
 .hidden{
-display:None;
-
+display: None;
 }
+
+.hiddenmode{
+    display: inline;
+    }
 
 h3 {
 font-size: 1.5em;
@@ -394,24 +214,67 @@ text-transform: uppercase;
 }
 
 
-/*borrowed from w3 schools */
-.loader {
-    border: 10px solid #f3f3f3;
-    border-radius: 45%;
-    border-top: 10px solid #0d4c76;
-    width: 40px;
-    height: 40px;
-    margin:auto;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+#food{
+    position: fixed;
+    top: 18%;
+    left: 39%;
+    width: 30%;
+    overflow: hidden;
+    text-align: center;
+    background-color: white;
+}
+
+#myInput{
+    margin: auto;
+    width: 12%;
+}
+
+.topnav a.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    font-size: 17px;
+    width: 180px;
+}
+
+.search{
+    width: 100px;
+    height: 30px;
+    right: 2%;
+    color: white;
+    float: right;
+    margin-top: 8px;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
