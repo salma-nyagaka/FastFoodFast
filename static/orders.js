@@ -13,7 +13,7 @@ window.onload = function(){
     }
 
     //returns a promise which is a reponse to a request   
-    fetch(`${url}/v2/orders`,{
+    fetch(`${url}/orders`,{
         method: 'GET',
         headers:{
             'Content-Type': 'application/json',

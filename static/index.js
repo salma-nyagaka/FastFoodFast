@@ -68,7 +68,7 @@ function makeOrder(){
         elem.innerHTML ="LOGIN TO ORDER";
         setTimeout(() => {
             elem.parentNode.removeChild(elem);
-        }, 2000);
+        }, 30000);
         setTimeout(() => {
             location.reload();}, 1900);   
        

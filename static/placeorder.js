@@ -134,7 +134,6 @@ function foodOrder(name, quantity){
     .then(data=>{
         if(data['food_order'] === "order placed sucessfully") {
 
-
         window.localStorage.setItem('phonenumber', data['phonenumber'])
         
         elem = document.getElementById('dialog');
