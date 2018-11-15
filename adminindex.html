@@ -15,15 +15,53 @@
         <a href="./adminindex.html">MENU</a>
 </div>
 <br>
-       
-<div  class="display">
-        <h3 class="output hidden" id="dialog"></h3>
-        
-</div>  
-<br> 
-<div class="loader hidden" id="loader"></div>
 
-<div id= "container"> 
+<div class="topnav">
+        <div class="search-container">
+            <input type="text" placeholder="Search.." name="search" id="search" onkeyup="searchBar()"> 
+</div>
+
+</div>
+<br><br>
+
+<div  class="display">
+        <h3 class="output hidden" id="dialog"></h3>       
+</div> 
+
+<button class="input" type="button" id="previous" onClick="previousPage()" >PREVIOUS</button>
+<button class="input" type="button" id="next" onClick="nextPage()">NEXT</button>
+<br> 
+
+<div class="quantity-page hidden" id="food">
+        <div class="quantity"><p id ="quantitystyle">UPDATE MEAL</p></div><br>
+        
+        <div  class="display">
+                <h3 class="output hidden" id="updatedialog"></h3>              
+        </div>
+              <div class="loader hidden" id="loader"></div>
+              <input type="text" placeholder="Enter food name" id="name" />
+              <input type="text" placeholder="Enter description" id="description" />
+              <input type="text" placeholder="Enter food price" id="price" oninput="this.value=(parseInt(this.value)||0)"/><br><br><br><br>
+            
+              <label class="new" for="images">Images
+                <select id ="images">
+                  <option value="" >Select an image</option>
+                  <option value="Default" >Default image</option>
+                  <option value="Burger">Cheese burger</option>
+                  <option value="Burger2" >Beef burger</option>
+                  <option value="Hawaian" >Hawaian pizza</option>
+                  <option value="Chinese" >Chinese tikka</option>
+     
+                </select>
+               </label><br><br>
+
+              <button class="input" type="button" id="update" onClick="updateMeal()">UPDATE</button>
+              <button class="input" type="button" id="close" onClick="closeDialog()">CLOSE</button><br><br>
+            </div>    
+      </div>
+    </div>
+
+<div id= "container" class= "container hidden"> 
         <script src="static/base.js"></script>
         <script src="static/getmenu.js"></script>
 

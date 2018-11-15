@@ -1,6 +1,7 @@
 //function to login
 
 window.onload = function(){
+  
 
     //passing a keyName that returns a key's value or returns null if the key does not exist
     if (window.localStorage.getItem('username') == null){
@@ -33,26 +34,31 @@ window.onload = function(){
             element.innerHTML =  "These are the available meals";
             element.id = "theoutput"
             elem.appendChild(element)
+            let window = document.getElementById('container')
+            window.classList.remove('hidden')
             
 
         let output = '';
         data["Food menu"].forEach(res=>{
+
             output +=` 
                             <div class="column" id="adminmenu">
-                                    <img src="${image[res.image] || image["Default"]}"   alt="food image" >
+                                    <img src="${image[res.image] || image["Default"]}"   alt="food image" id="image">
                                     <div class="colum"  class="bg-1">
-                                        <h2 id="menuname">${res['name']}</h2>
+                                        <p class="food-name" id="menuname">${res['name']}</p>
                                         <p id="menudescription">${res['description']}</p>
-                                        <h2 id="menuprice">${res['price']}</h2>  
+                                        <p id="menuprice">${res['price']}</p>  
                                         <button class="ORDER"  onClick="getMeal('${res['id']}')">EDIT</button>
                                         <br><br>
                                         <button class="ORDER"  onClick="deleteMeal('${res['id']}')">DELETE</button>
                                     </div>
                             </div>`
+                        
+                            
                        
         }) 
         document.getElementById("container").innerHTML = output;
-       
+        pagination()
               }
         else{
             elem = document.getElementById('dialog');
@@ -83,15 +89,19 @@ function getMeal(id){
     let qInputDiv = document.getElementById("food");
            
     qInputDiv.classList.remove("hidden")
-    let qInput = document.getElementById("quantity");
+    let menuwindow = document.getElementById('container')
+    menuwindow.classList.add('hidden')
     updateMeal(id)
 
 }
 
 function closeDialog() {
     let qInputDiv = document.getElementById("food")
- 
+   
     qInputDiv.classList.add("hidden")
+    let menuwindow = document.getElementById('container')
+    menuwindow.classList.remove('hidden')
+            
 } 
 
 function updateMeal(id){
@@ -103,7 +113,7 @@ function updateMeal(id){
     let price = document.getElementById('price').value;
     let image = document.getElementById('images').value;
 
-    fetch(`http://127.0.0.1:5000/api/v2/menu/${id}`,{
+    fetch(`${url}/menu/${id}`,{
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -120,9 +130,10 @@ function updateMeal(id){
     .then(res => res.json())
     .then(data => {
 
-        elem = document.getElementById('dialog');
+        elem = document.getElementById('updatedialog');
         elem.classList.remove('hidden');
         let element = document.createElement('p')
+        
 
         if (data['message'] === 'Food menu updated'){
             document.getElementById('name').value = "";
@@ -130,12 +141,12 @@ function updateMeal(id){
             document.getElementById('price').value = ""; 
             document.getElementById('images').value = "";  
                     
-            element.innerHTML =  "Food menu created";
+            element.innerHTML =  "Food menu updated";
             element.id = "theoutput"
             elem.appendChild(element)
 
             setTimeout(() => {
-                location.reload();}, 1900);                                   
+                location.reload();}, 1900); 
              
         }
         else{
@@ -154,47 +165,77 @@ function updateMeal(id){
 })
 }
 
-    
-//function to delete a meal item
-function deleteMeal(id){
-    fetch(`${url}/${id}`,{
-        method: 'DELETE',
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + window.localStorage.getItem('token')
-        },
-    })
-    .then(res=> res.json())
-    .then(data=>{
+function searchBar() {
 
-                if(data['message'] === "Successfully Deleted") {
-                    elem = document.getElementById('dialog');
-                    elem.classList.remove('hidden');
-                    let element = document.createElement('p')
-                    element.innerHTML =  "Successfully deleted";
-                    element.id = "theoutput"
-                    elem.appendChild(element)
-
-                    setTimeout(() => {
-                        location.reload();}, 900);        
-            
-            }
-                else{
-                    elem = document.getElementById('dialog');
-                    elem.classList.remove('hidden');
-                    let element = document.createElement('p')
-                    element.innerHTML =  `${data["message"]}`;
-                    element.id = "theoutput"
-                    elem.appendChild(element)
-
-                }
-            }
-)
-    .catch(function(error){
-    console.log(error)            
-        })
+    let input = document.getElementById("search").value
+    let name = input.toUpperCase();
+    let foodNames = document.getElementsByClassName("food-name")
+    for(let foodNameP of foodNames) {
+        let foodName = foodNameP.innerHTML.toUpperCase()
+        if(!foodName.includes(name) ){
+            foodNameP.parentNode.parentNode.style.display = "none"
+        } else {
+            pagination()
+        }
+    }
 }
+
+
+let n = 0;
+function pagination(){
+    let allMeals = document.getElementsByClassName("column")
+    allMeals = Array.from(allMeals)
+
+
+    let displayMeals = allMeals.slice(n, 4) 
+    pageDisplay(displayMeals)  
+}
+
+function pageDisplay(array){
+    let allMeals = document.getElementsByClassName("column")
+    allMeals = Array.from(allMeals)
+
+    allMeals.forEach((meal) =>{
+        if(array.indexOf(meal) < 0){
+            meal.style.display = "none"
+            
+        }
+        else{
+            meal.style.display = "inline"
+        }
+    })
+}
+
+function nextPage(){
+    let allMeals = document.getElementsByClassName("column")
+    allMeals = Array.from(allMeals)
+    
+    if(n+4 < allMeals.length){
+        n += 4;
+    }
+    else{
+        pagination()    
+    }
+    let newPage = allMeals.slice(n, n+4)
+    pageDisplay(newPage)
+   
+}
+
+function previousPage(){
+    let allMeals = document.getElementsByClassName("column")
+    if(n-4 > 0){
+        n -= 4;
+    }
+    else{
+        n = 0;    
+    }
+    allMeals = Array.from(allMeals)
+    let newPage = allMeals.slice(n, n+4)
+    pageDisplay(newPage)
+   
+}
+
+
 
 //function to logout
 var logout = document.getElementById('signintext')
