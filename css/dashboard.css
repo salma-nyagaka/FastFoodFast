@@ -22,32 +22,6 @@ body {
     transform: scale(1.1); 
 }
 
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 19px;
-    color: white;
-    display: block;
-    
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.main {
-    margin-left: 160px;
-    font-size: 28px; 
-    padding: 0px 10px;
-    position: fixed;
-
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 17px;}
-}
 .button {
     background-color: rgb(119, 7, 18); 
     border: none;
@@ -66,133 +40,6 @@ body {
     margin-top: 18%;
 }
 
-.button1 {
-    background-color:rgb(119, 7, 18); 
-    color: black; 
-    border: 2px solid rgb(119, 7, 18);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-}
-
-.button1:hover {
-    border: 0 px solid white;
-    background-color: rgb(87, 4, 12);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    -ms-transform: scale(1.5); 
-    -webkit-transform: scale(1.05); 
-    transform: scale(1.05);
-
-
-    color: white;
-}
-
-.button2 {
-    background-color:grey; 
-    color: black; 
-    height: 30px;
-    border: 2px solid rgba(128, 128, 128, 0.392);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-}
-
-.button2:hover {
-    border: 2px solid rgba(128, 128, 128, 0.392);
-    background-color: grey;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    -ms-transform: scale(1.5); 
-    -webkit-transform: scale(1.5); 
-    transform: scale(1.1);
-
-    color: white;
-}
-
-
-.button4 {
-    background-color:rgb(119, 7, 18); 
-    color: black; 
-    width: 145px;
-    font-size: 12px;
-    border: 2px solid rgb(119, 7, 18);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-}
-
-.button4:hover {
-    border: 0 px solid white;
-    background-color: rgb(87, 4, 12);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    -ms-transform: scale(1.5); 
-    -webkit-transform: scale(1.05); 
-    transform: scale(1.05);
-
-
-    color: white;
-}
-.collapsible {
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100px;
-    height: 30px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-    background-color: rgb(119, 7, 18); 
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border: none;
-    text-align:left;
-    outline: none;
-    font-size: 15px;
-}
-
-.active, .collapsible:hover {
-    background-color: rgb(87, 4, 12);
-    color: white;
-
-}
-
-.content {
-    display: none;
-    overflow: hidden;
-    background-color: white;
-    width: 400px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-}
-
-.main-panel {
-    position: relative;
-    margin-left:2%;
-    width: calc(120% - 260px);
-    -webkit-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    -moz-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    -o-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
-    max-height: 100%;
-}
-
-.main-panel>.content {
-    margin-top: 70px;
-    padding: 30px 15px;
-    min-height: calc(100% - 123px);
-}
-
-.main-panel>.footer {
-    border-top: 1px solid #e7e7e7;
-}
-
-.main-panel>.navbar {
-    margin-bottom: 0;
-}
-
-.btn-group,
-.btn-group-vertical {
-    position: relative;
-    margin: 10px 1px;
-}
-
-
 .center{
     margin-right:31%;
     position: center;
@@ -204,62 +51,8 @@ body {
   box-sizing: border-box;
 }
 
-.row {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap; 
-  flex-wrap: wrap;
-  margin: 0 -16px;
-}
-
-.col-25 {
-  -ms-flex: 25%; 
-  flex: 25%;
-}
-
-.col-50 {
-  -ms-flex: 50%; 
-  flex: 50%;
-}
-
-.col-75 {
-  -ms-flex: 75%; 
-  flex: 75%;
-}
-
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
 
 
-
-input[type=text] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-label {
-  margin-bottom: 10px;
-  display: block;
-}
-
-
-.containner{
-    border: 2px solid black;
-
-
-}
-.icon-container {
-  margin-bottom: 20px;
-  padding: 7px 0;
-  font-size: 24px;
-  
-}
 h2 {
     display: block;
     font-size: 1.5em;
@@ -309,20 +102,11 @@ h2 {
   width: 100%;
 }
 img {
-    /* margin-top: 30px; */
+
     border-radius: 5px 5px 0 0;
     width:50%;
      height:170px;
     }
-.sticky + .content {
-  padding-top: 60px;
-}
-.column2 {
-    float: left;
-    width: 33.33%;
-}
-
-
 
  .container {
     display: grid;
@@ -331,9 +115,6 @@ img {
     /* float: center; */
  }
     
-
-
-
 
 .colum {
     width: 43.33%;
@@ -361,39 +142,6 @@ button {
     opacity: 0.9px;
     padding: 7px;
     background-color: rgba(230, 115, 73, 0.434);
-}
-
-
-/* .section.menu{
-    width: 99%;
-    display: grid;
-    grid-template-columns:  repeat(4, 1fr);
-} */
-
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
 }
 
 .output{
@@ -424,27 +172,6 @@ button {
     text-transform: uppercase;
     margin-left: 20%;
 }
-
-.loader {
-    border: 10px solid #f3f3f3;
-    border-radius: 45%;
-    border-top: 10px solid #0d4c76;
-    width: 40px;
-    height: 40px;
-    margin:auto;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
 
 
 .order{    
@@ -502,7 +229,6 @@ input#quantity{
 #tablee {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    /* margin-left: 6%; */
     width: 100%;
 }
 
@@ -530,12 +256,6 @@ input#quantity{
     background-color: rgba(188, 88, 52, 0.434);
     color: white;
 }
-/* 
-.table{
-    height: auto;
-    width: 100%;
-    background: white;
-} */
 
 hr {
     border: 1px solid rgba(0, 0, 0, 0.564);
@@ -551,6 +271,6 @@ hr {
     height: auto;
     width: 100%;
     opacity: 0.9px;
-    border-radius: 10px;
+    border-radius: 5%;
     background-color: rgba(230, 115, 73, 0.434);
 }
