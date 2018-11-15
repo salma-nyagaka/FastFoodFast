@@ -18,7 +18,7 @@ describe('Order history page', () => {
     })
 });
 
-describe('Ge', () => {
+describe('User shojld be able to login', () => {
   beforeAll(async () => {
 
     await page.goto('http://127.0.0.1:8080/login.html')

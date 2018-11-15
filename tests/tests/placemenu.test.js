@@ -97,8 +97,6 @@ describe('New meal', () => {
       await page.goto('http://127.0.0.1:8080/newfood.html')
     });
   
-  
-  
       it('Name field cannot be left blank', async () => {
   
         const meal = {
